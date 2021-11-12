@@ -1,6 +1,8 @@
 PImage[] img;
 int nFotogramas = 44;
 int f = 1;
+boolean vid = true;
+
 
 void setup() {
   size(1200, 700);
@@ -15,15 +17,17 @@ void setup() {
     img[i-1] = loadImage("fotograma"+i+".jpg");
   }
 }
+
+
+
 void draw() {
 
-
-  if (frameCount%5==0) {
-    image(img[f], 0, 101);
+  if (frameCount%5==0&& vid) {
+    image(img[f-1], 0, 101);
     f++;
   }
   if (f==nFotogramas) {
-    noLoop();
+        vid = false;
   }
   //banner
   fill(#3f5a6e);
