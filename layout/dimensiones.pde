@@ -11,5 +11,15 @@ float buttonH= 50;
 float xT = marginW +4 ;
 float yT = marginH + bannerH + 20;
 
-float wT = 9* width/10;
-float hT = 400;
+float wT = 950;
+float hT = 550;
+
+//pizarra
+
+float wBlackboard = 500;
+float hBlackboard = 500;
+
+//toolbar
+
+float wTB =50;
+float hTB = height - bannerH;

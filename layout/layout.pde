@@ -18,7 +18,7 @@ void draw() {
     p1();
   }
   if (pantalla==2) { //
-    p1();
+    p2();
   }
   if (pantalla==3) {
     p1();

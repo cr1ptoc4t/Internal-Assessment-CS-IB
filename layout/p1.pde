@@ -1,7 +1,8 @@
 void p1(){
   template();
   createTable(xT,yT,nPlayers);
-  
+  //
+  table(wT, hT);
   
 }
 
@@ -12,4 +13,9 @@ void createTable(float w, float h, int nPlayers){
     fill(random(255));
     rect(w, h+d, wT, hT/nPlayers);
   }*/
+}
+
+void table(float w, float h){
+  fill(255);
+  rect(width/2 - w/2, height/2 -200, w, h);
 }

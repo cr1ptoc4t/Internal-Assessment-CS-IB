@@ -32,7 +32,4 @@ void keyPressed() {
   if (key=='d') {
     pantalla++;
   }
-  if (key=='a') {
-    pantalla--;
-  }
 }
