@@ -1,21 +1,41 @@
 void template() {
   background(platinum);
- 
+
   //banner
   fill(blackCoral);
-  rect(marginW, marginH, width-2*marginW, bannerH);
-  
+  rect(marginW, marginH, width-2*marginW, hBanner);
+
   //logo
   fill(prussianBlue);
-  rect(marginW+10, marginH+10, logoW, bannerH-20);
-
+  rect(marginW+10, marginH+10, logoW, hBanner-20);
+  /*
   for (int i=width/3, s=0; i< (width-marginW); i+=140, s++) {
-    fill(255, 255, 255);
-    text("Sección "+s, i, bannerH/2 + marginH);
-  }
+   fill(255, 255, 255);
+   text("Sección "+s, i, hBanner/2 + marginH);
+   }
+   */
+  fill(255);
+  text("Mi equipo", 250 +(width- 200)/6, hBanner/2);
+
+  text("Pizarra", 250 +2*(width- 200)/6, hBanner/2);
+  text("Resultados", 250 +3*(width- 200)/6, hBanner/2);
+  text("Guardados", 250 +4*(width- 200)/6, hBanner/2);
+  text("Sobre nosotros", 250 +5*(width- 200)/6, hBanner/2);
+  
+  pushStyle();
+  rectMode(LEFT);
+  miEquipo.display();
+  pizarra.display();
+  resultados.display();
+  guardados.display();
+
+  sobreNosotros.display();
+  popStyle();
+
+
 
   //zona libre
 
   fill(200, 200, 200);
-  rect(marginW, bannerH+marginH, width-2*marginW, height - 2*marginH - bannerH);
+  rect(marginW, hBanner+marginH, width-2*marginW, height - 2*marginH - hBanner);
 }

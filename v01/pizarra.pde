@@ -1,5 +1,4 @@
 void p2() {
-  template();
   halfBlackboard();
   trainingToolBar();
 }
@@ -20,7 +19,7 @@ void halfBlackboard() {
         vertex(wBlackboard, 0);
       endShape(CLOSE);
       line(-30, 2*hBlackboard/3, wBlackboard + 30,2*hBlackboard/3);
-      line(-40, hBlackboard, wBlackboard + 40,hBlackboard);
+      line(-40, hBlackboard, wBlackboard + 40, hBlackboard);
     popStyle();
   popMatrix();
 }
@@ -31,8 +30,8 @@ void trainingToolBar(){
     stroke(0);
     strokeWeight(0);
     
-    rect(width-wTB-marginW,bannerH+marginH, wTB, height-bannerH-2*marginH);
+    rect(width-wTB-marginW,0, wTB, height-hBanner-2*marginH);
     strokeWeight(2);
-    line(width-wTB-marginW, bannerH+marginH, width-wTB-marginW, height-bannerH-2*marginH);
+    line(width-wTB-marginW, 0, width-wTB-marginW, height-hBanner-2*marginH);
   popStyle();
 }

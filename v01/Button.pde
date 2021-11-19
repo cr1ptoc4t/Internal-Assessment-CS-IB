@@ -1,3 +1,4 @@
+
 class Button {
   
  // Propietats d'un botó:
@@ -7,9 +8,11 @@ class Button {
  color fillColorOver, fillColorDisabled;
  String textBoto;  // Text
  boolean enabled;  // Abilitat / desabilitat
+ boolean transparency;
+ int a;
  
  // Mètode Constructor
- Button(String text, float x, float y, float w, float h){
+ Button(String text, float x, float y, float w, float h, boolean transparencia){
    this.textBoto = text;
    this.x = x;
    this.y = y; 
@@ -21,7 +24,8 @@ class Button {
    fillColor = color(prussianBlue);
    fillColorOver = color(prussianBlue);
    fillColorDisabled = color(150);
-   strokeColor = color(0);
+   strokeColor = color(0,0,0,0);
+   this.transparency = transparencia;
  }
  
  // Setters
@@ -33,17 +37,24 @@ class Button {
  // Dibuixa el botó
  void display(){
    
+   if(transparency){
+     a=255;
+   } else{
+     a=0;
+   }
+   
    if(!enabled){
-     fill(fillColorDisabled);  // Color desabilitat
+     fill(fillColorDisabled,a);  // Color desabilitat
    }
    else if(mouseOverButton()){
-     fill(fillColorOver);      // Color quan ratolí a sobre
+     fill(fillColorOver, a);      // Color quan ratolí a sobre
    }
    else{
-     fill(fillColor);          // Color actiu però ratolí fora
+     fill(fillColor, a);          // Color actiu però ratolí fora
    }
-   stroke(strokeColor); strokeWeight(2);        //Color i gruixa del contorn
+   stroke(strokeColor, a); strokeWeight(2);        //Color i gruixa del contorn
    rect(this.x, this.y, this.w, this.h, 10);    // Rectangle del botó
+   
    
    // Text (color, alineació i mida)
    fill(0); textAlign(CENTER); textSize(20);

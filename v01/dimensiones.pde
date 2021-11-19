@@ -9,7 +9,7 @@ float wButton= 190;
 float hButton= 50;
 
 float xT = marginW +4 ;
-float yT = marginH + bannerH + 20;
+float yT = marginH + hBanner + 20;
 
 float wT = 950;
 float hT = 550;
@@ -22,4 +22,4 @@ float hBlackboard = 500;
 //toolbar
 
 float wTB =50;
-float hTB = height - bannerH;
+float hTB = height - hBanner;
