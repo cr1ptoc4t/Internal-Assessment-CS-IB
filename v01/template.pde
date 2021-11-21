@@ -23,13 +23,15 @@ void template() {
   text("Sobre nosotros", 250 +5*(width- 200)/6, hBanner/2);
   
   pushStyle();
+  
   rectMode(LEFT);
-  miEquipo.display();
-  pizarra.display();
-  resultados.display();
-  guardados.display();
 
-  sobreNosotros.display();
+  goToMiEquipo.display();
+  goToPizarra.display();
+  goToResultados.display();
+  goToGuardados.display();
+  goToSobreNosotros.display();
+
   popStyle();
 
 

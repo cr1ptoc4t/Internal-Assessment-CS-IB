@@ -17,15 +17,15 @@ class Button {
    this.x = x;
    this.y = y; 
    
-   
    this.w = w;
    this.h = h;
    this.enabled = true;
+   this.transparency = transparencia;
+
    fillColor = color(prussianBlue);
    fillColorOver = color(prussianBlue);
    fillColorDisabled = color(150);
    strokeColor = color(0,0,0,0);
-   this.transparency = transparencia;
  }
  
  // Setters

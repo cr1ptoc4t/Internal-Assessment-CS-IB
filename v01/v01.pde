@@ -1,38 +1,45 @@
+
+
 Button b1;
-Button miEquipo;
-Button pizarra;
-Button resultados;
-Button guardados;
-Button sobreNosotros;
+Button goToMiEquipo, goToPizarra, goToResultados, goToGuardados, goToSobreNosotros;
 
 
 
 void setup() {
+
+
   b1 = new Button("a", width/2 - wButton/2, height/2, wButton, hButton, true);
-  miEquipo =    new Button("", 250 +1*(width- 120)/6, hBanner/5, wButton, hButton, false);
-  pizarra =     new Button("", 250 +2*(width- 120)/6, hBanner/5, wButton, hButton, false);
-  resultados =  new Button("", 250 +3*(width- 120)/6, hBanner/5, wButton, hButton, false);
-  guardados =   new Button("", 250 +4*(width- 120)/6, hBanner/5, wButton, hButton, false);
-  sobreNosotros=new Button("", 250 +5*(width- 120)/6, hBanner/5, wButton, hButton, true);
+  goToMiEquipo   =  new Button("", 150 + 1*(width- 120)/6, hBanner/5, 150 + 2*(width- 120)/6, hButton, false);
+  goToPizarra    =  new Button("", 150 + 2*(width- 120)/6, hBanner/5, 150 + 3*(width- 120)/6, hButton, false);
+  goToResultados =  new Button("", 150 + 3*(width- 120)/6, hBanner/5, 150 + 4*(width- 120)/6, hButton, false);
+  goToGuardados  =  new Button("", 150 + 4*(width- 120)/6, hBanner/5, 150 + 5*(width- 120)/6, hButton, false);
+  goToSobreNosotros=new Button("", 150 + 5*(width- 120)/6, hBanner/5, 150 + 6*(width- 120)/6, hButton, false);
 
   size(1200, 780);
   noStroke();
   textAlign(CENTER);
   textSize(18);
+
 }
 
 //
 enum pantallas {
-  MIEQUIPO, PIZARRA, RESULTADOS, GUARDADOS, SOBRENOSOTROS
+  START, MIEQUIPO, PIZARRA, RESULTADOS, GUARDADOS, SOBRENOSOTROS
 };
 
 
 void draw() {
+  pantalla = 0;
   template();
   pushMatrix();
   translate(marginW, hBanner+marginH);
+  pantallas();
+  //mousePointer();
+}
 
 
+void pantallas (){
+  
   if (pantalla==0) { //entrada
     p0();
   }
@@ -58,4 +65,12 @@ void keyPressed() {
   if (key=='a') {
     pantalla--;
   }
+}
+
+void mousePointer(){
+  
+  if(mousePressed){  
+    println("mouse X: "+ mouseX);
+    println("mouse Y: "+ mouseY);
+}
 }
