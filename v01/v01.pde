@@ -1,14 +1,15 @@
 
 
-Button b1;
+//Button b1;
 Button goToMiEquipo, goToPizarra, goToResultados, goToGuardados, goToSobreNosotros;
-
+Pissarra p;
 
 
 void setup() {
 
+  p = new Pissarra(50, 50, 700,700);
 
-  b1 = new Button("a", width/2 - wButton/2, height/2, wButton, hButton, true);
+  //b1 = new Button("a", width/2 - wButton/2, height/2, wButton, hButton, true);
   goToMiEquipo   =  new Button("", 150 + 1*(width- 120)/6, hBanner/5, 150 + 2*(width- 120)/6, hButton, false);
   goToPizarra    =  new Button("", 150 + 2*(width- 120)/6, hBanner/5, 150 + 3*(width- 120)/6, hButton, false);
   goToResultados =  new Button("", 150 + 3*(width- 120)/6, hBanner/5, 150 + 4*(width- 120)/6, hButton, false);
@@ -19,6 +20,7 @@ void setup() {
   noStroke();
   textAlign(CENTER);
   textSize(18);
+  int pantalla = 0;
 
 }
 
@@ -29,17 +31,19 @@ enum pantallas {
 
 
 void draw() {
-  pantalla = 0;
+  
   template();
   pushMatrix();
   translate(marginW, hBanner+marginH);
   pantallas();
-  //mousePointer();
+  println(pantalla);
+  mousePointer();
 }
 
 
 void pantallas (){
   
+
   if (pantalla==0) { //entrada
     p0();
   }
@@ -59,18 +63,17 @@ void pantallas (){
 }
 
 void keyPressed() {
-  if (key=='d') {
+  if (key=='d'|| key =='D') {
     pantalla++;
   }
-  if (key=='a') {
+  if (key=='a')|| key =='A' {
     pantalla--;
   }
 }
 
 void mousePointer(){
-  
   if(mousePressed){  
     println("mouse X: "+ mouseX);
     println("mouse Y: "+ mouseY);
-}
+  }
 }

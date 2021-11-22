@@ -6,7 +6,7 @@ void p2() {
 
 void halfBlackboard() {
   pushMatrix();
-    pushStyle();
+    pushStyle();2
       rectMode(CENTER);
       fill(255);
       rect(width/2, height/2, wBlackboard, hBlackboard);
