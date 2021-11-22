@@ -1,6 +1,8 @@
 void p2() {
   halfBlackboard();
+  
   trainingToolBar();
+  p.displayPins();
 }
 
 void halfBlackboard() {
@@ -41,3 +43,4 @@ void trainingToolBar(){
     line(width-wTB-marginW, 0, width-wTB-marginW, height-hBanner-2*marginH);
   popStyle();
 }
+
