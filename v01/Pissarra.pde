@@ -14,28 +14,38 @@ class Pissarra {
     this.h = h;
     
     // Crea 5 pins (Equip 1)
-   pins1 = new Pin[5];
+   pins1 = new Pin[6];
     String txt;
     for(int i=0; i<pins1.length; i++){ 
-      if(i<3){
+      if(i<4){
           txt = (i+1)+"";
-          pins1[i] = new Pin( x + 50 , y + 50 + 80*i, 30, txt, color(255, 0, 0));
-      } else if(i==3){
+          pins1[i] = new Pin( x + 200 , y + 50 + 80*i, 30, txt, color(255, 0, 0));
+      } else if(i==4){
           txt = "C";
-          pins1[i] = new Pin( x + 50 , y + 50 + 80*i, 30, txt, color(255, 0, 0));
-      } else if(i>3){
+          pins1[i] = new Pin( x + 200 , y + 50 + 80*i, 30, txt, color(255, 0, 0));
+      } else if(i>4){
           txt = "L";
-          pins1[i] = new Pin( x + 50 , y + 50 + 80*i, 30, txt, color(255, 0, 0));
+          pins1[i] = new Pin( x + 200 , y + 50 + 80*i, 30, txt, color(255, 0, 0));
       }
     }
 
 
     
     // Crea 5 pins (Equip 2)
-    pins2 = new Pin[5];
+    pins2 = new Pin[6];
     for(int i=0; i<pins2.length; i++){
+       if(i<4){
+          txt = (i+1)+"";
+          pins2[i] = new Pin( x + w - 100 , y + 50 + 80*i, 30, txt, color(0, 0, 255));
+      } else if(i==4){
+          txt = "C";
+          pins2[i] = new Pin( x + w - 100 , y + 50 + 80*i, 30, txt, color(0, 0, 255));
+      } else if(i>4){
+          txt = "L";
+          pins2[i] = new Pin( x + w - 100 , y + 50 + 80*i, 30, txt, color(0, 0, 255));
+          }
        txt = (i+1)+"";
-      pins2[i] = new Pin( x + w - 50 , y + 50 + 80*i, 30, txt, color(0, 0, 255));
+      
     }
   }
   
@@ -63,15 +73,19 @@ class Pissarra {
   }
   
   // Dibuixa els Pins
-  void displayPins(){
+  void displayPins1(){
     for(Pin p : pins1){
       p.display();
     }
     
+  }
+
+  void displayPins2(){
     for(Pin p : pins2){
       p.display();
     }
   }
+    
   
   // Comprova si el cursor està sobre la Pissarra
   boolean mouseOver(){

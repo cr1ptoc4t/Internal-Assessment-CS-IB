@@ -1,8 +1,20 @@
+  boolean halfB = true;
+  boolean training = true;
+
 void p2() {
+
+
+  if(halfB){
   halfBlackboard();
-  
-  trainingToolBar();
-  p.displayPins();
+  toolBar(training);
+  p.displayPins1();
+  }
+  else if (!halfB) {
+    fullBlackboard();
+    p.displayPins1();
+    p.displayPins2();
+
+  }
 }
 
 void halfBlackboard() {
@@ -32,7 +44,7 @@ void halfBlackboard() {
 
 }
 
-void trainingToolBar(){
+void toolBar(boolean training){
   pushStyle();
     fill(255);
     stroke(0);
@@ -41,6 +53,11 @@ void trainingToolBar(){
     rect(width-wTB-marginW,0, wTB, height-hBanner-2*marginH);
     strokeWeight(2);
     line(width-wTB-marginW, 0, width-wTB-marginW, height-hBanner-2*marginH);
+
+    if (training){
+      //dibuixar fletxes, conos...
+    }
   popStyle();
 }
 
+void fullBlackboard(){}
