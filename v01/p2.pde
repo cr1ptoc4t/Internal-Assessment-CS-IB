@@ -39,6 +39,12 @@ void halfBlackboard() {
       line(-30, 2*hBlackboard/3, wBlackboard + 30,2*hBlackboard/3);
       line(-40, hBlackboard, wBlackboard + 40, hBlackboard);
 
+      background(255);
+      // Dibuixa la pissarra
+    //p.display();
+      // Dibuixa els pins
+      p.displayPins();
+
     popStyle();
   popMatrix();
 
