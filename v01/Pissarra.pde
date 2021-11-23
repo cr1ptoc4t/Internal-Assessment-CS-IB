@@ -1,6 +1,6 @@
 class Pissarra {
   
-  // Propietats de la Pissarra
+  // Propietats de la Pissarra.
   float x, y, w, h;
   
   // Col·leccions de Pins
@@ -16,7 +16,7 @@ class Pissarra {
     // Crea 5 pins (Equip 1)
    pins1 = new Pin[5];
     String txt;
-    for(int i=0; i<pins1.length; i++){
+    for(int i=0; i<pins1.length; i++){ 
       if(i<3){
           txt = (i+1)+"";
           pins1[i] = new Pin( x + 50 , y + 50 + 80*i, 30, txt, color(255, 0, 0));
