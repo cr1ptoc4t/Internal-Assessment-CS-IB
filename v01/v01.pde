@@ -63,10 +63,10 @@ void pantallas (){
 }
 
 void keyPressed() {
-  if (key=='d'|| key =='D') {
+  if ( key=='d' || key =='D') {
     pantalla++;
   }
-  if (key=='a')|| key =='A' {
+  if ( key=='a' || key =='A') {
     pantalla--;
   }
 }
