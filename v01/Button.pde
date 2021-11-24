@@ -44,7 +44,7 @@ class Button {
    }
    
    if(!enabled){
-     fill(fillColorDisabled,a);  // Color deshabilitat
+     fill(fillColorDisabled,a);  // Color desabilitat
    }
    else if(mouseOverButton()){
      fill(fillColorOver, a);      // Color quan ratolí a sobre
