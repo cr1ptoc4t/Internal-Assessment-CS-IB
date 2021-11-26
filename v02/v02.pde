@@ -3,7 +3,7 @@
 //Button b1;
 Button goToMiEquipo, goToPizarra, goToResultados, goToGuardados, goToSobreNosotros;
 Pissarra p;
-
+Table t;
 
 void setup() {
 
@@ -15,6 +15,13 @@ void setup() {
   goToResultados =  new Button("", 150 + 3*(width- 120)/6, hBanner/5, 150 + 4*(width- 120)/6, hButton, false);
   goToGuardados  =  new Button("", 150 + 4*(width- 120)/6, hBanner/5, 150 + 5*(width- 120)/6, hButton, false);
   goToSobreNosotros=new Button("", 150 + 5*(width- 120)/6, hBanner/5, 150 + 6*(width- 120)/6, hButton, false);
+
+
+  // Creació de la taula
+  t = new Table(files, columnes);
+  t.setHeaders(headers);
+  t.setData(info);
+  t.setColumnWidths(colWidths);
 
   size(1200, 780);
   noStroke();
@@ -45,13 +52,13 @@ void pantallas (){
   
 
   if (pantalla==0) { //entrada
-    p0();
+    p1();
   }
   if (pantalla==1) { //mi equipo
     p1();
   }
   if (pantalla==2) { //
-    pant2();
+    p2();
   }
   if (pantalla==3) {
     p1();
