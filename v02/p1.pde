@@ -1,6 +1,6 @@
 void p1(){
   //table();
-  t.display(50, 50, tableW, tableH);
+  t.display((width-tableW)/2, 50, tableW, tableH);
   
 }
 

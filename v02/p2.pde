@@ -12,6 +12,7 @@ void p2(){
     p.displayPins2();
  
   }
+  p.checkPinsMotion();
 }
  
 void halfBlackboard() {

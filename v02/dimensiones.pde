@@ -23,3 +23,8 @@ float hBlackboard = 500;
 
 float wTB = 50;
 float hTB = height - hBanner;
+
+
+//tabla 
+float tableW = 1000, tableH = 600;
+

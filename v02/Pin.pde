@@ -27,7 +27,7 @@ class Pin {
     pushStyle();
       stroke(0); strokeWeight(3); fill(c);
       ellipse(x, y, 2*r, 2*r);
-      fill(0); textAlign(CENTER); textSize(r);
+      fill(255); textAlign(CENTER); textSize(r);
       text(txt, x, y + r/4);
     popStyle();
   }

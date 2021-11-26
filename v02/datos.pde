@@ -6,14 +6,11 @@ boolean training = true;
 
 //tabla
 
-// Dimensions de la taula
-float tableW = 900, tableH = 600;
-
 // Número de files (capçalera inclosa) i columnes de la taula
 int files = 14, columnes = 7;
 
 // Títols de les columnes 
-String[] headers = {"Dorsal", "Nombre", "Apellidos", "Edad", "Sexo", "1ª posición", "2ª posición"};
+String[] headers = {"Dorsal", "Nombre", "Apellidos", "Edad", "Sexo", "1ª p", "2ª p"};
 
 // Amplades de les columnes
 //han de sumar 100
