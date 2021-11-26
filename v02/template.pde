@@ -26,7 +26,7 @@ void template() {
   goToResultados.display();
   goToGuardados.display();
   goToSobreNosotros.display();
-
+  goToPizarra.press();
   popStyle();
 
 

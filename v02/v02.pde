@@ -43,8 +43,9 @@ void draw() {
   pushMatrix();
   translate(marginW, hBanner+marginH);
   pantallas();
-  println(pantalla);
-  mousePointer();
+  //println(pantalla);
+  //mousePointer();
+  updateCursor();
 }
 
 
@@ -52,7 +53,7 @@ void pantallas (){
   
 
   if (pantalla==0) { //entrada
-    p1();
+    p0();
   }
   if (pantalla==1) { //mi equipo
     p1();
@@ -82,5 +83,33 @@ void mousePointer(){
   if(mousePressed){  
     println("mouse X: "+ mouseX);
     println("mouse Y: "+ mouseY);
+    
   }
+
+  
 }
+
+void updateCursor(){
+  
+  if((goToMiEquipo.mouseOverButton() && goToMiEquipo.enabled)||
+     (goToGuardados.mouseOverButton() && goToGuardados.enabled)||
+     (goToPizarra.mouseOverButton() && goToPizarra.enabled)){
+      cursor(HAND);
+  }
+  else {
+     cursor(ARROW);
+  }
+
+}
+
+void mousePressed(){
+  if(goToMiEquipo.mouseOverButton() && goToMiEquipo.enabled && mousePressed){
+    pantalla =1;
+  }
+  if(goToGuardados.mouseOverButton() && goToGuardados.enabled && mousePressed){
+    pantalla =3;
+  }
+  if(goToPizarra.mouseOverButton() && goToMiEquipo.enabled && mousePressed){
+    pantalla =2;
+  
+}}

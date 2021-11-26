@@ -51,7 +51,7 @@ void pantallas (){
     p1();
   }
   if (pantalla==2) { //
-    pant2();
+    p2();
   }
   if (pantalla==3) {
     p1();
