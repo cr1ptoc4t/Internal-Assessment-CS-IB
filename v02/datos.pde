@@ -32,3 +32,10 @@ String[][] info = {
     {"5", "Jose", "Perez Galdós", "37", "Home","Lib", "Col"},
     {"5", "Jose", "Perez Galdós", "37", "Home","Lib", "Col"},            
     };
+
+//arreglar aquest codi!!!!!!
+ for(int i =0; i<info.length; i++){
+     for(int j =0; j< info.length; j++){
+     info [i][j] = 1.this.name();
+    }
+}

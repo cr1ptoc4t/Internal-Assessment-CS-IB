@@ -4,6 +4,7 @@
 Button goToMiEquipo, goToPizarra, goToResultados, goToGuardados, goToSobreNosotros;
 Pissarra p;
 Table t;
+Player 1;
 
 void setup() {
 
@@ -22,6 +23,9 @@ void setup() {
   t.setHeaders(headers);
   t.setData(info);
   t.setColumnWidths(colWidths);
+
+  //creació jugador
+  1 = new Player("Pere Joan", "Gomila" , "home", "Libero", "Col", 10, 999999999, 2001, 16, 2);
 
   size(1200, 780);
   noStroke();
@@ -103,13 +107,17 @@ void updateCursor(){
 }
 
 void mousePressed(){
-  if(goToMiEquipo.mouseOverButton() && goToMiEquipo.enabled && mousePressed){
+  if(goToMiEquipo.mouseOverButton() && mousePressed){
     pantalla =1;
   }
-  if(goToGuardados.mouseOverButton() && goToGuardados.enabled && mousePressed){
+  if(goToGuardados.mouseOverButton() && mousePressed){
     pantalla =3;
   }
-  if(goToPizarra.mouseOverButton() && goToMiEquipo.enabled && mousePressed){
-    pantalla =2;
+  if(goToPizarra.mouseOverButton()  && mousePressed){
+    pantalla = 2;  
+  }
+  if(goToSobreNosotros.mouseOverButton() && mousePressed){
+    pantalla = 3;
+  }
   
-}}
+}
