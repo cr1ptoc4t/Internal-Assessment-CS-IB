@@ -1,7 +1,7 @@
 int nPlayers =14;
-int pantalla = 0;
+int pantalla = 2;
 
-boolean halfB = true;
+boolean halfB = false;
 boolean training = true;
 
 //tabla
@@ -34,8 +34,6 @@ String[][] info = {
     };
 
 //arreglar aquest codi!!!!!!
- for(int i =0; i<info.length; i++){
-     for(int j =0; j< info.length; j++){
-     info [i][j] = 1.this.name();
-    }
+void recorrArrayInfo(){
+ 
 }

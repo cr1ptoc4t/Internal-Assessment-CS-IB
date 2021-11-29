@@ -2,9 +2,10 @@
 
 //Button b1;
 Button goToMiEquipo, goToPizarra, goToResultados, goToGuardados, goToSobreNosotros;
+Button trainingButton;
 Pissarra p;
 Table t;
-Player 1;
+Player p1;
 
 void setup() {
 
@@ -18,6 +19,8 @@ void setup() {
   goToSobreNosotros=new Button("", 150 + 5*(width- 120)/6, hBanner/5, 150 + 6*(width- 120)/6, hButton, false);
 
 
+  trainingButton = new Button("", width/2 - wButtonTraining/2, hButtonTraining-20, wButtonTraining ,hButtonTraining , false);
+
   // Creació de la taula
   t = new Table(files, columnes);
   t.setHeaders(headers);
@@ -25,14 +28,15 @@ void setup() {
   t.setColumnWidths(colWidths);
 
   //creació jugador
-  1 = new Player("Pere Joan", "Gomila" , "home", "Libero", "Col", 10, 999999999, 2001, 16, 2);
+  p1 = new Player("Pere Joan", "Gomila" , "home", "Libero", "Col", 10, 999999999, 2001, 16, 2);
 
   size(1200, 780);
   noStroke();
   textAlign(CENTER);
   textSize(18);
   int pantalla = 0;
-
+  recorrArrayInfo();
+  printArray(info);
 }
 
 //
@@ -42,7 +46,6 @@ enum pantallas {
 
 
 void draw() {
-  
   template();
   pushMatrix();
   translate(marginW, hBanner+marginH);
@@ -97,7 +100,8 @@ void updateCursor(){
   
   if((goToMiEquipo.mouseOverButton() && goToMiEquipo.enabled)||
      (goToGuardados.mouseOverButton() && goToGuardados.enabled)||
-     (goToPizarra.mouseOverButton() && goToPizarra.enabled)){
+     (goToPizarra.mouseOverButton() && goToPizarra.enabled) ||
+     trainingButton.mouseOverButton()){
       cursor(HAND);
   }
   else {

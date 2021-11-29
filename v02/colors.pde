@@ -5,7 +5,8 @@ color royalBlueDark= color(10, 36, 99);
 color celadonBlue =  color(251, 54, 64);
 color platinum =     color(226, 226, 226);
 
-
+color c1;
+color c2;
 //color prussianBlue = color(#00243D);
 //color blackCoral = color(#3F5A6E);
 //color ming = color(#587B7F);

@@ -28,3 +28,5 @@ float hTB = height - hBanner;
 //tabla 
 float tableW = 1000, tableH = 600;
 
+float wButtonTraining = 200;
+float hButtonTraining = 40;

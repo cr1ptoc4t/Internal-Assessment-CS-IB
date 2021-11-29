@@ -1,7 +1,8 @@
   boolean halfB = true;
   boolean training = true;
  
-void pant2(){ 
+void pant2(){
+
   
   if(halfB){
   halfBlackboard();
