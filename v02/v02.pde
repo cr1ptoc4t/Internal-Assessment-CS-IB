@@ -6,20 +6,27 @@ Button trainingButton;
 Pissarra p;
 Table t;
 Player p1;
+Select entrenamiento,competicion;
+Select mediaPista, pistaEntera;
 
 void setup() {
 
   p = new Pissarra(50, 50, 700,700);
 
   //b1 = new Button("a", width/2 - wButton/2, height/2, wButton, hButton, true);
-  goToMiEquipo   =  new Button("", 150 + 1*(width- 120)/6, hBanner/5, 150 + 2*(width- 120)/6, hButton, false);
-  goToPizarra    =  new Button("", 150 + 2*(width- 120)/6, hBanner/5, 150 + 3*(width- 120)/6, hButton, false);
-  goToResultados =  new Button("", 150 + 3*(width- 120)/6, hBanner/5, 150 + 4*(width- 120)/6, hButton, false);
-  goToGuardados  =  new Button("", 150 + 4*(width- 120)/6, hBanner/5, 150 + 5*(width- 120)/6, hButton, false);
-  goToSobreNosotros=new Button("", 150 + 5*(width- 120)/6, hBanner/5, 150 + 6*(width- 120)/6, hButton, false);
+  goToMiEquipo      =  new Button("", 150 + 1*(width- 120)/6, hBanner/5, 150 + 2*(width- 120)/6, hButton, false);
+  goToPizarra       =  new Button("", 150 + 2*(width- 120)/6, hBanner/5, 150 + 3*(width- 120)/6, hButton, false);
+  goToResultados    =  new Button("", 150 + 3*(width- 120)/6, hBanner/5, 150 + 4*(width- 120)/6, hButton, false);
+  goToGuardados     =  new Button("", 150 + 4*(width- 120)/6, hBanner/5, 150 + 5*(width- 120)/6, hButton, false);
+  goToSobreNosotros =  new Button("", 150 + 5*(width- 120)/6, hBanner/5, 150 + 6*(width- 120)/6, hButton, false);
 
+  trainingButton    = new Button("", width/2 - wButtonTraining/2, hButtonTraining-20, wButtonTraining ,hButtonTraining , false);
 
-  trainingButton = new Button("", width/2 - wButtonTraining/2, hButtonTraining-20, wButtonTraining ,hButtonTraining , false);
+  entrenamiento = new Select("Modo entrenamiento", 50, 70 ,true, 15);
+  competicion   = new Select("Modo competición", 50, 100 ,false, 15);
+  mediaPista    = new Select("Media pista", 50, 140 ,false, 15);
+  pistaEntera   = new Select("Pista entera", 50, 170 ,true, 15);
+
 
   // Creació de la taula
   t = new Table(files, columnes);
@@ -51,6 +58,7 @@ void draw() {
   pantallas();
   //println(pantalla);
   mousePointer();
+  calibrateBlackboardModes();
   updateCursor();
 }
 
@@ -82,6 +90,16 @@ void keyPressed() {
   }
   if ( key=='a' || key =='A') {
     pantalla--;
+  }
+  if (key=='t'){
+    mediaPista.setSelected(!mediaPista.getSelected());
+    pistaEntera.setSelected(!mediaPista.getSelected());
+
+  }
+  if (key=='c'){
+    competicion.setSelected(!competicion.getSelected());
+    entrenamiento.setSelected(!competicion.getSelected());
+
   }
 }
 
@@ -122,5 +140,21 @@ void mousePressed(){
   if(goToSobreNosotros.mouseOverButton() && mousePressed){
     pantalla = 3;
   }
+  
+}
+
+void calibrateBlackboardModes(){
+  /*
+  if(entrenamiento.getSelected()){
+    competicion.setSelected(false);
+  }else{
+    competicion.setSelected(false);
+  }
+  */
+  /*
+  competicion.setSelected(!entrenamiento.getSelected());
+
+  mediaPista.setSelected(!pistaEntera.getSelected());
+  */
   
 }

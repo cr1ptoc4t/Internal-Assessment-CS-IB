@@ -1,9 +1,9 @@
-class select{
+class Select{
     float x, y, w;
     boolean selected;
     String txt;
 
-    select(String txt, float x, float y, boolean selected, float w){
+    Select(String txt, float x, float y, boolean selected, float w){
         this.txt = txt;
 
         this.x =  x;
@@ -24,13 +24,28 @@ class select{
                 line(x,y, x+w, y+w);
                 line(x, y+w, x+w,y);
             }
+
+            textAlign(LEFT);
+            textSize(15);
+            fill(0);
+            text(""+this.txt, x+w+ 7, y+13);
         popStyle();
     }
     
-    void changeSelected(){
-        selected = !selected;
+
+    void setSelected (boolean select){
+        selected = select;
+    } 
+    
+    boolean getSelected(){
+        return selected;
     }
 
-
+    boolean mouseOverSelected(){
+        return (mouseX >= this.x) && 
+                (mouseX<=this.x + this.w) && 
+                (mouseY>= this.y) && 
+                (mouseY<= this.y + this.w);
+    }
 
 }

@@ -4,13 +4,15 @@ void p2(){
   
   //trainingButton.display();
   //trainingButton1();
-  toolBar(training);
+  toolBar(entrenamiento.getSelected());
   
 
-  if(halfB){
+  if(mediaPista.getSelected()){
+  
     halfBlackboard();
     p.displayPins1();
-  } else if (!halfB) {
+  
+  } else{
     fullBlackboard();
 
     //p.displayPins1();
@@ -20,7 +22,7 @@ void p2(){
   p.checkPinsMotion();
   checkChanges();
   
-  if (training){
+  if (entrenamiento.getSelected()){
     text("TRAINING", width/2, height/2);
   } else{
     text("PLAYING", width/2, height/2);
@@ -155,8 +157,8 @@ void menu(){
       strokeWeight(1);
       rect(0,0,300,height-hBanner-2*marginH);
 
-      line(15, 15, 60, 60);
-      line(15, 60, 60, 15);
+      line(15, 15, 15+30, 15+30);
+      line(15, 15+30, 15+30, 15);
       
       textAlign(LEFT);
       textSize(40);
@@ -164,21 +166,21 @@ void menu(){
       text("Menú:", 120, 50);
 
       fill(255,255,255, 0);
-      strokeWeight(1);
-      rect(50, 100, 20, 20);
-      
-      
-      if(training){
-        strokeWeight(2);
-        line(50, 100, 70, 120);
-        line(50, 120, 70, 100);
+      strokeWeight(1);      
 
+      entrenamiento.display();
+      competicion.display();
+      mediaPista.display();
+      pistaEntera.display();
+
+
+      if(entrenamiento.mouseOverSelected() && mousePressed){
+        println(entrenamiento.getSelected());
+        entrenamiento.setSelected(!entrenamiento.getSelected());
+        println(entrenamiento.getSelected());
       }
 
-
-      stroke(0,0,0);
-
-      text("modo entrenamiento",  75, 120);
+      
     }
 
 
