@@ -28,13 +28,12 @@ void setup() {
   t.setColumnWidths(colWidths);
 
   //creació jugador
-  p1 = new Player("Pere Joan", "Gomila" , "home", "Libero", "Col", 10, 999999999, 2001, 16, 2);
+  p1 = new Player("Pere Joan", "Gomila" , "home", "Libero", "Col", 10, 999999999, 2001, 16, 2, "perej@mail.com");
 
   size(1200, 780);
   noStroke();
   textAlign(CENTER);
   textSize(18);
-  int pantalla = 0;
   recorrArrayInfo();
   printArray(info);
 }
@@ -51,13 +50,13 @@ void draw() {
   translate(marginW, hBanner+marginH);
   pantallas();
   //println(pantalla);
-  //mousePointer();
+  mousePointer();
   updateCursor();
 }
 
 
 void pantallas (){
-  
+  //println(pantalla);
 
   if (pantalla==0) { //entrada
     p0();
@@ -69,7 +68,7 @@ void pantallas (){
     p2();
   }
   if (pantalla==3) {
-    p1();
+    p1.display();
   }
   if (pantalla==4) {
     p1();

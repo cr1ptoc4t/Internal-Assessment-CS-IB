@@ -34,7 +34,7 @@ class Pin {
   
   // Indica si el cursor està sobre el Pin
   boolean mouseOver(){
-    return dist(mouseX, mouseY, this.x, this.y)<=this.r;
+    return dist(mouseX, mouseY+50, this.x, this.y+50)<=this.r;
   }
   
 

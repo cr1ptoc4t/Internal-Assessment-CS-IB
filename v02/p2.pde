@@ -1,12 +1,12 @@
-
-//PROBLEMA BOTÓ TRAIN/PLAY!!!
-// FALTA TEXT BOTONS
+boolean menuDisplayed = false;
+//HE CREAT SA CLASSE BOTO SELECT, FALTA CREAR TOTS ES SELECTS, FERLIS DISPLAY I FER CANVIS
 void p2(){
-
-  trainingButton.display();
-  trainingButton1();
+  
+  //trainingButton.display();
+  //trainingButton1();
   toolBar(training);
   
+
   if(halfB){
     halfBlackboard();
     p.displayPins1();
@@ -26,6 +26,9 @@ void p2(){
     text("PLAYING", width/2, height/2);
     
     }
+  
+  menu();
+
 }
  
 void halfBlackboard() {
@@ -84,7 +87,7 @@ void fullBlackboard(){
       //rect(width/2, height/2, wBlackboard*2, hBlackboard);
       stroke(0);
       strokeWeight(3);
-      translate(width/2-wBlackboard,height/2-hBlackboard/2-10);
+      translate(width/2-wBlackboard,height/2-hBlackboard/2-50);
     
       beginShape();
         vertex(0, 0);
@@ -131,4 +134,62 @@ void checkChanges(){
     training =! training;
   }
   
+}
+
+void menu(){
+  pushStyle();
+    
+    stroke(0);
+    strokeWeight(4);
+    fill(0);
+    
+    
+    if (!menuDisplayed){
+      line(15, 15, 60, 15);
+      line(15, 30, 60, 30);
+      line(15, 45, 60, 45);
+
+    } else{
+
+      fill(blackCoral, 140);
+      strokeWeight(1);
+      rect(0,0,300,height-hBanner-2*marginH);
+
+      line(15, 15, 60, 60);
+      line(15, 60, 60, 15);
+      
+      textAlign(LEFT);
+      textSize(40);
+      fill(0);
+      text("Menú:", 120, 50);
+
+      fill(255,255,255, 0);
+      strokeWeight(1);
+      rect(50, 100, 20, 20);
+      
+      
+      if(training){
+        strokeWeight(2);
+        line(50, 100, 70, 120);
+        line(50, 120, 70, 100);
+
+      }
+
+
+      stroke(0,0,0);
+
+      text("modo entrenamiento",  75, 120);
+    }
+
+
+    if(frameCount%5 == 0){
+        if((mouseX >= 15) && 
+          (mouseX<=120) && 
+          (mouseY>= 100) && 
+          (mouseY<=130)&& mousePressed){
+          menuDisplayed= !menuDisplayed;
+        }
+    }
+  popStyle();
+
 }
