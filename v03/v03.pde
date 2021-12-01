@@ -1,6 +1,6 @@
 
+PFont fuente1;
 
-//Button b1;
 Button goToMiEquipo, goToPizarra, goToResultados, goToGuardados, goToSobreNosotros;
 Button trainingButton;
 Pissarra p;
@@ -36,7 +36,8 @@ void setup() {
 
   //creació jugador
   p1 = new Player("Pere Joan", "Gomila" , "home", "Libero", "Col", 10, 999999999, 2001, 16, 2, "perej@mail.com");
-  
+
+  fuente1 = createFont("D:/Users/catalinafullana/Documents/Classe/APPINFO/Solucion/data/HKGrotesk/HKGrotesk-Regular.otf", 40);
   size(1200, 780);
   noStroke();
   textAlign(CENTER);
