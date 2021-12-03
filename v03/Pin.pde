@@ -4,14 +4,16 @@ class Pin {
   float x, y, r;
   String txt;
   color c;
+  boolean enabled;
   
   // Constructor
-  Pin(float x, float y, float r, String t, color c){
+  Pin(float x, float y, float r, String t, color c, boolean enabled){
     this.x = x;
     this.y = y;
     this.r = r;
     this.txt = t;
     this.c = c;
+    this.enabled = enabled;
   }
   
   
@@ -36,4 +38,13 @@ class Pin {
   boolean mouseOver(){
     return dist(mouseX, mouseY, this.x, this.y)<=this.r;
   }
+
+  void setEnability (boolean enab){
+    this.enabled = enab;
+  }
+
+  boolean getEnabled(){
+    return enabled;
+  }
+
 }

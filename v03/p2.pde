@@ -1,5 +1,4 @@
 boolean menuDisplayed = false;
-//HE CREAT SA CLASSE BOTO SELECT, FALTA FER CANVIS
 void p2(){
   
   //trainingButton.display();
@@ -152,13 +151,14 @@ void menu(){
     
     
     if (!menuDisplayed){
+      
       line(15, 15, 60, 15);
       line(15, 30, 60, 30);
       line(15, 45, 60, 45);
-
+      
     } else{
 
-      fill(blackCoral, 140);
+      fill(blackCoral, 170);
       strokeWeight(1);
       rect(0,0,300,height-hBanner-2*marginH);
 
@@ -168,8 +168,10 @@ void menu(){
       textAlign(LEFT);
       textSize(40);
       fill(0);
+      pushStyle();
       textFont(fuente1);
       text("Menú:", 80, 45);
+      popStyle();
 
       fill(255,255,255, 0);
       strokeWeight(1);      

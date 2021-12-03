@@ -21,13 +21,13 @@ class Pissarra {
     for(int i=0; i<pins1.length; i++){
       if(i<4){
           txt = (i+1)+"";
-          pins1[i] = new Pin( xPin1 + 200 , y + 80*i, 30, txt, color(blackCoral));
+          pins1[i] = new Pin( xPin1 + 200 , y + 80*i, 30, txt, color(blackCoral), true);
       } else if(i==4){
           txt = "C";
-          pins1[i] = new Pin( xPin1 + 200 , y + 80*i, 30, txt, color(prussianBlue));
+          pins1[i] = new Pin( xPin1 + 200 , y + 80*i, 30, txt, color(prussianBlue), true);
       } else if(i>4){
           txt = "L";
-          pins1[i] = new Pin( xPin1 + 200, y + 80*i, 30, txt, color(redSalsa));
+          pins1[i] = new Pin( xPin1 + 200, y + 80*i, 30, txt, color(redSalsa), true);
       }
     }
  
@@ -38,13 +38,13 @@ class Pissarra {
     for(int i=0; i<pins2.length; i++){
        if(i<4){
           txt = (i+1)+"";
-          pins2[i] = new Pin( xPin2 , y + 80*i, 30, txt, color(ming));
+          pins2[i] = new Pin( xPin2 , y + 80*i, 30, txt, color(ming), true);
       } else if(i==4){
           txt = "C";
-          pins2[i] = new Pin( xPin2 , y + 80*i, 30, txt, color(royalBlueDark));
+          pins2[i] = new Pin( xPin2 , y + 80*i, 30, txt, color(royalBlueDark), true);
       } else if(i>4){
           txt = "L";
-          pins2[i] = new Pin( xPin2 , y + 80*i, 30, txt, color(celadonBlue));
+          pins2[i] = new Pin( xPin2 , y + 80*i, 30, txt, color(celadonBlue), true);
           }
        txt = (i+1)+"";
     }
@@ -91,12 +91,13 @@ class Pissarra {
   // Comprova si el cursor està sobre la Pissarra
   boolean mouseOver(){
     return mouseX >= this.x && mouseX <= this.x + this.w &&
-           mouseY >= this.y && mouseY <= this.y + this.h && mousePressed;
+           mouseY >= this.y && mouseY <= this.y + this.h && 
+           mousePressed ;
   }
  
   // Comprova si cal moure algun Pin
   void checkPinsMotion(){
-    if(mouseOver()){
+    if(mouseOver()&& pins2[0].getEnabled()){
      
       // Comprova els pins de l'Equip 1
       for(Pin p : pins1){

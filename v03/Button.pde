@@ -68,11 +68,11 @@ class Button {
           (mouseY>= this.y) && 
           (mouseY<= this.y + this.h); 
  }
-
+/*
  void press(){
    if(mouseOverButton()&& mousePressed){
      p1();
    }
  }
- 
+ */
 }

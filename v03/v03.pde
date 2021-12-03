@@ -1,5 +1,5 @@
 
-PFont fuente1;
+PFont fuente1, fuente2;
 
 Button goToMiEquipo, goToPizarra, goToResultados, goToGuardados, goToSobreNosotros;
 Button trainingButton;
@@ -8,6 +8,14 @@ Table t;
 Player p1;
 Select entrenamiento,competicion;
 Select mediaPista, pistaEntera;
+
+
+//datos video
+PImage[] img;
+int nFotogramas = 44;
+int f = 1;
+boolean vid = true;
+
 
 void setup() {
 
@@ -27,6 +35,8 @@ void setup() {
   mediaPista        =  new Select("Media pista",       50, 150 , false,  20);
   pistaEntera       =  new Select("Pista entera",      50, 180 , true,   20);
 
+  subeFotogramas();
+
 
   // Creació de la taula
   t = new Table(files, columnes);
@@ -37,13 +47,13 @@ void setup() {
   //creació jugador
   p1 = new Player("Pere Joan", "Gomila" , "home", "Libero", "Col", 10, 999999999, 2001, 16, 2, "perej@mail.com");
 
-  fuente1 = createFont("D:/Users/catalinafullana/Documents/Classe/APPINFO/Solucion/data/HKGrotesk/HKGrotesk-Regular.otf", 40);
+  fuente1 = createFont("HKGrotesk-Bold.otf", 40);
+  fuente2 = createFont("Coco-Sharp-Extrabold-trial.ttf", 40);
+
   size(1200, 780);
   noStroke();
   textAlign(CENTER);
   textSize(18);
-  recorrArrayInfo();
-  printArray(info);
 }
 
 //
@@ -77,7 +87,7 @@ void pantallas (){
     p2();
   }
   if (pantalla==3) {
-    p1.display();
+    p3();
   }
   if (pantalla==4) {
     p1();
@@ -141,6 +151,9 @@ void mousePressed(){
   if(goToSobreNosotros.mouseOverButton() && mousePressed){
     pantalla = 3;
   }
+  if(goToInicio()&& mousePressed){
+    pantalla = 0;
+  }
   
 }
 
@@ -157,4 +170,30 @@ void calibrateBlackboardModes(){
   mediaPista.setSelected(!pistaEntera.getSelected());
   */
   
+}
+
+boolean goToInicio(){
+  return (mouseX >= marginW+10) && 
+          (mouseX<=marginW + logoW) && 
+          (mouseY>= marginH+10) && 
+          (mouseY<= marginH+10+ hBanner-20); 
+}
+
+
+void subeFotogramas(){
+  img = new PImage [nFotogramas] ;
+
+  for (int i=1; i<img.length; i++) {
+    img[i-1] = loadImage("fotograma"+i+".jpg");
+  }
+}
+
+void ejecutaFotogramas(){
+  if (frameCount%5==0&& vid) {
+    image(img[f-1], 0, 101);
+    f++;
+  }
+  if (f==nFotogramas) {
+        vid = false;
+  }
 }
