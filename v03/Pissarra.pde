@@ -21,13 +21,13 @@ class Pissarra {
     for(int i=0; i<pins1.length; i++){
       if(i<4){
           txt = (i+1)+"";
-          pins1[i] = new Pin( xPin1 + 200 , y + 80*i, 30, txt, color(blackCoral), true);
+          pins1[i] = new Pin( xPin1  , y + 80*i, 30, txt, color(blackCoral), true);
       } else if(i==4){
           txt = "C";
-          pins1[i] = new Pin( xPin1 + 200 , y + 80*i, 30, txt, color(prussianBlue), true);
+          pins1[i] = new Pin( xPin1, y + 80*i, 30, txt, color(prussianBlue), true);
       } else if(i>4){
           txt = "L";
-          pins1[i] = new Pin( xPin1 + 200, y + 80*i, 30, txt, color(redSalsa), true);
+          pins1[i] = new Pin( xPin1 , y + 80*i, 30, txt, color(redSalsa), true);
       }
     }
  
@@ -53,8 +53,8 @@ class Pissarra {
   // Resetea la posició de tots els Pins
   void resetPinPositions(){
     for(int i=0; i<pins2.length; i++){
-      pins1[i].setPosition( x + 50 , y + 50 + 80*i);
-      pins2[i].setPosition( x + w - 50 , y + 50 + 80*i);
+      pins1[i].setPosition( 100 , y + 80*i);
+      pins2[i].setPosition( width-100 , y+ 80*i);
     }
   }
  
@@ -97,7 +97,7 @@ class Pissarra {
  
   // Comprova si cal moure algun Pin
   void checkPinsMotion(){
-    if(mouseOver()&& pins2[0].getEnabled()){
+    if(mouseOver()){
      
       // Comprova els pins de l'Equip 1
       for(Pin p : pins1){

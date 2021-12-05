@@ -6,9 +6,24 @@ void template() {
   rect(marginW, marginH, width-2*marginW, hBanner);
 
   //logo
+  /*
   fill(prussianBlue);
   rect(marginW+10, marginH+10, logoW, hBanner-20);
-  
+  */
+  pushStyle();
+    pushMatrix();
+    textAlign(LEFT);
+        textFont(fuente2);
+        textSize(30);
+        fill(redSalsa);
+        text("keep the ball flying",24, 44);
+        fill(255);
+        text("keep the ball flying",25,45);
+        fill(royalBlueDark);
+        text("keep the ball flying",26,46);
+    popMatrix();
+  popStyle();
+
   fill(255,255,255);
   
   text("Mi equipo", 250 +(width- 200)/6, hBanner/2);

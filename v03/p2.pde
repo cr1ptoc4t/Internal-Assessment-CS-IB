@@ -135,11 +135,6 @@ void  trainingButton1(){
 
 void checkChanges(){
   
-  if(trainingButton.mouseOverButton() && mousePressed){
-    
-    training =! training;
-  }
-  
 }
 
 void menu(){

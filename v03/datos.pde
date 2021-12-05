@@ -1,5 +1,5 @@
 int nPlayers =14;
-int pantalla = 3;
+int pantalla = 0;
 
 boolean halfB = false;
 boolean training = true;
