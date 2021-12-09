@@ -1,6 +1,6 @@
 void p3(){
     fondo();
-    guardado1.display();
+    //guardado1.display();
 }
 
 void fondo(){

@@ -21,7 +21,7 @@ Guardado guardado1;
 
 //datos video
 PImage[] img;
-int nFotogramas = 44;
+int nFotogramas = 10;
 int f = 1;
 boolean vid = true;
 
@@ -45,7 +45,7 @@ void setup() {
 
   guardado1 = new Guardado(img1, "k1", 17, 04,2021, 10, 20, 100, 80);
 
-  //subeFotogramas();
+  subeFotogramas();
 
 
   // Creació de la taula
@@ -206,16 +206,6 @@ void subeFotogramas(){
   img = new PImage [nFotogramas] ;
 
   for (int i=1; i<img.length; i++) {
-    img[i-1] = loadImage("fotograma"+i+".jpg");
-  }
-}
-
-void ejecutaFotogramas(){
-  if (frameCount%5==0&& vid) {
-    image(img[f-1], 0, 101);
-    f++;
-  }
-  if (f==nFotogramas) {
-        vid = false;
+    img[i] = loadImage("f"+i+".jpg");
   }
 }
