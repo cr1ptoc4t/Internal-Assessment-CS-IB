@@ -33,7 +33,9 @@ void p2(){
   if(competicion.getSelected()&&pistaEntera.getSelected()){
     p.displayPins2();
   }
+
   menu();
+  
 
 }
  
@@ -80,6 +82,9 @@ void toolBar(boolean training){
       
     }
 
+    save.display();
+
+
   popStyle();
 }
  
@@ -103,7 +108,10 @@ void fullBlackboard(){
       endShape(CLOSE);
       
       line(wBlackboard, -30,wBlackboard, hBlackboard+30);
-  
+
+      line(2*wBlackboard/3, -20, 2*wBlackboard/3, hBlackboard +20);
+      line(4*wBlackboard/3, -20, 4*wBlackboard/3, hBlackboard +20);
+
     popStyle();
   popMatrix();
 

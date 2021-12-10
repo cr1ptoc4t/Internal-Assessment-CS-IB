@@ -22,8 +22,8 @@ class Button {
    this.enabled = true;
    this.transparency = transparencia;
 
-   fillColor = color(prussianBlue);
-   fillColorOver = color(prussianBlue);
+   fillColor = color(blackCoral);
+   fillColorOver = color(blackCoral, 200);
    fillColorDisabled = color(150);
    strokeColor = color(0,0,0,0);
  }
@@ -57,7 +57,7 @@ class Button {
    
    
    // Text (color, alineació i mida)
-   fill(0); textAlign(CENTER); textSize(20);
+   fill(255); textAlign(CENTER); textSize(20);
    text(textBoto, this.x + this.w/2, this.y + this.h/2 + 10);
  }
  

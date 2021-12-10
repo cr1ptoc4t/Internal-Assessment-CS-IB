@@ -10,19 +10,10 @@ void template() {
   fill(prussianBlue);
   rect(marginW+10, marginH+10, logoW, hBanner-20);
   */
-  pushStyle();
-    pushMatrix();
-    textAlign(LEFT);
-        textFont(fuente2);
-        textSize(30);
-        fill(redSalsa);
-        text("keep the ball flying",24, 44);
-        fill(255);
-        text("keep the ball flying",25,45);
-        fill(royalBlueDark);
-        text("keep the ball flying",26,46);
-    popMatrix();
-  popStyle();
+
+  if(pantalla!=0){
+    logoDrawing(160, 44, 30);
+  }
 
   fill(255,255,255);
   
@@ -49,4 +40,31 @@ void template() {
 
   fill(200, 200, 200);
   rect(marginW, hBanner+marginH, width-2*marginW, height - 2*marginH - hBanner);
+}
+
+
+void logoDrawing(float x, float y, int z){
+  pushStyle();
+    pushMatrix();
+    String nombre = "keep the ball flying";
+        textAlign(CENTER);
+        textFont(fuente2);
+        textSize(z);
+        fill(redSalsa);
+        
+        if(pantalla!=0){
+          text(nombre,x, y);
+          fill(255);
+          text(nombre,x+1,y+1);
+          fill(royalBlueDark);
+          text(nombre,x+2,y+2);
+        } else{
+          text(nombre,x, y);
+          fill(255);
+          text(nombre,x+2,y+2);
+          fill(royalBlueDark);
+          text(nombre,x+4,y+4);
+        }
+    popMatrix();
+  popStyle();
 }
