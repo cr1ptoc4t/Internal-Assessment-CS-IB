@@ -2,9 +2,9 @@ color prussianBlue = color(0, 36, 61);
 color blackCoral =   color(63, 90, 110);
 color ming =         color(88, 123, 127);
 color royalBlueDark= color(10, 36, 99);
-color redSalsa =    color(251, 54, 64);
+color redSalsa =     color(251, 54, 64);
 color platinum =     color(226, 226, 226);
-color celadonBlue =     color(#FB3640);
+color celadonBlue =  color(#FB3640);
 
 color c1;
 color c2;

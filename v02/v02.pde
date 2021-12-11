@@ -1,4 +1,4 @@
-
+//PFont fuente1; 
 
 //Button b1;
 Button goToMiEquipo, goToPizarra, goToResultados, goToGuardados, goToSobreNosotros;
@@ -37,12 +37,15 @@ void setup() {
   //creació jugador
   p1 = new Player("Pere Joan", "Gomila" , "home", "Libero", "Col", 10, 999999999, 2001, 16, 2, "perej@mail.com");
   
+  //fuente1 = loadFont("FFScala-32.vlw");
+
   size(1200, 780);
   noStroke();
   textAlign(CENTER);
   textSize(18);
   recorrArrayInfo();
   printArray(info);
+
 }
 
 //

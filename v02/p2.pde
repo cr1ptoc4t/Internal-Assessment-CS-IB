@@ -167,7 +167,7 @@ void menu(){
       
       textAlign(LEFT);
       fill(0);
-      textFont(fuente1, 40);
+      //textFont(fuente1, 40);
       text("Menú:", 80, 45);
 
       fill(255,255,255, 0);

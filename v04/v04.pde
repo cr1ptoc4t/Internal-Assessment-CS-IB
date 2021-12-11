@@ -50,7 +50,7 @@ void setup() {
   mediaPista        =  new Select("Media pista",       50, 150 , false,  20);
   pistaEntera       =  new Select("Pista entera",      50, 180 , true,   20);
 
-  guardado1 = new Guardado(img1, "k1", 17, 04,2021, 10, 20, 100, 80);
+  guardado1         =  new Guardado(img1, "k1", 17, 04,2021, 10, 20, 100, 80);
 
   subeFotogramas();
 
