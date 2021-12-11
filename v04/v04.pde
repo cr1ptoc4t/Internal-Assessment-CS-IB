@@ -43,7 +43,6 @@ void setup() {
   goToSobreNosotros =  new Button("", 150 + 5*(width- 120)/6, hBanner/5, 150 + 6*(width- 120)/6, hButton, false);
 
 
-
   save              =  new Button("S", width - 45,  10, 40 ,40, true );
 
   entrenamiento     =  new Select("Modo entrenamiento",50, 70 ,  true,   20);
@@ -88,10 +87,10 @@ enum pantallas {
 
 void draw() {
 
-  if(frameCount<150){
+  if(frameCount<75){
   //if(true){
     inicio();
-  } else if(frameCount<200){
+  } else if(frameCount<125){
     fill(226,226, 240, i);
     rect(0,0,width, height);
     i++;
