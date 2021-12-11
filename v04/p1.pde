@@ -1,7 +1,14 @@
 void p1(){
   //table();
   t.display((width-tableW)/2, 50, tableW, tableH);
+  //t.display(50, 50, tableW, tableH);
   
+  // Dibuixa els botons
+  b1.display();
+  b2.display();
+  
+  // Actualitza forma del cursor
+  updateCursor();
 }
 
 /*

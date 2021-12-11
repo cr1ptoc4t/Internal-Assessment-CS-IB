@@ -3,7 +3,7 @@ void p2(){
   
   //trainingButton.display();
   //trainingButton1();
-  toolBar(entrenamiento.getSelected());
+  
   
 
   if(mediaPista.getSelected()){
@@ -33,7 +33,7 @@ void p2(){
   if(competicion.getSelected()&&pistaEntera.getSelected()){
     p.displayPins2();
   }
-
+  toolBar(entrenamiento.getSelected());
   menu();
   
 
@@ -78,13 +78,23 @@ void toolBar(boolean training){
     strokeWeight(2);
     line(width-wTB-marginW, 0, width-wTB-marginW, height-hBanner-2*marginH);
  
-    if (training){
-      
-    }
-
     save.display();
 
+    rectMode(CORNER);
+    strokeWeight(1);
 
+    fill(255,0,0);
+    rect(width-45, (height-hBanner-40)/2 - 60, 40, 40, 5);
+
+    fill(0,255,0);
+    rect(width-45, (height-hBanner-40)/2, 40, 40,5);
+   
+    fill(0,0,255);
+    rect(width-45, (height-hBanner-40)/2 + 60, 40, 40,5);
+
+    if(training){
+      image(cono,width-45, height - hBanner - 70, 35, 45);
+    }
   popStyle();
 }
  

@@ -59,6 +59,7 @@ class Pissarra {
   }
  
   // Dibuixa la Pissarra
+  /*
   void display(){
     pushStyle();
      
@@ -72,6 +73,7 @@ class Pissarra {
      
     popStyle();
   }
+  */
  
   // Dibuixa els Pins
   void displayPins1(){

@@ -1,5 +1,5 @@
 
-PImage img1, img2, img3;
+PImage img1, img2, img3, cono;
 
 PFont fuente1, fuente2;
 
@@ -10,6 +10,8 @@ Button goToGuardados;
 Button goToSobreNosotros;
 
 Button save;
+
+Button b1,b2;
 
 Pissarra p;
 Table t;
@@ -31,9 +33,22 @@ int i=0;
 int j=0;
 int k=0;
 
+
+//pop up
+PopUp pop;
+
+// Dimensions del PopUp
+float popW = 600;
+float popH = 340;
+
+// Textos del PopUp
+String title = "Error!";
+String message = "Error en la connexió a la BBDD.";
+
+
 void setup() {
 
-  p = new Pissarra(50, 190, 700,700, 100, width-100);
+  p = new Pissarra(50, 280, 700,700, 100, width-100);
 
   //b1 = new Button("a", width/2 - wButton/2, height/2, wButton, hButton, true);
   goToMiEquipo      =  new Button("", 150 + 1*(width- 120)/6, hBanner/5, 150 + 2*(width- 120)/6, hButton, false);
@@ -42,15 +57,17 @@ void setup() {
   goToGuardados     =  new Button("", 150 + 4*(width- 120)/6, hBanner/5, 150 + 5*(width- 120)/6, hButton, false);
   goToSobreNosotros =  new Button("", 150 + 5*(width- 120)/6, hBanner/5, 150 + 6*(width- 120)/6, hButton, false);
 
+  b1 = new Button("NEXT", 25 + tableW/2 + wButton/1.5, height - hButton - 20, wButton, hButton, true);
+  b2 = new Button("PREV", 25 + tableW/2 - wButton/1.5, height - hButton - 20, wButton, hButton, true);
 
-  save              =  new Button("S", width - 45,  10, 40 ,40, true );
+  save              =  new Button("S", width - 45,  10 + hBanner, 40 ,40, true );
 
   entrenamiento     =  new Select("Modo entrenamiento",50, 70 ,  true,   20);
   competicion       =  new Select("Modo competición",  50, 100 , false,  20);
   mediaPista        =  new Select("Media pista",       50, 150 , false,  20);
   pistaEntera       =  new Select("Pista entera",      50, 180 , true,   20);
 
-  guardado1         =  new Guardado(img1, "k1", 17, 04,2021, 10, 20, 100, 80);
+  //guardado1         =  new Guardado(img1, "k1", 17, 04,2021, 10, 20, 100, 80);
 
   subeFotogramas();
 
@@ -64,10 +81,13 @@ void setup() {
   //creació jugador
   p1 = new Player("Pere Joan", "Gomila" , "home", "Libero", "Col", 10, 999999999, 2001, 16, 2, "perej@mail.com");
   
+  pop = new PopUp(title, message, 100, 100, popW, popH);
   
   img1 = loadImage("sobreNosotros1.jpg");
   img2 = loadImage("sobreNosotros2.jpg");
   img3 = loadImage("sobreNosotros3.jpg");
+
+  cono = loadImage("cono.png");
 
   fuente1 = createFont("HKGrotesk-Bold.otf", 40);
   fuente2 = createFont("Coco-Sharp-Extrabold-trial.ttf", 40);
@@ -98,15 +118,17 @@ void draw() {
 
     template(j);
     pushMatrix();
-    translate(marginW, hBanner+marginH);
-    pantallas(j);
-    //println(pantalla);
-    //mousePointer();
-    calibrateBlackboardModes();
-    updateCursor();
-    if(j<255){
-      j+=3;
-    }
+      translate(marginW, hBanner+marginH);
+      pantallas(j);
+      popMatrix();
+      //println(pantalla);
+      //mousePointer();
+      calibrateBlackboardModes();
+      updateCursor();
+      if(j<255){
+        j+=3;
+      }
+    
   }
 
 }
@@ -130,7 +152,6 @@ void pantallas (int j){
     if (pantalla==4) {
       sobreNosotros();
     }
-  popMatrix();
 }
 
 void keyPressed() {
@@ -172,7 +193,8 @@ void updateCursor(){
   if((goToMiEquipo.mouseOverButton() && goToMiEquipo.enabled)||
      (goToGuardados.mouseOverButton() && goToGuardados.enabled)||
      (goToPizarra.mouseOverButton() && goToPizarra.enabled) ||
-     mouseOverLogo() || save.mouseOverButton()){
+     mouseOverLogo() || save.mouseOverButton() || 
+     (b1.mouseOverButton() && b1.enabled)||(b2.mouseOverButton() && b2.enabled)){
       cursor(HAND);
   }
   else {
@@ -197,7 +219,21 @@ void mousePressed(){
   if(mouseOverLogo()&& mousePressed){
     pantalla = 0;
   }
-  
+  if(b1.mouseOverButton() && b1.enabled){
+    t.nextPage();
+  }
+  else if(b2.mouseOverButton() && b2.enabled){
+    t.prevPage();
+  }
+  if(pop.bAceptar.mouseOverButton()){
+    pop.setVisible(false);
+  }
+  else {
+    pop.setVisible(true);
+  }
+  if(save.mouseOverButton()&&mousePressed){
+    pop.setVisible(true);
+  }
 }
 
 void calibrateBlackboardModes(){

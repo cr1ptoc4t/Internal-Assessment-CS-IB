@@ -28,9 +28,9 @@ class Pin {
   void display(){
     pushStyle();
       stroke(0); strokeWeight(3); fill(c);
-      ellipse(x, y, 2*r, 2*r);
+      ellipse(x, y-hBanner, 2*r, 2*r);
       fill(255); textAlign(CENTER); textSize(r);
-      text(txt, x, y + r/4);
+      text(txt, x, y-hBanner + r/4);
     popStyle();
   }
   

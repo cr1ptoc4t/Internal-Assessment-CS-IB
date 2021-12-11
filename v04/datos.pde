@@ -7,7 +7,7 @@ boolean training = true;
 //tabla
 
 // Número de files (capçalera inclosa) i columnes de la taula
-int files = 14, columnes = 7;
+int files = 18, columnes = 7;
 
 // Títols de les columnes 
 String[] headers = {"Dorsal", "Nombre", "Apellidos", "Edad", "Sexo", "1ª p", "2ª p"};
@@ -30,7 +30,11 @@ String[][] info = {
     {"5", "Jose", "Perez Galdós", "37", "Home","Lib", "Col"},
     {"5", "Jose", "Perez Galdós", "37", "Home","Lib", "Col"},
     {"5", "Jose", "Perez Galdós", "37", "Home","Lib", "Col"},
-    {"5", "Jose", "Perez Galdós", "37", "Home","Lib", "Col"},            
+    {"5", "Jose", "Perez Galdós", "37", "Home","Lib", "Col"},
+    {"6", "Maria", "Garcia Lopez", "25", "Dona","Lib", "Col"},
+    {"7", "Joan", "Melis Cabrer", "47", "Home","Lib", "Col"},
+    {"8", "Bel", "Riera Mates", "52", "Dona", "Lib", "Col"},
+    {"9", "Jose", "Perez Galdós", "37", "Home","Lib", "Col"},            
     };
 
 //arreglar aquest codi!!!!!!
