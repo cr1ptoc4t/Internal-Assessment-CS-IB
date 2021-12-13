@@ -12,7 +12,7 @@ class Button {
  int a;
  
  // Mètode Constructor
- Button(String text, float x, float y, float w, float h, boolean opaco){
+  Button(String text, float x, float y, float w, float h, boolean opaco){
    this.textBoto = text;
    this.x = x;
    this.y = y; 

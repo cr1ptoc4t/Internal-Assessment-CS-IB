@@ -23,12 +23,13 @@ void template(int j) {
 
   fill(255,255,255, j);
   
-  text("Mi equipo", 250 +(width- 200)/6, hBanner/2);
-  text("Pizarra", 250 +2*(width- 200)/6, hBanner/2);
-  text("Resultados", 250 +3*(width- 200)/6, hBanner/2);
-  text("Guardados", 250 +4*(width- 200)/6, hBanner/2);
-  text("Sobre nosotros", 250 +5*(width- 200)/6, hBanner/2);
-  
+  text("Mi equipo", 250 +(width- 200)/7, hBanner/2);
+  text("Pizarra", 250 +2*(width- 200)/7, hBanner/2);
+  text("Resultados", 250 +3*(width- 200)/7, hBanner/2);
+  text("Guardados", 250 +4*(width- 200)/7, hBanner/2);
+  text("Sobre nosotros", 250 +5*(width- 200)/7, hBanner/2);
+  text("En Vivo", 250 +6*(width- 200)/7, hBanner/2);
+
   pushStyle();
   
   rectMode(LEFT);
