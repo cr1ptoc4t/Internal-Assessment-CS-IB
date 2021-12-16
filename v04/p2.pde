@@ -1,9 +1,10 @@
 boolean menuDisplayed = false;
+PImage [] conos;
+
 void p2(){
   
   //trainingButton.display();
   //trainingButton1();
-  
   
 
   if(mediaPista.getSelected()){
@@ -94,6 +95,11 @@ void toolBar(boolean training){
 
     if(training){
       image(cono,width-45, height - hBanner - 70, 35, 45);
+
+      if (mouseOverObject(width-45, height - hBanner - 70, 35, 45)){
+
+      }
+
     }
   popStyle();
 }
@@ -171,18 +177,34 @@ void menu(){
       
     } else{
 
+      for(int i=0; i<300; i+=10){
+        if(i%3==0){
+            stroke(redSalsa,j);
+        }else if(i%3==1){
+            stroke(royalBlueDark,j);
+        }else{
+            stroke(ming,j);
+        }
+        line(i, 0, 0,i);
+      }
+
       fill(blackCoral, 170);
       strokeWeight(1);
-      rect(0,0,300,height-hBanner-2*marginH);
+      rect(25,50,250,250);
 
+      stroke(0);
+      strokeWeight(4);
       line(15, 15, 15+30, 15+30);
       line(15, 15+30, 15+30, 15);
-      
+      stroke(255);
+      strokeWeight(1);
+
+
       textAlign(LEFT);
       textSize(40);
-      fill(0);
+      fill(prussianBlue);
       pushStyle();
-      textFont(fuente1);
+      textFont(fuente2);
       text("Menú:", 80, 45);
       popStyle();
 
@@ -193,6 +215,8 @@ void menu(){
       competicion.display();
       mediaPista.display();
       pistaEntera.display();
+
+      text("pulse la tecla R para resetear las posiciones", 50, 200);
 
 
       if(entrenamiento.mouseOverSelected() && mousePressed){
@@ -214,4 +238,11 @@ void menu(){
     }
   popStyle();
 
+}
+
+boolean mouseOverObject(float x, float y, float w, float h){
+   return (mouseX >= x) && 
+          (mouseX<=x + w) && 
+          (mouseY>= y) && 
+          (mouseY<= y +h); 
 }

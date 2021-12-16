@@ -72,4 +72,8 @@ class Player{
         text("Primera posición: " + this.firstPos, 3*width/5+100, 500);
         text("Segunda posición: " + this.secPos, 3* width/5+100, 600);
     }
+
+    String getName(){
+        return this.name;
+    }
 }

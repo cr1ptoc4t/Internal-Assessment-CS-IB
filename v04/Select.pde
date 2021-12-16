@@ -27,7 +27,7 @@ class Select{
 
             textAlign(LEFT);
             textSize(18);
-            fill(0);
+            fill(255);
             text(this.txt, x+w+ 7, y+13);
         popStyle();
     }

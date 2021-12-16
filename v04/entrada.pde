@@ -2,7 +2,7 @@ void p0(int j){
     //video();
     pushStyle();
     textAlign(CENTER);
-    textFont(fuente2);
+    textFont(fuente3);
     
     for(int i=0; i<2*width; i+=10){
         if(i%3==0){

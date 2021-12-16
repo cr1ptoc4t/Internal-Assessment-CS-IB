@@ -1,4 +1,14 @@
-void enVivo(Player p){
+void enVivo (Player p){
+
+    //taula de doble entrada amb noms i habilitats. en funció des nom que has triat, se posaràn en gris unes habilitats o unes altres.
+    //fer backeo
+    //antiguo(p);
+    //lib.display(300, 300, 500, 500);
+    enVivoTable.display(50, 50, 1000, height-hBanner- 200);
+}
+
+void antiguo(Player p) {
+
     pushStyle();
         strokeWeight(1);
         fill(blackCoral);
@@ -7,34 +17,38 @@ void enVivo(Player p){
         rectMode(CENTER);
         rect(150,50, 200, 50, 10);
         fill(255);
-        text("Pick a player", 150, 55);
+        text("Pick a player: ", 120, 55);
         
 
         if(p.firstPos=="Col"){
-            String hability1 = "colocación";
-            String hability2 = "finta";
-            String hability3 = "ace";
-            String hability4 = "bloqueo";
-            String hability5 = "otro";
-        } if(p.firstPos=="Punta"||p.firstPos=="Opuesto"||p.firstPos=="central"){
-            String hability1 = "finta";
-            String hability2 = "remate";
-            String hability3 = "ace";
-            String hability4 = "bloqueo";
-            String hability5 = "otro";
-        } if(p.firstPos=="Libero"){
-            String hability1 = "doble positiva";
-            String hability2 = "positiva";
-            String hability3 = "negativa";
-            String hability4 = "doble negativa";
-            String hability5 = "otro";
-        }
+            hability1 = "colocación";
+            hability2 = "finta";
+            hability3 = "ace";
+            hability4 = "bloqueo";
 
-        text(hability1+":", 160, 1*(width - hBanner- 200)/6);
-        text(hability2+":", 160, 2*(width - hBanner- 200)/6);
-        text(hability3+":", 160, 3*(width - hBanner- 200)/6);
-        text(hability4+":", 160, 4*(width - hBanner- 200)/6);
-        text(hability5+":", 160, 5*(width - hBanner- 200)/6);
+        } if(p.firstPos=="Punta"||p.firstPos=="Opuesto"||p.firstPos=="central"){
+            hability1 = "finta";
+            hability2 = "remate";
+            hability3 = "ace";
+            hability4 = "bloqueo";
+    
+        } if(p.firstPos=="Libero"){
+            hability1 = "doble positiva";
+            hability2 = "positiva";
+            hability3 = "negativa";
+            hability4 = "doble negativa";
+            
+        }
+        hability5 = "otro";
+
+        fill(0);
+
+        text(hability1+":", 160, 100);
+        text(hability2+":", 160, 250);
+        text(hability3+":", 160, 400);
+        text(hability4+":", 160, 550);
+        text(hability5+":", 160, 700);
+        
        
 
     popStyle();
