@@ -2,6 +2,7 @@ void setup() {
 
   p = new Pissarra(50, 280, 700,700, 100, width-100);
 
+
   img1 = loadImage("sobreNosotros1.jpg");
   img2 = loadImage("sobreNosotros2.jpg");
   img3 = loadImage("sobreNosotros3.jpg");
@@ -37,9 +38,9 @@ void setup() {
 
 
   enVivoTable = new Table(11, 9);
-  String [][] enVivoInfo = new String[jugadores.length][habilidades.length+1];
+  //String [][] enVivoInfo = new String[jugadores.length][habilidades.length+1];
   enVivoTable.setHeaders(jugadores);
-  fillEnVivoInfo();
+  //fillEnVivoInfo();
   enVivoTable.setData(enVivoInfo);
   enVivoTable.setColumnWidths(colWidthsPlayers);
 
@@ -53,9 +54,9 @@ void setup() {
   //creació jugador
   p1   = new Player("Pere Joan", "Gomila" , "home", "Libero", "Col", 10, 999999999, 2001, 16, 2, "perej@mail.com");
   p2   = new Player("Pere Joan", "Gomila" , "home", "Central", "Punta", 10, 999999999, 2001, 16, 2, "perej@mail.com");
-  //p3   = new Player("Pere Joan", "Gomila" , "home", "Opuesto", "Central", 10, 999999999, 2001, 16, 2, "perej@mail.com");
+  p3   = new Player("Pere Joan", "Gomila" , "home", "Opuesto", "Central", 10, 999999999, 2001, 16, 2, "perej@mail.com");
 
-  pop  = new PopUp("GUARDAR", "tria un titol", 100, 100, popW, popH);
+  guardar  = new PopUp("GUARDAR", "elige un título:", (width- popW)/2, (height-popH- hBanner)/2, popW, popH);
   
 
 
@@ -65,11 +66,17 @@ void setup() {
   fuente2 = createFont("Coco-Sharp-Extrabold-trial.ttf", 40);
   fuente3 = createFont("Coco-Sharp-Heavy-Italic-trial.ttf", 40);
 
+  nSaved = new TextField(550, 400, 200, 35);
+  dSaved = new TextField(800, 450, 50, 35);
+  mSaved = new TextField(870, 450, 50, 35);
+  ySaved = new TextField(940, 450, 50, 35);
+
   //size(1200, 780);
   size(1300,900);
   noStroke();
   textAlign(CENTER);
   textSize(18);
+
 
 }
 
@@ -150,6 +157,10 @@ void keyPressed() {
   if(key =='R'|| key=='r'){
     p.resetPinPositions();
   }
+  nSaved.keyPressed(key, (int)keyCode);
+  dSaved.keyPressed(key, (int)keyCode);
+  mSaved.keyPressed(key, (int)keyCode);
+  ySaved.keyPressed(key, (int)keyCode);
 }
 
 void mousePointer(){
@@ -198,15 +209,21 @@ void mousePressed(){
   else if(b2.mouseOverButton() && b2.enabled){
     t.prevPage();
   }
-  if(pop.bAceptar.mouseOverButton()){
-    pop.setVisible(false);
+  if(guardar.bAceptar.mouseOverButton()){
+    guardar.setVisible(false);
   }
   else {
-    pop.setVisible(true);
+    guardar.setVisible(true);
   }
   if(save.mouseOverButton()&&mousePressed){
-    pop.setVisible(true);
+    guardar.setVisible(true);
   }
+  /*
+  mSaved.isPressed();
+  nSaved.isPressed();
+  ySaved.isPressed();
+  dSaved.isPressed();
+  */
 }
 
 void calibrateBlackboardModes(){
@@ -241,3 +258,4 @@ void subeFotogramas(){
   }
 
 }
+

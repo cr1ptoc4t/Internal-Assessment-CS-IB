@@ -13,7 +13,7 @@ class PopUp {
  float buttonW = 200;
  float buttonH = 80;
  
- boolean visible = true;
+ boolean visible = false;
  
  // Constructor
  
@@ -58,11 +58,12 @@ class PopUp {
      pushStyle();
      
      // Rectangle
-     stroke(0); strokeWeight(10);fill(200, 200, 100);
-     rect(x, y, w, h, b/2);
+     stroke(0); strokeWeight(1);fill(blackCoral);
+     rect(x, y, w, h, 5);
      
      line(x, y + 2*b , x+w, y + 2*b);
      
+
      // Títol
      fill(0); textSize(38); textAlign(LEFT);
      text(title, x + b, y + 1.4*b);
@@ -73,6 +74,11 @@ class PopUp {
      
      // Botó d'Acceptar
      bAceptar.display();
+     nSaved.display();
+     dSaved.display();
+     mSaved.display();
+     ySaved.display();
+     
      popStyle();
    }
  }

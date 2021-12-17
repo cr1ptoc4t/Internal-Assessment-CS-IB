@@ -78,8 +78,12 @@ void toolBar(boolean training){
     rect(width-wTB-marginW,0, wTB, height-hBanner-2*marginH);
     strokeWeight(2);
     line(width-wTB-marginW, 0, width-wTB-marginW, height-hBanner-2*marginH);
- 
+  
+    guardar.display();
     save.display();
+    if(save.mouseOverButton() && mousePressed){
+      guardar.setVisible(true);
+    }
 
     rectMode(CORNER);
     strokeWeight(1);

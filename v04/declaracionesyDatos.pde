@@ -51,7 +51,7 @@ int k=0;
 
 
 //pop up
-PopUp pop;
+PopUp guardar;
 
 // Dimensions del PopUp
 float popW = 600;
@@ -109,26 +109,32 @@ String[][] info = {
 
 String [] habilidades = {"colocación positiva", "colocación", "finta segundo toque",
                       "ace", "bloqueo", "finta", "remate", "Doble Positiva",
-                      "Positiva","Negativa","Doble negativa" };
+                      "Positiva","Negativa","Doble negativa"};
 
-
-String [][] enVivoInfo;
-
-void fillEnVivoInfo () {
-  for(int i=0; i<8; i++){
-    enVivoInfo[0][i+1] = habilidades[i];
-}
-/*
-    {"colocación positiva", "", "", "", "","", "", "", "",""},
-    {"colocación",          "", "", "", "","", "", "", "",""},
-    {"finta segundo toque", "", "", "", "","", "", "", "",""},
-    {"ace",                 "", "", "", "","", "", "", "",""},
-    {"bloqueo",             "", "", "", "","", "", "", "",""},
-    {"finta",               "", "", "", "","", "", "", "",""},
-    {"remate",              "", "", "", "","", "", "", "",""},
-    {"Doble Positiva",      "", "", "", "","", "", "", "",""},
-    {"Positiva",            "", "", "", "","", "", "", "",""},
-    {"Negativa",            "", "", "", "","", "", "", "",""},
-    {"Doble negativa",      "", "", "", "","", "", "", "",""},
-*/
+String [][] enVivoInfo ={
+    {"Colocación positiva", "", "", "", "", "", "", "", "",""},
+    {"Colocación",          "", "", "", "", "", "", "", "",""},
+    {"Cinta segundo toque", "", "", "", "", "", "", "", "",""},
+    {"Ace",                 "", "", "", "", "", "", "", "",""},
+    {"Bloqueo",             "", "", "", "", "", "", "", "",""},
+    {"Finta",               "", "", "", "", "", "", "", "",""},
+    {"Remate",              "", "", "", "", "", "", "", "",""},
+    {"Doble Positiva",      "", "", "", "", "", "", "", "",""},
+    {"Positiva",            "", "", "", "", "", "", "", "",""},
+    {"Negativa",            "", "", "", "", "", "", "", "",""},
+    {"Doble negativa",      "", "", "", "", "", "", "", "",""},
 };
+
+int colocaciónPositiva;
+int colocación;
+int fintaSegundoToque;
+int ace;
+int bloqueo;
+int finta;
+int remate;
+int doblePositiva, positiva;
+int negativa, dobleNegativa;
+
+
+boolean logged = false;
+TextField  nSaved, dSaved, mSaved, ySaved;
