@@ -8,12 +8,11 @@ void setup() {
   img3 = loadImage("sobreNosotros3.jpg");
 
   //b1 = new Button("a", width/2 - wButton/2, height/2, wButton, hButton, true);
-  goToMiEquipo      =  new Button("", 150 + 1*(width- 120)/7, hBanner/5, 150 + 2*(width- 120)/6, hButton, false);
-  goToPizarra       =  new Button("", 150 + 2*(width- 120)/7, hBanner/5, 150 + 3*(width- 120)/6, hButton, false);
-  goToResultados    =  new Button("", 150 + 3*(width- 120)/7, hBanner/5, 150 + 4*(width- 120)/6, hButton, false);
-  goToGuardados     =  new Button("", 150 + 4*(width- 120)/7, hBanner/5, 150 + 5*(width- 120)/6, hButton, false);
-  goToSobreNosotros =  new Button("", 150 + 5*(width- 120)/7, hBanner/5, 150 + 6*(width- 120)/6, hButton, false);
-  goToEnVivo        =  new Button("", 150 + 6*(width- 120)/7, hBanner/5, 150 + 6*(width- 120)/6, hButton, false);
+  goToMiEquipo      =  new Button("", 150 + 1*(width- 120)/6, hBanner/5, 150 + 2*(width- 120)/6, hButton, false);
+  goToPizarra       =  new Button("", 150 + 2*(width- 120)/6, hBanner/5, 150 + 3*(width- 120)/6, hButton, false);
+  goToResultados    =  new Button("", 150 + 3*(width- 120)/6, hBanner/5, 150 + 4*(width- 120)/6, hButton, false);
+  goToGuardados     =  new Button("", 150 + 4*(width- 120)/6, hBanner/5, 150 + 5*(width- 120)/6, hButton, false);
+  goToSobreNosotros =  new Button("", 150 + 5*(width- 120)/6, hBanner/5, 150 + 6*(width- 120)/6, hButton, false);
 
   
   b1 = new Button("NEXT", 25 + tableW/2 + wButton/1.5, height - hButton - 20, wButton, hButton, true);
@@ -35,14 +34,6 @@ void setup() {
   t.setHeaders(headers);
   t.setData(info);
   t.setColumnWidths(colWidths);
-
-
-  enVivoTable = new Table(11, 9);
-  //String [][] enVivoInfo = new String[jugadores.length][habilidades.length+1];
-  enVivoTable.setHeaders(jugadores);
-  //fillEnVivoInfo();
-  enVivoTable.setData(enVivoInfo);
-  enVivoTable.setColumnWidths(colWidthsPlayers);
 
   /*
   //tabla liberos
@@ -120,7 +111,7 @@ void pantallas (int j){
 
     if (pantalla==0) { //entrada
       p0(j);
-      //enVivo(p1);
+      
     }
     if (pantalla==1) { //mi equipo
       p1();
@@ -132,10 +123,10 @@ void pantallas (int j){
       p3();
     }
     if (pantalla==4) {
-      sobreNosotros();
+      resultados();
     }
     if (pantalla==5) {
-      enVivo(p1);
+      sobreNosotros();
     }
 }
 
@@ -197,11 +188,11 @@ void mousePressed(){
   if(goToSobreNosotros.mouseOverButton() && mousePressed){
     pantalla = 4;
   }
-  if(goToEnVivo.mouseOverButton() && mousePressed){
-    pantalla = 5;
-  }
   if(mouseOverLogo()&& mousePressed){
     pantalla = 0;
+  }
+  if(goToResultados.mouseOverButton() && mousePressed){
+    pantalla =4;
   }
   if(b1.mouseOverButton() && b1.enabled){
     t.nextPage();
@@ -210,20 +201,20 @@ void mousePressed(){
     t.prevPage();
   }
   if(guardar.bAceptar.mouseOverButton()){
-    guardar.setVisible(false);
+    guardar.setVisible(true);
   }
   else {
-    guardar.setVisible(true);
+    guardar.setVisible(false);
   }
   if(save.mouseOverButton()&&mousePressed){
     guardar.setVisible(true);
   }
-  /*
-  mSaved.isPressed();
-  nSaved.isPressed();
-  ySaved.isPressed();
-  dSaved.isPressed();
-  */
+  if(false){
+    mSaved.isPressed();
+    nSaved.isPressed();
+    ySaved.isPressed();
+    dSaved.isPressed();
+  }
 }
 
 void calibrateBlackboardModes(){

@@ -74,10 +74,7 @@ class PopUp {
      
      // Botó d'Acceptar
      bAceptar.display();
-     nSaved.display();
-     dSaved.display();
-     mSaved.display();
-     ySaved.display();
+     
      
      popStyle();
    }

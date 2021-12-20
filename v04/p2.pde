@@ -181,7 +181,7 @@ void menu(){
       
     } else{
 
-      for(int i=0; i<300; i+=10){
+      for(int i=0; i<2*height; i+=10){
         if(i%3==0){
             stroke(redSalsa,j);
         }else if(i%3==1){
@@ -189,7 +189,12 @@ void menu(){
         }else{
             stroke(ming,j);
         }
+
+        if(i<300){
         line(i, 0, 0,i);
+        }else{
+          line(300, i-300, 0, i);
+        }
       }
 
       fill(blackCoral, 170);

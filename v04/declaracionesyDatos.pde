@@ -7,15 +7,12 @@ Button goToPizarra;
 Button goToResultados;
 Button goToGuardados;
 Button goToSobreNosotros;
-Button goToEnVivo;
 
 Button save;
-
 Button b1,b2;
 
 Pissarra p;
 Table t;
-Table enVivoTable;
 Player p1;
 Player p2;
 Player p3;
@@ -111,20 +108,7 @@ String [] habilidades = {"colocación positiva", "colocación", "finta segundo t
                       "ace", "bloqueo", "finta", "remate", "Doble Positiva",
                       "Positiva","Negativa","Doble negativa"};
 
-String [][] enVivoInfo ={
-    {"Colocación positiva", "", "", "", "", "", "", "", "",""},
-    {"Colocación",          "", "", "", "", "", "", "", "",""},
-    {"Cinta segundo toque", "", "", "", "", "", "", "", "",""},
-    {"Ace",                 "", "", "", "", "", "", "", "",""},
-    {"Bloqueo",             "", "", "", "", "", "", "", "",""},
-    {"Finta",               "", "", "", "", "", "", "", "",""},
-    {"Remate",              "", "", "", "", "", "", "", "",""},
-    {"Doble Positiva",      "", "", "", "", "", "", "", "",""},
-    {"Positiva",            "", "", "", "", "", "", "", "",""},
-    {"Negativa",            "", "", "", "", "", "", "", "",""},
-    {"Doble negativa",      "", "", "", "", "", "", "", "",""},
-};
-
+/*
 int colocaciónPositiva;
 int colocación;
 int fintaSegundoToque;
@@ -134,7 +118,7 @@ int finta;
 int remate;
 int doblePositiva, positiva;
 int negativa, dobleNegativa;
-
+*/
 
 boolean logged = false;
 TextField  nSaved, dSaved, mSaved, ySaved;
