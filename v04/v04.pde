@@ -26,8 +26,6 @@ void setup() {
   pistaEntera    =  new Select("Pista entera",      50, 180 , true,   20);
 
   guardado1      =  new Guardado(img1, "k1", 17, 04, 2021, 125, 100);
-  //guardado2      =  new Guardado(img2, "rece en k2", 16, 12, 2021, 125+ 2*300+20, 100);
-  subeFotogramas();
 
   // Creació de la taula
   t = new Table(files, columnes);
@@ -35,14 +33,7 @@ void setup() {
   t.setData(info);
   t.setColumnWidths(colWidths);
 
-  /*
-  //tabla liberos
-  lib = new Table(5, 3);
-  lib.setHeaders(liberos);
-  lib.setData(libTable);
-  lib.setColumnWidths(colWidthsLibs);
-*/
-  //creació jugador
+  //creació jugadors
   p1   = new Player("Pere Joan", "Gomila" , "home", "Libero", "Col", 10, 999999999, 2001, 16, 2, "perej@mail.com");
   p2   = new Player("Pere Joan", "Gomila" , "home", "Central", "Punta", 10, 999999999, 2001, 16, 2, "perej@mail.com");
   p3   = new Player("Pere Joan", "Gomila" , "home", "Opuesto", "Central", 10, 999999999, 2001, 16, 2, "perej@mail.com");
@@ -93,7 +84,6 @@ void draw() {
 
     //println(pantalla);
     mousePointer();
-    calibrateBlackboardModes();
     updateCursor();
 
     if(j<255){
@@ -110,8 +100,7 @@ void pantallas (int j){
   //println(pantalla);
 
     if (pantalla==0) { //entrada
-      p0(j);
-      
+      p0(j);   
     }
     if (pantalla==1) { //mi equipo
       p1();
@@ -120,10 +109,10 @@ void pantallas (int j){
       p2();
     }
     if (pantalla==3) {
-      p3();
+      resultados();
     }
     if (pantalla==4) {
-      resultados();
+      guardados();
     }
     if (pantalla==5) {
       sobreNosotros();
@@ -168,7 +157,9 @@ void updateCursor(){
      (goToPizarra.mouseOverButton() && goToPizarra.enabled) ||
      mouseOverObject(0,0,0,0) || save.mouseOverButton() || 
      (b1.mouseOverButton() && b1.enabled)||
-     (b2.mouseOverButton() && b2.enabled)){
+     (b2.mouseOverButton() && b2.enabled)|| 
+     mouseOverObject(width-45, height - 70, 35, 45) //cono
+     ){
       cursor(HAND);
   } else {
      cursor(ARROW);
@@ -177,23 +168,24 @@ void updateCursor(){
 
 void mousePressed(){
   if(goToMiEquipo.mouseOverButton() && mousePressed){
-    pantalla =1;
+    pantalla = 1;
   }
   if(goToPizarra.mouseOverButton()  && mousePressed){
     pantalla = 2;  
   }
+  if(goToResultados.mouseOverButton() && mousePressed){
+    pantalla = 3;
+  }
   if(goToGuardados.mouseOverButton() && mousePressed){
-    pantalla =3;
+    pantalla = 4;
   }
   if(goToSobreNosotros.mouseOverButton() && mousePressed){
-    pantalla = 4;
+    pantalla = 5;
   }
   if(mouseOverLogo()&& mousePressed){
     pantalla = 0;
   }
-  if(goToResultados.mouseOverButton() && mousePressed){
-    pantalla =4;
-  }
+  
   if(b1.mouseOverButton() && b1.enabled){
     t.nextPage();
   }
@@ -217,18 +209,6 @@ void mousePressed(){
   }
 }
 
-void calibrateBlackboardModes(){
-  /*
-  if(entrenamiento.getSelected()){
-    competicion.setSelected(false);
-  }else{
-    competicion.setSelected(false);
-  }
-  competicion.setSelected(!entrenamiento.getSelected());
-  mediaPista.setSelected(!pistaEntera.getSelected());
-  */
-}
-
 boolean mouseOverLogo(){
   boolean a = (mouseX >= marginW+10) && 
           (mouseX<=303) && 
@@ -239,14 +219,3 @@ boolean mouseOverLogo(){
   }else{cursor(ARROW);}
   return a ;
 }
-
-void subeFotogramas(){
-
-  img = new PImage [nFotogramas] ;
-
-  for (int i=1; i<img.length; i++) {
-    img[i] = loadImage("f"+i+".jpg");
-  }
-
-}
-

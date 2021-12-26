@@ -9,11 +9,6 @@ void template(int j) {
   noStroke();
   rect(marginW, marginH, width-2*marginW, hBanner);
 
-  //logo
-  /*
-  fill(prussianBlue);
-  rect(marginW+10, marginH+10, logoW, hBanner-20);
-  */
   c3 = color(251, 54, 64, j);
   c4 = color(10, 36, 99, j);
 
@@ -28,11 +23,10 @@ void template(int j) {
   text("Resultados", 250 +3*(width- 200)/6, hBanner/2);
   text("Guardados", 250 +4*(width- 200)/6, hBanner/2);
   text("Sobre nosotros", 250 +5*(width- 200)/6, hBanner/2);
-  //text("En Vivo", 250 +6*(width- 200)/7, hBanner/2);
 
   pushStyle();
   
-  rectMode(LEFT);
+  rectMode(CORNER);
 
   goToMiEquipo.display();
   goToPizarra.display();

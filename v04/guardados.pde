@@ -1,4 +1,4 @@
-void p3(){
+void guardados(){
     if(entrenamiento.getSelected()){
         logoDrawing(width/2, 60, 50,"últimos entrenos guardados", color(0,0,0,0), c4);
     } else{

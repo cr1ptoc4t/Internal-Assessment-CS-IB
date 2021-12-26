@@ -58,13 +58,7 @@ float popH = 340;
 String title = "Error!";
 String message = "Error en la connexió a la BBDD.";
 
-String hability1;
-String hability2;
-String hability3;
-String hability4;
-String hability5;
-
-//String [] players = {p1.getName(), p2.getName(), p3.getName()};
+String hability1, hability2, hability3, hability4, hability5;
 
 int pantalla = 0;
 
@@ -122,3 +116,4 @@ int negativa, dobleNegativa;
 
 boolean logged = false;
 TextField  nSaved, dSaved, mSaved, ySaved;
+int nConos=0;

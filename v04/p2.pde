@@ -3,9 +3,6 @@ PImage [] conos;
 
 void p2(){
   
-  //trainingButton.display();
-  //trainingButton1();
-  
 
   if(mediaPista.getSelected()){
   
@@ -99,11 +96,12 @@ void toolBar(boolean training){
 
     if(training){
       image(cono,width-45, height - hBanner - 70, 35, 45);
-
-      if (mouseOverObject(width-45, height - hBanner - 70, 35, 45)){
-
+      if (mouseOverObject(width-45, height - 70, 35, 45) && mousePressed){
+          image(cono, mouseX, mouseY, 35, 45);
+          nConos++;
+          println("número de conos: "+ nConos);
+          delay(1000);
       }
-
     }
   popStyle();
 }
@@ -250,6 +248,7 @@ void menu(){
 }
 
 boolean mouseOverObject(float x, float y, float w, float h){
+   
    return (mouseX >= x) && 
           (mouseX<=x + w) && 
           (mouseY>= y) && 
