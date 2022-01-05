@@ -59,7 +59,10 @@ void setup() {
   textAlign(CENTER);
   textSize(18);
 
-
+  
+  r1 = new Resultado(width/2, 130, 1);
+  r2 = new Resultado(width/2, 350, 2);
+  r2 = new Resultado(width/2, 350, 3);
 }
 
 

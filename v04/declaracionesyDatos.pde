@@ -32,7 +32,7 @@ enum posiciones{
   LIB, COL, OP, PUN, CENT
 };
 
-enum genre{
+enum genero{
   HOMBRE, MUJER, OTRO
 };
 
@@ -45,7 +45,10 @@ boolean vid = true;
 int i=0;
 int j=0;
 int k=0;
+int nConos=0;
 
+boolean logged = false;
+TextField  nSaved, dSaved, mSaved, ySaved;
 
 //pop up
 PopUp guardar;
@@ -102,6 +105,9 @@ String [] habilidades = {"colocación positiva", "colocación", "finta segundo t
                       "ace", "bloqueo", "finta", "remate", "Doble Positiva",
                       "Positiva","Negativa","Doble negativa"};
 
+
+Resultado r1, r2;
+
 /*
 int colocaciónPositiva;
 int colocación;
@@ -113,7 +119,3 @@ int remate;
 int doblePositiva, positiva;
 int negativa, dobleNegativa;
 */
-
-boolean logged = false;
-TextField  nSaved, dSaved, mSaved, ySaved;
-int nConos=0;
