@@ -8,7 +8,7 @@ Button goToResultados;
 Button goToGuardados;
 Button goToSobreNosotros;
 
-Button save;
+Button save, newPlayer;
 Button b1,b2;
 
 Pissarra p;
@@ -82,23 +82,23 @@ float[] colWidths = {10, 20, 30, 10, 15, 7.5, 7.5};
 float[] colWidthsPlayers = {40, 60/8, 60/8, 60/8, 60/8,60/8, 60/8, 60/8, 60/8};
 // Dades de la taula
 String[][] info = {
-    {"1", "Pere", "Soler Miralles", "33", "Home","Lib", "Col"},                 
-    {"2", "Maria", "Garcia Lopez", "25", "Dona","Lib", "Col"},
-    {"3", "Joan", "Melis Cabrer",  "47", "Home","Lib", "Col"},
-    {"4", "Bel", "Riera Mates",    "52", "Dona", "Lib", "Col"},
-    {"5", "Jose", "Perez Galdós",  "37", "Home","Lib", "Col"},
-    {"6", "Jose", "Perez Galdós",  "37", "Home","Lib", "Col"},
-    {"7", "Jose", "Perez Galdós",  "37", "Home","Lib", "Col"},
-    {"8", "Jose", "Perez Galdós",  "37", "Home","Lib", "Col"},
-    {"9", "Jose", "Perez Galdós",  "37", "Home","Lib", "Col"},
-    {"10", "Jose", "Perez Galdós",  "37", "Home","Lib", "Col"},
-    {"11", "Jose", "Perez Galdós",  "37", "Home","Lib", "Col"},
-    {"12", "Jose", "Perez Galdós",  "37", "Home","Lib", "Col"},
-    {"13", "Jose", "Perez Galdós",  "37", "Home","Lib", "Col"},
-    {"14", "Maria", "Garcia Lopez", "25", "Dona","Lib", "Col"},
-    {"15", "Joan", "Melis Cabrer",  "47", "Home","Lib", "Col"},
-    {"16", "Bel", "Riera Mates",    "52", "Dona", "Lib", "Col"},
-    {"17", "Jose", "Perez Galdós",  "37", "Home","Lib", "Col"},            
+    {"1", "Pere", "Soler Miralles", "33", "H","Lib", "Col"},                 
+    {"2", "Maria", "Garcia Lopez", "25", "D","Lib", "Col"},
+    {"3", "Joan", "Melis Cabrer",  "47", "H","Lib", "Col"},
+    {"4", "Bel", "Riera Mates",    "52", "D", "Lib", "Col"},
+    {"5", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
+    {"6", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
+    {"7", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
+    {"8", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
+    {"9", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
+    {"10", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
+    {"11", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
+    {"12", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
+    {"13", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
+    {"14", "Maria", "Garcia Lopez", "25", "D","Lib", "Col"},
+    {"15", "Joan", "Melis Cabrer",  "47", "H","Lib", "Col"},
+    {"16", "Bel", "Riera Mates",    "52", "D", "Lib", "Col"},
+    {"17", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},            
 };
 
 String [] habilidades = {"colocación positiva", "colocación", "finta segundo toque",
@@ -108,6 +108,40 @@ String [] habilidades = {"colocación positiva", "colocación", "finta segundo t
 
 Resultado r1, r2;
 
+// tu equipo - equipo contrario - set 1 equipo- set 1equipo contrario - set 2 equipo...
+int [][] resultados  = {
+    {0, 3, 25, 19, 25, 21, 22, 25, 24, 26, 0, 0},
+    {1, 3, 25, 19, 22, 25, 24, 26, 15, 25, 0, 0},
+    {2, 3, 25, 19, 25, 21, 22, 25, 24, 26,20,25},
+    {1, 3, 25, 19, 22, 25, 24, 26, 22, 25, 0, 0},
+    {0, 3, 25, 19, 25, 21, 22, 25, 24, 26, 0, 0},
+    {1, 3, 25, 19, 22, 25, 24, 26, 15, 25, 0, 0},
+    {2, 3, 25, 19, 25, 21, 22, 25, 24, 26,20,25},
+    {1, 3, 25, 19, 22, 25, 24, 26, 22, 25, 0, 0},
+    {0, 3, 25, 19, 25, 21, 22, 25, 24, 26, 0, 0},
+    {1, 3, 25, 19, 22, 25, 24, 26, 15, 25, 0, 0},
+    {2, 3, 25, 19, 25, 21, 22, 25, 24, 26,20,25},
+    {1, 3, 25, 19, 22, 25, 24, 26, 22, 25, 0, 0},
+};
+String [] equipos = {"Equipo A", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C"};
+
+String sets;
+
+//formato DD/MM/AAAA
+int[][] fecha={
+    {10, 02, 2021},
+    {13, 03, 2022},
+    {10, 02, 2021},
+    {13, 03, 2022},
+    {10, 02, 2021},
+    {13, 03, 2022},
+    {10, 02, 2021},
+    {13, 03, 2022},
+    {10, 02, 2021},
+    {13, 03, 2022},
+    {10, 02, 2021},
+    {13, 03, 2022},
+};
 /*
 int colocaciónPositiva;
 int colocación;
@@ -119,3 +153,5 @@ int remate;
 int doblePositiva, positiva;
 int negativa, dobleNegativa;
 */
+
+Pop nuevoJugador1;

@@ -11,6 +11,10 @@ void p1(){
     
     // Actualitza forma del cursor
     updateCursor();
+    
+    newPlayer.display();
+    nuevoJugador1.display();
+
   popStyle();
 }
 

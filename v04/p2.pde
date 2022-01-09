@@ -247,8 +247,7 @@ void menu(){
 
 }
 
-boolean mouseOverObject(float x, float y, float w, float h){
-   
+boolean mouseOverObject(float x, float y, float w, float h){ 
    return (mouseX >= x) && 
           (mouseX<=x + w) && 
           (mouseY>= y) && 

@@ -19,6 +19,7 @@ void setup() {
   b2 = new Button("PREV", 25 + tableW/2 - wButton/1.5, height - hButton - 20, wButton, hButton, true);
 
   save           =  new Button("S", width - 45,  10 + hBanner, 40 ,40, true );
+  newPlayer      =  new Button("NP", width - 45,  10 + hBanner, 40 ,40, true );
 
   entrenamiento  =  new Select("Modo entrenamiento",50, 70 ,  true,   20);
   competicion    =  new Select("Modo competición",  50, 100 , false,  20);
@@ -53,16 +54,20 @@ void setup() {
   mSaved = new TextField(870, 450, 50, 35);
   ySaved = new TextField(940, 450, 50, 35);
 
+  r1 = new Resultado(width/2, 130, 0);
+  r2 = new Resultado(width/2, 350, 1);
+  r2 = new Resultado(width/2, 350, 2);
+
+  nuevoJugador1 = new Pop ( "newPlayer",false);
+
+
+
   //size(1200, 780);
   size(1300,900);
   noStroke();
   textAlign(CENTER);
   textSize(18);
-
-  
-  r1 = new Resultado(width/2, 130, 1);
-  r2 = new Resultado(width/2, 350, 2);
-  r2 = new Resultado(width/2, 350, 3);
+ 
 }
 
 
@@ -101,7 +106,9 @@ void draw() {
 
 void pantallas (int j){
   //println(pantalla);
-
+     if (pantalla==-1) { //entrada
+      paleta();
+    }
     if (pantalla==0) { //entrada
       p0(j);   
     }
@@ -123,6 +130,9 @@ void pantallas (int j){
 }
 
 void keyPressed() {
+  if(key=='p'){
+    pantalla= -1;
+  }
   if ( key=='d' || key =='D') {
     pantalla++;
   }
@@ -209,6 +219,10 @@ void mousePressed(){
     nSaved.isPressed();
     ySaved.isPressed();
     dSaved.isPressed();
+  }
+  if(newPlayer.mouseOverButton() && mousePressed){
+    nuevoJugador1.setDisp(true);
+    println("El pop up new player se encuentra en: "+ nuevoJugador1.getDisplay());
   }
 }
 
