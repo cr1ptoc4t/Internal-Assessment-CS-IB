@@ -36,38 +36,40 @@ class Button {
  
  // Dibuixa el botó
  void display(){
-    if(opaco){
-      a=255;
-    } else{
-      a=0;
-    }
-    
-    if(!enabled){
-      fill(fillColorDisabled,a);  // Color desabilitat
-    }
-    else if(mouseOverButton()){
-      fill(fillColorOver, a);      // Color quan ratolí a sobre
-    }
-    else{
-      fill(fillColor, a);          // Color actiu però ratolí fora
-    }
-    stroke(strokeColor, a); strokeWeight(2);        //Color i gruixa del contorn
-    float b=0;
-    if(mouseX>hBanner){
-      b=hBanner;
-    }
-    rect(this.x, this.y- hBanner, this.w, this.h, 10);    // Rectangle del botó
-    
-    
-    // Text (color, alineació i mida)
-    fill(255); textAlign(CENTER); textSize(20);
-    text(textBoto, this.x + this.w/2, this.y + this.h/2 + 10- hBanner);
+   pushStyle();
+
+      if(opaco){
+        a=255;
+      } else{
+        a=0;
+      }
+      
+      if(!enabled){
+        fill(fillColorDisabled,a);  // Color desabilitat
+      }
+      else if(mouseOverButton()){
+        fill(fillColorOver, a);      // Color quan ratolí a sobre
+      }
+      else{
+        fill(fillColor, a);          // Color actiu però ratolí fora
+      }
+      stroke(strokeColor, a); strokeWeight(2);        //Color i gruixa del contorn
+      float b=0;
+      if(mouseX>hBanner){
+        b=hBanner;
+      }
+      rect(this.x, this.y- hBanner, this.w, this.h, 10);    // Rectangle del botó
+      
+      
+      // Text (color, alineació i mida)
+      fill(255); textAlign(CENTER); textSize(20);
+      text(textBoto, this.x + this.w/2, this.y + this.h/2 + 10- hBanner);
+    popStyle();
  }
 
  
  // Indica si el cursor està sobre el botó
  boolean mouseOverButton(){
-   
    return (mouseX >= this.x) && 
           (mouseX<=this.x + this.w) && 
           (mouseY>= this.y) && 

@@ -10,6 +10,7 @@ Button goToSobreNosotros;
 
 Button save, newPlayer;
 Button b1,b2;
+Button close;
 
 Pissarra p;
 Table t;
@@ -106,13 +107,13 @@ String [] habilidades = {"colocación positiva", "colocación", "finta segundo t
                       "Positiva","Negativa","Doble negativa"};
 
 
-Resultado r1, r2;
+Resultado r1, r2, r3;
 
 // tu equipo - equipo contrario - set 1 equipo- set 1equipo contrario - set 2 equipo...
 int [][] resultados  = {
     {0, 3, 25, 19, 25, 21, 22, 25, 24, 26, 0, 0},
     {1, 3, 25, 19, 22, 25, 24, 26, 15, 25, 0, 0},
-    {2, 3, 25, 19, 25, 21, 22, 25, 24, 26,20,25},
+    {2, 3, 25, 19, 25, 21, 22, 25, 24, 26,10,15},
     {1, 3, 25, 19, 22, 25, 24, 26, 22, 25, 0, 0},
     {0, 3, 25, 19, 25, 21, 22, 25, 24, 26, 0, 0},
     {1, 3, 25, 19, 22, 25, 24, 26, 15, 25, 0, 0},
@@ -155,3 +156,4 @@ int negativa, dobleNegativa;
 */
 
 Pop nuevoJugador1;
+Cone cono1;

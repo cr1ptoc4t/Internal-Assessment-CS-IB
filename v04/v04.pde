@@ -20,6 +20,7 @@ void setup() {
 
   save           =  new Button("S", width - 45,  10 + hBanner, 40 ,40, true );
   newPlayer      =  new Button("NP", width - 45,  10 + hBanner, 40 ,40, true );
+  close          =  new Button("Cerrar", width/2, height - 200, wButton, hButton, true);
 
   entrenamiento  =  new Select("Modo entrenamiento",50, 70 ,  true,   20);
   competicion    =  new Select("Modo competición",  50, 100 , false,  20);
@@ -40,8 +41,6 @@ void setup() {
   p3   = new Player("Pere Joan", "Gomila" , "home", "Opuesto", "Central", 10, 999999999, 2001, 16, 2, "perej@mail.com");
 
   guardar  = new PopUp("GUARDAR", "elige un título:", (width- popW)/2, (height-popH- hBanner)/2, popW, popH);
-  
-
 
   cono = loadImage("cono.png");
 
@@ -56,9 +55,10 @@ void setup() {
 
   r1 = new Resultado(width/2, 130, 0);
   r2 = new Resultado(width/2, 350, 1);
-  r2 = new Resultado(width/2, 350, 2);
+  r3 = new Resultado(width/2, 570, 2);
 
-  nuevoJugador1 = new Pop ( "newPlayer",false);
+  nuevoJugador1 = new Pop ( "New player",false);
+  cono1 = new Cone (width-45, height - hBanner - 70);
 
 
 
@@ -224,6 +224,11 @@ void mousePressed(){
     nuevoJugador1.setDisp(true);
     println("El pop up new player se encuentra en: "+ nuevoJugador1.getDisplay());
   }
+  if(close.mouseOverButton() && mousePressed){
+    nuevoJugador1.setDisp(false);
+
+  }
+
 }
 
 boolean mouseOverLogo(){

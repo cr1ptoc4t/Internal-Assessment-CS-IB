@@ -1,6 +1,7 @@
 void resultados(){
     r1.display();
     r2.display();
+    r3.display();
     
    
 }
@@ -12,6 +13,10 @@ void nuevoJugador(boolean display){
 }
 
 void campo(String txt, float x, float y){
-    text(txt, x, y);
-    rect( x+ 40, y, 50.0, 7.0);
+    pushStyle();
+        stroke(255); textAlign(CORNER);
+        text(txt, x, y);
+        fill(255); rectMode(CORNER);
+        rect( x+ 40, y, 50.0, 7.0);
+    popStyle();
 }

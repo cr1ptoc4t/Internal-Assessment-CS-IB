@@ -97,10 +97,13 @@ void toolBar(boolean training){
     if(training){
       image(cono,width-45, height - hBanner - 70, 35, 45);
       if (mouseOverObject(width-45, height - 70, 35, 45) && mousePressed){
-          image(cono, mouseX, mouseY, 35, 45);
+          cono1.display();
           nConos++;
           println("número de conos: "+ nConos);
           delay(1000);
+      }
+      if(cono1.mouseOverCono()){
+        cono1.setPosition(mouseX, mouseY);
       }
     }
   popStyle();

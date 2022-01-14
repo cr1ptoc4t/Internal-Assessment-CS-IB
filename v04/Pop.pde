@@ -11,20 +11,28 @@ class Pop{
     void display(){
         if(d){
             rectMode(CENTER);
-            fill(celadonBlue);
+            fill(blackCoral, 200);
             noStroke();
-            rect(width/2, (height- hBanner)/2, 2*width/3, 2*height/3);
+            rect(width/2, (height- hBanner)/2, 3*width/4, 3*height/4);
             textAlign(CENTER);
-            text("s" + type,width/2, height/2);
+            text("" + type, width/2, height/2);
             textAlign(LEFT);
 
-            if (type == "new player"){
-                campo("Nombre:", 2*width/3, height/2 -100);       
+            if (type == "New player"){
+                campo("Nombre: ", width/3, height/2 -100);
+                campo("Apellidos: ", width/3, height/2-50);       
+                campo("Fecha de nacimiento: ", width/3, height/2-50);
+                campo("Edad: ", width/3, height/2-50);       
+
             }
             
             if (type == "Save"){
 
             }
+            
+            close.display();
+
+            
         }
         
     }

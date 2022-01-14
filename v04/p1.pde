@@ -15,6 +15,7 @@ void p1(){
     newPlayer.display();
     nuevoJugador1.display();
 
+
   popStyle();
 }
 

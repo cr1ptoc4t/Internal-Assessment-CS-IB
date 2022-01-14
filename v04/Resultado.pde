@@ -65,7 +65,7 @@ class Resultado{
                     textSize(80);
                     textAlign(CENTER);
                     fill(prussianBlue);
-                    text(r1 +"-"+ r2, x-300, y );
+                    text(r1 +"-"+ r2, x-320, y );
                     
                     textAlign(LEFT);
                     textFont(fuente2);
@@ -80,14 +80,16 @@ class Resultado{
                     
                     sets = s1_1+" - "+s1_2+"/"+s2_1+" - "+s2_2+"/"+s3_1+" - "+s3_2;
 
-                    if(r1+r2<=4){
+                    if(r1+r2>=4){
                         sets = sets + "/" + s4_1 + " - " + s4_2;
-                    }
-                    if(r1+r2==5){
-                        sets = sets + "/" + s5_1 + " - " + s5_2;
+                        
+                        if(r1+r2==5){
+                            sets = sets + "/" + s5_1 + " - " + s5_2;
+                        }
                     }
                     
-                    text(sets , x- 300, y + 30);
+                    
+                    text(sets , x- 320, y + 30);
                     
                 popStyle();
         popStyle();
