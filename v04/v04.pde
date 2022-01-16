@@ -60,8 +60,6 @@ void setup() {
   nuevoJugador1 = new Pop ( "New player",false);
   cono1 = new Cone (width-45, height - hBanner - 70);
 
-
-
   //size(1200, 780);
   size(1300,900);
   noStroke();
