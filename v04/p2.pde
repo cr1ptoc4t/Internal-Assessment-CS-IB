@@ -85,14 +85,20 @@ void toolBar(boolean training){
     rectMode(CORNER);
     strokeWeight(1);
 
-    fill(255,0,0);
-    rect(width-45, (height-hBanner-40)/2 - 60, 40, 40, 5);
 
-    fill(0,255,0);
-    rect(width-45, (height-hBanner-40)/2, 40, 40,5);
-   
-    fill(0,0,255);
-    rect(width-45, (height-hBanner-40)/2 + 60, 40, 40,5);
+    colores(width-45, (height-hBanner-40)/2 - 60, color (255, 0,0));
+    colores(width-45, (height-hBanner-40)/2, color (0, 255,0));
+    colores(width-45, (height-hBanner-40)/2+60, color (0, 0,255));
+
+    if(mouseOverObject(0,0,width- 40, height-hBanner)){
+      
+      if(mousePressed){
+        fill(currentCol);
+        ellipse(mouseX, mouseY-hBanner, 5, 5);
+      }
+    }else{
+      cursor(ARROW);
+    }
 
     if(training){
       image(cono,width-45, height - hBanner - 70, 35, 45);
@@ -255,4 +261,17 @@ boolean mouseOverObject(float x, float y, float w, float h){
           (mouseX<=x + w) && 
           (mouseY>= y) && 
           (mouseY<= y +h); 
+}
+
+void colores (float x, float y, color c){
+    fill(c);
+    rect(x, y, 40, 40, 5);
+    
+    if(mouseOverObject(x, y+hBanner, 40, 40)){
+      cursor(HAND);
+      if(mousePressed){
+        currentCol = c;
+      }
+    }
+    
 }

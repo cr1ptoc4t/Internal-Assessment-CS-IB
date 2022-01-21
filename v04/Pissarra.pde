@@ -99,7 +99,7 @@ class Pissarra {
  
   // Comprova si cal moure algun Pin
   void checkPinsMotion(){
-    if(mouseOver()){
+    if(mousePressed){
      
       // Comprova els pins de l'Equip 1
       for(Pin p : pins1){
@@ -115,8 +115,7 @@ class Pissarra {
           p.setPosition(mouseX, mouseY);
           break;
         }
-      }
-     
+      } 
     }
   }
  

@@ -157,3 +157,5 @@ int negativa, dobleNegativa;
 
 Pop nuevoJugador1;
 Cone cono1;
+
+color currentCol;
