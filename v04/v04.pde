@@ -53,9 +53,9 @@ void setup() {
   mSaved = new TextField(870, 450, 50, 35);
   ySaved = new TextField(940, 450, 50, 35);
 
-  r1 = new Resultado(width/2, 130, 0);
-  r2 = new Resultado(width/2, 350, 1);
-  r3 = new Resultado(width/2, 570, 2);
+  r1 = new Resultado(width/6, height/2 - 50, 0);
+  r2 = new Resultado(3*width/6,height/2 - 50 , 1);
+  r3 = new Resultado(5*width/6, height/2 - 50, 2);
 
   nuevoJugador1 = new Pop ( "New player",false);
   cono1 = new Cone (width-45, height - hBanner - 70);
