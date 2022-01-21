@@ -21,8 +21,8 @@ class Pop{
             if (type == "New player"){
                 campo("Nombre: ", width/3, height/2 -100);
                 campo("Apellidos: ", width/3, height/2-50);       
-                campo("Fecha de nacimiento: ", width/3, height/2-50);
-                campo("Edad: ", width/3, height/2-50);       
+                campo("Fecha de nacimiento: ", width/3, height/2-25);
+                campo("Edad: ", width/3, height/2);      
 
             }
             

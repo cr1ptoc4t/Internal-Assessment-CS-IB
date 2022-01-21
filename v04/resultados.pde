@@ -14,9 +14,10 @@ void nuevoJugador(boolean display){
 
 void campo(String txt, float x, float y){
     pushStyle();
-        stroke(255); textAlign(CORNER);
+        fill(255); textAlign(CORNER);
+        textSize(18);
         text(txt, x, y);
-        fill(255); rectMode(CORNER);
-        rect( x+ 40, y, 50.0, 7.0);
+        fill(255); rectMode(CENTER);
+        rect( x+ 80, y, 50.0, 7.0);
     popStyle();
 }

@@ -58,38 +58,47 @@ class Resultado{
         pushStyle();
             rectMode(CENTER);
             fill(150);
-            rect(x, y, width*2/3,200,5);
+            rect(x, y, 400, 750, 5);
                 pushStyle();
                     fill(255);
                     textFont(fuente1);
-                    textSize(80);
+                    textSize(180);
                     textAlign(CENTER);
-                    fill(prussianBlue);
-                    text(r1 +"-"+ r2, x-320, y );
-                    
-                    textAlign(LEFT);
+                    fill(redSalsa);
+                    text(r1 +"-"+ r2, x-3, y-112, 380);
+                    fill(255);
+                    text(r1 +"-"+ r2, x, y-110, 380);
+                    fill(royalBlueDark);
+                    text(r1 +"-"+ r2, x+3, y-108, 380);
                     textFont(fuente2);
-                    text(contrario, x-220, y-30);
+
+                    textSize(75);
+                    fill(redSalsa);
+                    text(contrario, x-2, y-2, 380);
+                    fill(255);
+                    text(contrario, x, y, 380);
+                    fill(royalBlueDark);
+                    text(contrario, x+2, y+2, 380);
                     
                     textFont(fuente1);
                     textSize(15);
                     fill(255);
-                    text(fecha[nPartido][0] + "/"+fecha[nPartido][1]+"/"+ fecha[nPartido][2],  x-220, y);
+                    text(fecha[nPartido][0] + "/"+fecha[nPartido][1]+"/"+ fecha[nPartido][2],  x, y- 350, 380);
                     textSize(12);
                     textAlign(CENTER);
                     
-                    sets = s1_1+" - "+s1_2+"/"+s2_1+" - "+s2_2+"/"+s3_1+" - "+s3_2;
+                    sets = s1_1+"-"+s1_2+"/"+s2_1+"-"+s2_2+"/"+s3_1+"-"+s3_2;
 
                     if(r1+r2>=4){
-                        sets = sets + "/" + s4_1 + " - " + s4_2;
+                        sets = sets + "/" + s4_1 + "-" + s4_2;
                         
                         if(r1+r2==5){
-                            sets = sets + "/" + s5_1 + " - " + s5_2;
+                            sets = sets + "/" + s5_1 + "-" + s5_2;
                         }
                     }
                     
                     
-                    text(sets , x- 320, y + 30);
+                    text(sets , x, y + 130, 380);
                     
                 popStyle();
         popStyle();
