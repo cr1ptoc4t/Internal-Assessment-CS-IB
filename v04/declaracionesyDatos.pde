@@ -107,7 +107,7 @@ String [] habilidades = {"colocación positiva", "colocación", "finta segundo t
                       "Positiva","Negativa","Doble negativa"};
 
 
-Resultado r1, r2, r3;
+Resultado r1, r2, r3, r4, r5,r6;
 
 // tu equipo - equipo contrario - set 1 equipo- set 1equipo contrario - set 2 equipo...
 int [][] resultados  = {
@@ -124,7 +124,7 @@ int [][] resultados  = {
     {2, 3, 25, 19, 25, 21, 22, 25, 24, 26,20,25},
     {1, 3, 25, 19, 22, 25, 24, 26, 22, 25, 0, 0},
 };
-String [] equipos = {"Equipo A", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C"};
+String [] equipos = {"Equipo A", "Equipo B", "Equipo C","Equipo D", "Equipo E", "Equipo F","Equipo G", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo X", "Equipo Y", "Equipo Z"};
 
 String sets;
 
@@ -159,3 +159,9 @@ Pop nuevoJugador1;
 Cone cono1;
 
 color currentCol;
+
+Button next, prev;
+
+ListaPaginada e;
+
+//Resultado[] arrResultados;

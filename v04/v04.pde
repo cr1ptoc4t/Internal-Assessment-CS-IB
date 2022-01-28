@@ -18,6 +18,9 @@ void setup() {
   b1 = new Button("NEXT", 25 + tableW/2 + wButton/1.5, height - hButton - 20, wButton, hButton, true);
   b2 = new Button("PREV", 25 + tableW/2 - wButton/1.5, height - hButton - 20, wButton, hButton, true);
 
+  next = new Button("NEXT", width- 150 - 25, height - 55, 150, 50, true);
+  prev = new Button("PREV", 25, height - 55, 150, 50, true);
+
   save           =  new Button("S", width - 45,  10 + hBanner, 40 ,40, true );
   newPlayer      =  new Button("NP", width - 45,  10 + hBanner, 40 ,40, true );
   close          =  new Button("Cerrar", width/2, height - 200, wButton, hButton, true);
@@ -56,9 +59,17 @@ void setup() {
   r1 = new Resultado(width/6, height/2 - 50, 0);
   r2 = new Resultado(3*width/6,height/2 - 50 , 1);
   r3 = new Resultado(5*width/6, height/2 - 50, 2);
+  r4 = new Resultado(width/6, height/2 - 50, 3);
+  r5 = new Resultado(3*width/6,height/2 - 50 , 4);
+  r6 = new Resultado(5*width/6, height/2 - 50, 5);
+
+  Resultado [] arrResultados = {r1, r2, r3, r4, r5, r6};
 
   nuevoJugador1 = new Pop ( "New player",false);
   cono1 = new Cone (width-45, height - hBanner - 70);
+
+  e = new ListaPaginada(arrResultados,10, 10, width*7/8, height*9/10);
+  e.setButtons("bPrev.png", "bNext.png");
 
   //size(1200, 780);
   size(1300,900);
@@ -224,9 +235,15 @@ void mousePressed(){
   }
   if(close.mouseOverButton() && mousePressed){
     nuevoJugador1.setDisp(false);
-
   }
 
+  if(prev.mouseOverButton() && mousePressed){
+    e.prev();
+  }
+  if(next.mouseOverButton() && mousePressed){
+    println("mouse over next");
+    e.next();
+  }
 }
 
 boolean mouseOverLogo(){

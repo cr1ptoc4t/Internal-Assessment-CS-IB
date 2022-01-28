@@ -1,9 +1,12 @@
 void resultados(){
-    r1.display();
-    r2.display();
-    r3.display();
+    //r1.display();
+    //r2.display();
+    //r3.display();
+    e.display();
     
-   
+    prev.display();
+    next.display();
+    
 }
 
 void nuevoJugador(boolean display){
