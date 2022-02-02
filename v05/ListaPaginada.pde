@@ -3,7 +3,7 @@ class ListaPaginada{
     RoundButton bPrev, bNext;
     int currentRes=0;
     int numRes =0;
-    int numResVisibles = 3;
+    int numResVisibles = 4;
     float x, y, w, h;
 
     ListaPaginada(Resultado[] r, float x, float y, float w, float h){
@@ -15,21 +15,6 @@ class ListaPaginada{
     }
 
     void display(){
-        /*
-        if(currentRes==0){
-            for(int i=0;i<numResVisibles; i++){
-                r[i].display();
-            }
-        } else if (currentRes==1){
-            for(int i=3;i<numResVisibles+3; i++){
-                r[i].display();
-            }
-        } else if (currentRes==2){
-            for(int i=6;i<numResVisibles+2*3; i++){
-                r[i].display();
-            }
-        }
-        */
 
         for(int i=currentRes*numResVisibles;i<numResVisibles+currentRes*numResVisibles; i++){
             if(r[i] != null){
@@ -38,9 +23,14 @@ class ListaPaginada{
         }
         
         if(currentRes*numResVisibles>r.length){
-            netx.setEnabled(false);
+            next.setEnabled(false);
         } else{
             next.setEnabled(true);
+        }
+        if(currentRes*numResVisibles==0){
+            prev.setEnabled(false);
+        } else{
+            prev.setEnabled(true);
         }
         //bPrev.display();
         //bNext.display();

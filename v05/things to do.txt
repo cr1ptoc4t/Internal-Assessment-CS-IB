@@ -1,0 +1,7 @@
+- pantalla pizarra:
+    - arreglar herramienta pincel
+
+- introduccion de datos:
+    - nuevo jugador
+    - nuevos resultados
+    
