@@ -3,7 +3,7 @@ class ListaPaginada{
     RoundButton bPrev, bNext;
     int currentRes=0;
     int numRes =0;
-    int numResVisibles = 4;
+    int numResVisibles = 3;
     float x, y, w, h;
 
     ListaPaginada(Resultado[] r, float x, float y, float w, float h){
@@ -15,13 +15,25 @@ class ListaPaginada{
     }
 
     void display(){
+        //set positions
+        for(int i=0; i<numResVisibles; i++){
+            r[i].setX(((i+0.5)*width)/(numResVisibles));
+        }
 
-        for(int i=currentRes*numResVisibles;i<numResVisibles+currentRes*numResVisibles; i++){
+        for (int i=numResVisibles+1, k = 0; i<2*numResVisibles+2 && i<r.length; i++, k++){
+            r[i].setX(((k+0.5)*width)/numResVisibles);
+        }
+
+        //display results
+        for(int i=currentRes*numResVisibles;i<numResVisibles+currentRes; i++){
             if(r[i] != null){
                 r[i].display();
             }
         }
         
+
+        // enable & disenable buttons
+        // to avoid index out of bounds
         if(currentRes*numResVisibles>r.length){
             next.setEnabled(false);
         } else{
@@ -36,6 +48,7 @@ class ListaPaginada{
         //bNext.display();
     }
 
+
     void setButtons(String img1, String img2) {
         PImage imgPrev = loadImage(img1);
         bPrev = new RoundButton(imgPrev, x, y + h/2, 30);
@@ -44,13 +57,6 @@ class ListaPaginada{
         bNext = new RoundButton(imgNext, x + w + 30, y + h/2, 30);
     }
 
-    void next() {
-        this.currentRes++;
-        //falta hacer algun if para no exceder las casillas del array
-    }
-
-    void prev() {
-        this.currentRes--;
-    }
+    void next() { this.currentRes++;}
+    void prev() { this.currentRes--;}
 }
-

@@ -54,6 +54,16 @@ class Resultado{
         this.s5_2 = resultados[nPartido][11];
     }
 
+
+    void setX (float x){
+        this.x = x;
+    }
+
+    void setY (float y){
+        this.y = y;
+    }
+
+
     void display(){
         pushStyle();
             rectMode(CENTER);

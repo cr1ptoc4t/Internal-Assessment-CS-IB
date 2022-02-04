@@ -24,7 +24,7 @@ class Button {
 
    fillColor = color(blackCoral);
    fillColorOver = color(blackCoral, 200);
-   fillColorDisabled = color(150);
+   fillColorDisabled = color(50, 80, 100);
    strokeColor = color(0,0,0,0);
  }
  

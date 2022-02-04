@@ -29,48 +29,94 @@ class Player{
 
 
     void display(){
-        fill(0);
-        cabecera();
-        datosPersonales();
-        datosDeportivos();
+        pushStyle();
+            fill(0);
+            cabecera();
+            datosPersonales();
+            datosDeportivos();
+        popStyle();
     }
 
     void cabecera(){
         textAlign(LEFT);
-        textSize(40);
-        text(this.surname+ ", "+ this.name, 200, 100);
+        pushStyle();
+            image(usuario, 130, 70, 50, 50);
+            textSize(100);
+            textFont(fuente2);
+            fill(255);
+            text(this.surname+ ", "+ this.name, 198, 98);
+            fill(royalBlueDark);
+            text(this.surname+ ", "+ this.name, 200, 100);
+        popStyle();
+
+        textSize(15); fill(0);
+        //text(this.day +"/"+ this.month+ "/"+ this.year, 205, 120);
     }
 
 
     void datosPersonales(){
         //titulo
         //falta translate con push y pop matrix
-        fill(royalBlueDark, 100);
-        rect (width/9, 220, 300, 400);
-        fill(0);
+        
         pushStyle();
-        textSize(25);
-        text("Datos personales y de contacto: " , width/10, 200);
-        popStyle();
-        textSize(18);
-        text("Fecha de nacimiento: " + this.day + "/" + this.month + "/" +this.year, 150, 250);
-        text("Telefono personal: " + this.telefono, 150, 300);
-        text("Correo electrónico: " + this.email, 150, 350);
+            fill(blackCoral);
+            //rect (width/9, 220, 300, 400, 10);
+            fill(0);
+            textAlign(LEFT);
+            pushStyle();
+                textFont(fuente2);
+                textSize(25);
+                fill(blackCoral);
+                text("Datos personales y de contacto: " , width/10, 200);
+            popStyle();
 
+            textSize(18);
+
+            beginShape();
+                vertex(width/10 - 5, 200);
+                vertex(width/10 - 15, 200);
+                vertex(width/10 - 15, 350);
+            endShape();
+
+            text(this.day + "/" + this.month + "/" +this.year,150+160, 250);
+            text(this.telefono, 150 +140, 300);
+            text(this.email, 100 + 200, 350);
+
+            pushStyle();
+                textFont(fuente1);
+                fill(blackCoral);
+                textSize(16);
+                text("Fecha de nacimiento:",150, 250);
+                text("Telefono personal:", 150, 300);
+                text("Correo electrónico: ",150, 350);
+            popStyle();
+        popStyle();
 
     }
 
     void datosDeportivos(){
         //rect!!
         pushStyle();
-        
-        textSize(25);
-        text("Datos deportivos: ", 3*width/5, 200);
+            fill(blackCoral);
+            textFont(fuente2);
+            textSize(25);
+            text("Datos deportivos: ", 3*width/5, 200);
         popStyle();
-        textSize(15);
-        text("Número dorsal: "    + this.numb, 3*width/5+100, 400);
-        text("Primera posición: " + this.firstPos, 3*width/5+100, 500);
-        text("Segunda posición: " + this.secPos, 3* width/5+100, 600);
+
+        textSize(18);
+
+        text(this.numb,3*width/5+180, 250);
+        text(this.firstPos, 3*width/5+180, 300);
+        text(this.secPos, 3* width/5+380, 300);
+
+        pushStyle();
+            textFont(fuente1);
+            fill(blackCoral);
+            textSize(16);
+            text("Número dorsal: ", 3*width/5+40, 250);
+            text("Primera posición: ", 3*width/5+40, 300);
+            text("Segunda posición: ", 3* width/5+240, 300);
+        popStyle();
     }
 
     String getName(){

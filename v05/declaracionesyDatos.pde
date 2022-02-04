@@ -1,4 +1,4 @@
-PImage img1, img2, img3, cono;
+PImage img1, img2, img3, cono, usuario;
 
 PFont fuente1, fuente2, fuente3;
 

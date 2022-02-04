@@ -4,4 +4,6 @@
 - introduccion de datos:
     - nuevo jugador
     - nuevos resultados
+
+- pantalla jugador
     

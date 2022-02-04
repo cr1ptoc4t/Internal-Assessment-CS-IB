@@ -1,4 +1,5 @@
 class Cone{
+    
     float x = width-45;
     float y = height - hBanner - 70;
     

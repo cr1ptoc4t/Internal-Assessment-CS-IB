@@ -2,12 +2,11 @@ void setup() {
 
   p = new Pissarra(50, 280, 700,700, 100, width-100);
 
-
   img1 = loadImage("sobreNosotros1.jpg");
   img2 = loadImage("sobreNosotros2.jpg");
   img3 = loadImage("sobreNosotros3.jpg");
+  usuario = loadImage("userIcon.png");
 
-  //b1 = new Button("a", width/2 - wButton/2, height/2, wButton, hButton, true);
   goToMiEquipo      =  new Button("", 150 + 1*(width- 120)/6, hBanner/5, 150 + 2*(width- 120)/6, hButton, false);
   goToPizarra       =  new Button("", 150 + 2*(width- 120)/6, hBanner/5, 150 + 3*(width- 120)/6, hButton, false);
   goToResultados    =  new Button("", 150 + 3*(width- 120)/6, hBanner/5, 150 + 4*(width- 120)/6, hButton, false);
@@ -136,9 +135,15 @@ void pantallas (int j){
     if (pantalla==5) {
       sobreNosotros();
     }
+    if (pantalla==6) {
+      p1.display();
+    }
 }
 
 void keyPressed() {
+  if(key=='ñ'){
+    pantalla=6;
+  }
   if(key=='p'){
     pantalla= -1;
   }
@@ -237,7 +242,7 @@ void mousePressed(){
     nuevoJugador1.setDisp(false);
   }
 
-  if(prev.mouseOverButton() && mousePressed){
+  if(prev.mouseOverButton() && mousePressed && prev.enability()){
     e.prev();
   }
   if(next.mouseOverButton() && mousePressed && next.enability()){
