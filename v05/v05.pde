@@ -55,6 +55,20 @@ void setup() {
   mSaved = new TextField(870, 450, 50, 35);
   ySaved = new TextField(940, 450, 50, 35);
 
+  s1 = new TextField(x, y, 75, 25);
+  s2 = new TextField(x, y, 75, 25);
+
+  s1_1 = new TextField(x, y, 75, 25);
+  s1_2 = new TextField(x, y, 75, 25);
+  s2_1 = new TextField(x, y, 75, 25);
+  s2_2 = new TextField(x, y, 75, 25);
+  s3_1 = new TextField(x, y, 75, 25);
+  s3_2 = new TextField(x, y, 75, 25);
+  s4_1 = new TextField(x, y, 75, 25);
+  s4_2 = new TextField(x, y, 75, 25);
+  s5_1 = new TextField(x, y, 75, 25);
+  s5_2 = new TextField(x, y, 75, 25);
+
   r1 = new Resultado(width/6, height/2 - 50, 0);
   r2 = new Resultado(3*width/6,height/2 - 50 , 1);
   r3 = new Resultado(5*width/6, height/2 - 50, 2);

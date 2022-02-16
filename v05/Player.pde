@@ -70,16 +70,35 @@ class Player{
                 text("Datos personales y de contacto: " , width/10, 200);
             popStyle();
 
-            textSize(18);
+            pushStyle();
+                textSize(18);
+                fill(0,0,0,0);
+                stroke(0);
+                strokeWeight(1);
 
-            beginShape();
-                vertex(width/10 - 5, 200);
-                vertex(width/10 - 15, 200);
-                vertex(width/10 - 15, 350);
-            endShape();
+                //caja 1
+                beginShape();
+                    vertex(width/10 - 5, 190);
+                    vertex(width/10 - 15, 190);
+                    vertex(width/10 - 15, 500);
+                    vertex(width/10 + 500, 500);
+                    vertex(width/10 + 500, 190);
+                    vertex(width/10 + 400, 190);
+                endShape();
+
+                //caja 2
+                beginShape();
+                    vertex(3*width/5 - 5, 190);
+                    vertex(3*width/5 - 15, 190);
+                    vertex(3*width/5 - 15, 500);
+                    vertex(3*width/5 + 500, 500);
+                    vertex(3*width/5 + 500, 190);
+                    vertex(3*width/5 + 250, 190);
+                endShape();
+            popStyle();
 
             text(this.day + "/" + this.month + "/" +this.year,150+160, 250);
-            text(this.telefono, 150 +140, 300);
+            text(this.telefono, 150 + 140, 300);
             text(this.email, 100 + 200, 350);
 
             pushStyle();
