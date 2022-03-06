@@ -49,11 +49,12 @@ void setup() {
   fuente1 = createFont("HKGrotesk-Bold.otf", 40);
   fuente2 = createFont("Coco-Sharp-Extrabold-trial.ttf", 40);
   fuente3 = createFont("Coco-Sharp-Heavy-Italic-trial.ttf", 40);
-
+/*
   nSaved = new TextField(550, 400, 200, 35);
   dSaved = new TextField(800, 450, 50, 35);
   mSaved = new TextField(870, 450, 50, 35);
   ySaved = new TextField(940, 450, 50, 35);
+
 
   s1 = new TextField(x, y, 75, 25);
   s2 = new TextField(x, y, 75, 25);
@@ -68,6 +69,7 @@ void setup() {
   s4_2 = new TextField(x, y, 75, 25);
   s5_1 = new TextField(x, y, 75, 25);
   s5_2 = new TextField(x, y, 75, 25);
+*/
 
   r1 = new Resultado(width/6, height/2 - 50, 0);
   r2 = new Resultado(3*width/6,height/2 - 50 , 1);

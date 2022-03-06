@@ -50,7 +50,7 @@ int nConos=0;
 
 boolean logged = false;
 TextField  nSaved, dSaved, mSaved, ySaved;
-TextField r1, r2;
+//TextField r1, r2;
 TextField s1_1, s1_2, s2_1, s2_2, s3_1, s3_2, s4_1, s4_2, s5_1, s5_2;
 
 //pop up
