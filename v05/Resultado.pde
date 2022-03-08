@@ -75,6 +75,8 @@ class Resultado{
                     textSize(180);
                     textAlign(CENTER);
                     fill(redSalsa);
+
+                    //resultado principal
                     text(r1 +"-"+ r2, x-3, y-112, 380);
                     fill(255);
                     text(r1 +"-"+ r2, x, y-110, 380);
@@ -97,6 +99,7 @@ class Resultado{
                     textSize(12);
                     textAlign(CENTER);
                     
+                    //encadenamiento de sets en funcion del numero de sets:
                     sets = s1_1+"-"+s1_2+"/"+s2_1+"-"+s2_2+"/"+s3_1+"-"+s3_2;
 
                     if(r1+r2>=4){

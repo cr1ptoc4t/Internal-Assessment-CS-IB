@@ -1,6 +1,8 @@
 color c3;
 color c4;
 
+
+//creació de la plantilla: banner i espai buit
 void template(int j) {
   background(platinum);
 
@@ -34,7 +36,7 @@ void template(int j) {
   goToGuardados.display();
   goToSobreNosotros.display();
   popStyle();
-
+ // no se ni que escric pero jajaj aixo es poer es video de instagram venga fe que escriuys a super rappicdad
 
 
   //zona libre
@@ -43,7 +45,7 @@ void template(int j) {
   rect(marginW, hBanner+marginH, width-2*marginW, height - 2*marginH - hBanner);
 }
 
-
+//método para la rotulación de logotipo
 void logoDrawing(float x, float y, int z, String texto, color c1, color c2){
   pushStyle();
     pushMatrix();

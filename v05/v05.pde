@@ -1,5 +1,5 @@
 void setup() {
-
+  // creació de pissarra i objectes: constuctors:
   p = new Pissarra(50, 280, 700,700, 100, width-100);
 
   img1 = loadImage("sobreNosotros1.jpg");
@@ -55,9 +55,10 @@ void setup() {
   mSaved = new TextField(870, 450, 50, 35);
   ySaved = new TextField(940, 450, 50, 35);
 
-  s1 = new TextField(x, y, 75, 25);
-  s2 = new TextField(x, y, 75, 25);
+ // s1 = new TextField(x, y, 75, 25);
+ // s2 = new TextField(x, y, 75, 25);
 
+  /*
   s1_1 = new TextField(x, y, 75, 25);
   s1_2 = new TextField(x, y, 75, 25);
   s2_1 = new TextField(x, y, 75, 25);
@@ -68,6 +69,7 @@ void setup() {
   s4_2 = new TextField(x, y, 75, 25);
   s5_1 = new TextField(x, y, 75, 25);
   s5_2 = new TextField(x, y, 75, 25);
+*/
 
   r1 = new Resultado(width/6, height/2 - 50, 0);
   r2 = new Resultado(3*width/6,height/2 - 50 , 1);
@@ -76,6 +78,7 @@ void setup() {
   r5 = new Resultado(3*width/6,height/2 - 50 , 4);
   r6 = new Resultado(5*width/6, height/2 - 50, 5);
 
+  //array de resultados para la posterior recorrimiento
   Resultado [] arrResultados = {r1, r2, r3, r4, r5, r6};
 
   nuevoJugador1 = new Pop ( "New player",false);

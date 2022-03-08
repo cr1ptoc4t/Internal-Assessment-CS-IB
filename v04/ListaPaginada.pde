@@ -38,7 +38,7 @@ class ListaPaginada{
         }
         
         if(currentRes*numResVisibles>r.length){
-            netx.setEnabled(false);
+            next.setEnabled(false);
         } else{
             next.setEnabled(true);
         }
