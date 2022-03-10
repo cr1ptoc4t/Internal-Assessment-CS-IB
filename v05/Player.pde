@@ -88,12 +88,12 @@ class Player{
 
                 //caja 2
                 beginShape();
-                    vertex(3*width/5 - 5, 190);
-                    vertex(3*width/5 - 15, 190);
-                    vertex(3*width/5 - 15, 500);
-                    vertex(3*width/5 + 500, 500);
-                    vertex(3*width/5 + 500, 190);
-                    vertex(3*width/5 + 250, 190);
+                    vertex(width/2 +100 - 5, 190);
+                    vertex(width/2 +100 - 15, 190);
+                    vertex(width/2 +100 - 15, 500);
+                    vertex(width/2 +100 + 500, 500);
+                    vertex(width/2 +100 + 500, 190);
+                    vertex(width/2 +100 + 250, 190);
                 endShape();
             popStyle();
 
@@ -119,22 +119,22 @@ class Player{
             fill(blackCoral);
             textFont(fuente2);
             textSize(25);
-            text("Datos deportivos: ", 3*width/5, 200);
+            text("Datos deportivos: ", width/2 + 120, 200);
         popStyle();
 
         textSize(18);
 
-        text(this.numb,3*width/5+180, 250);
-        text(this.firstPos, 3*width/5+180, 300);
-        text(this.secPos, 3* width/5+380, 300);
+        text(this.numb,width/2+120, 250);
+        text(this.firstPos, width/2+120, 300);
+        text(this.secPos, width/2+380, 300);
 
         pushStyle();
             textFont(fuente1);
             fill(blackCoral);
             textSize(16);
-            text("Número dorsal: ", 3*width/5+40, 250);
-            text("Primera posición: ", 3*width/5+40, 300);
-            text("Segunda posición: ", 3* width/5+240, 300);
+            text("Número dorsal: ", width/2+150, 250);
+            text("Primera posición: ", width/2 +150, 300);
+            text("Segunda posición: ",  width/2+150, 300);
         popStyle();
     }
 
