@@ -1,3 +1,6 @@
+
+import de.bezier.data.sql.mapper.*;
+
 // Llibreria de MySQL i Processing
 import de.bezier.data.sql.*;
 
@@ -9,12 +12,12 @@ void setup(){
     size(100, 100);
   
     // Paràmetres de la connexió
-    String user     = "root";
-    String pass     = "mitjanit3";   
-    String database = "trivio";
+    String user     = "admin";
+    String pass     = "12345";   
+    String database = "helloworld";
     
     // Establim la connexió
-    msql = new MySQL( this, "localhost", database, user, pass );
+    msql = new MySQL( this, "localhost:8889", database, user, pass );
     
     // Si la connexió s'ha establert
     if (msql.connect()){
