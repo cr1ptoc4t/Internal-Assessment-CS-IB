@@ -14,7 +14,7 @@ void setup(){
     // Paràmetres de la connexió
     String user     = "admin";
     String pass     = "12345";   
-    String database = "helloworld";
+    String database = "mydb";
     
     // Establim la connexió
     msql = new MySQL( this, "localhost:8889", database, user, pass );
