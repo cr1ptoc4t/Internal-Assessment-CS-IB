@@ -1,12 +1,12 @@
 void p2() {
   template();
   halfBlackboard();
-  trainingToolBar();
+  toolBar();
 }
 
 void halfBlackboard() {
   pushMatrix();
-    pushStyle();2
+    pushStyle();
       rectMode(CENTER);
       fill(255);
       rect(width/2, height/2, wBlackboard, hBlackboard);
@@ -20,12 +20,12 @@ void halfBlackboard() {
         vertex(wBlackboard, 0);
       endShape(CLOSE);
       line(-30, 2*hBlackboard/3, wBlackboard + 30,2*hBlackboard/3);
-      line(-40, hBlackboard, wBlackboard + 40,hBlackboard);
+      line(-40, hBlackboard, wBlackboard + 40, hBlackboard);
     popStyle();
   popMatrix();
 }
 
-void trainingToolBar(){
+void toolBar(){
   pushStyle();
     fill(255);
     stroke(0);
@@ -33,6 +33,13 @@ void trainingToolBar(){
     
     rect(width-wTB-marginW,bannerH+marginH, wTB, height-bannerH-2*marginH);
     strokeWeight(2);
-    line(width-wTB-marginW, bannerH+marginH, width-wTB-marginW, height-bannerH-2*marginH);
+    line(width-wTB-marginW, bannerH+marginH, width-wTB-marginW, height-marginH);
+    pushMatrix();
+      fill(0);
+      rotate(-HALF_PI);
+      textSize(20);
+      text("toolbar", width- 10, height/2);
+    popMatrix();
+    
   popStyle();
 }
