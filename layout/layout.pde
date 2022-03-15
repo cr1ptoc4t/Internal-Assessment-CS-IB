@@ -11,6 +11,7 @@ void setup() {
 
 void draw() {
 
+
   if (pantalla==0) { //entrada
     p0();
   }
@@ -21,10 +22,13 @@ void draw() {
     p2();
   }
   if (pantalla==3) {
-    p1();
+    p3();
   }
   if (pantalla==4) {
-    p1();
+    p4();
+  }
+  if (pantalla==5) {
+    p5();
   }
 }
 

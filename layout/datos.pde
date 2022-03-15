@@ -1,2 +1,2 @@
 int nPlayers =14;
-int pantalla = 1;
+int pantalla = 5;
