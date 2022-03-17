@@ -1,31 +1,27 @@
+import processing.core.PApplet;
 
-import de.bezier.data.sql.mapper.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
-// Llibreria de MySQL i Processing
-import de.bezier.data.sql.*;
-
-// Objecte de connexió a la BBDD
-MySQL msql;
 
 void setup(){
-    
-    size(100, 100);
-  
-    // Paràmetres de la connexió
-    String user     = "admin";
-    String pass     = "12345";   
-    String database = "mydb";
-    
-    // Establim la connexió
-    msql = new MySQL( this, "localhost:8889", database, user, pass );
-    
-    // Si la connexió s'ha establert
-    if (msql.connect()){
-        // La connexió ha funcionat!!!
-        println("Connected to database!!");
+  connexio();
+}
+
+public void connexio(){
+  try {
+    Connection con= DriverManager.getConnection("jdbc:mysql://localhost:8889/voley", "admin", "12345");
+    Statement stmt=con.createStatement();
+    System.out.println("Connected");
+    ResultSet rs=stmt.executeQuery("select * from competicion");
+    while (rs.next()) {
+      System.out.println(rs.getInt(1) + ": " + rs.getString(2));
     }
-    else {
-      // La connexió ha fallat!!!
-      println("Connection failed !");
-    }
+    con.close();
+  }
+  catch(Exception e) {
+    System.out.println(e);
+  }
 }
