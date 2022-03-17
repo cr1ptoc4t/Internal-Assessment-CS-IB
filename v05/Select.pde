@@ -44,8 +44,8 @@ class Select{
     boolean mouseOverSelected(){
         return (mouseX >= this.x) && 
                 (mouseX<=this.x + this.w) && 
-                (mouseY>= this.y) && 
-                (mouseY<= this.y + this.w);
+                (mouseY>= this.y +hBanner) && 
+                (mouseY<= this.y + this.w+hBanner);
     }
 
 }

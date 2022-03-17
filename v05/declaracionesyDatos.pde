@@ -11,6 +11,11 @@ Button goToSobreNosotros;
 Button save, newPlayer;
 Button b1,b2;
 Button close;
+Button reset;
+//Button modoEntrenamiento;
+//Button modoCompeticion;
+//Button mediaPista;
+//Button pistaEntera;
 
 Pissarra p;
 Table t;
@@ -49,20 +54,12 @@ int k=0;
 int nConos=0;
 
 boolean logged = false;
-TextField  nSaved, dSaved, mSaved, ySaved;
+TextField nombre,apellidos, telefono, dni, dayn, monthn, yearn,correo, ndorsal;
+TextField nSaved, dSaved, mSaved, ySaved;
+//TextField 
 //TextField r1, r2, s1, s2;
-//TextField s1_1, s1_2, s2_1, s2_2, s3_1, s3_2, s4_1, s4_2, s5_1, s5_2;
+TextField s1_1, s1_2, s2_1, s2_2, s3_1, s3_2, s4_1, s4_2, s5_1, s5_2;
 
-//pop up
-PopUp guardar;
-
-// Dimensions del PopUp
-float popW = 600;
-float popH = 340;
-
-// Textos del PopUp
-String title = "Error!";
-String message = "Error en la connexió a la BBDD.";
 
 String hability1, hability2, hability3, hability4, hability5;
 
@@ -157,7 +154,6 @@ int doblePositiva, positiva;
 int negativa, dobleNegativa;
 */
 
-Pop nuevoJugador1;
 Cone cono1;
 
 color currentCol;

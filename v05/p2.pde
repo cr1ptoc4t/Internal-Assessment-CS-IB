@@ -17,6 +17,7 @@ void p2(){
 
   }
   
+  
   p.checkPinsMotion();
   checkChanges();
   
@@ -75,17 +76,11 @@ void toolBar(boolean training){
     rect(width-wTB-marginW,0, wTB, height-hBanner-2*marginH);
     strokeWeight(2);
     line(width-wTB-marginW, 0, width-wTB-marginW, height-hBanner-2*marginH);
-  
-    guardar.display();
-    save.display();
-    if(save.mouseOverButton() && mousePressed){
-      guardar.setVisible(true);
-    }
 
     rectMode(CORNER);
     strokeWeight(1);
 
-
+    save.display();
     colores(width-45, (height-hBanner-40)/2 - 60, color (255, 0,0));
     colores(width-45, (height-hBanner-40)/2, color (0, 255,0));
     colores(width-45, (height-hBanner-40)/2+60, color (0, 0,255));
@@ -178,23 +173,24 @@ void menu(){
     stroke(0);
     strokeWeight(4);
     fill(0);
-    
+    textAlign(CENTER);
+    //text("pulse la tecla R para resetear las posiciones", width/2, height-hBanner- 25);
     
     if (!menuDisplayed){
       
       line(15, 15, 60, 15);
       line(15, 30, 60, 30);
       line(15, 45, 60, 45);
-      
+
     } else{
 
       for(int i=0; i<2*height; i+=10){
         if(i%3==0){
-            stroke(redSalsa,j);
+            stroke(redSalsa,100);
         }else if(i%3==1){
-            stroke(royalBlueDark,j);
+            stroke(royalBlueDark,100);
         }else{
-            stroke(ming,j);
+            stroke(ming,100);
         }
 
         if(i<300){
@@ -231,16 +227,15 @@ void menu(){
       competicion.display();
       mediaPista.display();
       pistaEntera.display();
-
-      text("pulse la tecla R para resetear las posiciones", 50, 200);
-
-
-      if(entrenamiento.mouseOverSelected() && mousePressed){
-        println(entrenamiento.getSelected());
-        entrenamiento.setSelected(!entrenamiento.getSelected());
-        println(entrenamiento.getSelected());
-
-      }  
+      reset.display();
+      /*
+      if(frameCount%5 == 0){
+        if(entrenamiento.mouseOverSelected() && mousePressed){
+          println(entrenamiento.getSelected());
+          entrenamiento.setSelected(!entrenamiento.getSelected());
+          println(entrenamiento.getSelected());
+        }
+      } */
     }
 
 

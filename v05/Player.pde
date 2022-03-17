@@ -108,6 +108,7 @@ class Player{
                 text("Fecha de nacimiento:",150, 250);
                 text("Telefono personal:", 150, 300);
                 text("Correo electrónico: ",150, 350);
+                text("DNI: ",150, 400);
             popStyle();
         popStyle();
 

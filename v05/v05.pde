@@ -13,7 +13,6 @@ void setup() {
   goToGuardados     =  new Button("", 150 + 4*(width- 120)/6, hBanner/5, 150 + 5*(width- 120)/6, hButton, false);
   goToSobreNosotros =  new Button("", 150 + 5*(width- 120)/6, hBanner/5, 150 + 6*(width- 120)/6, hButton, false);
 
-  
   b1 = new Button("NEXT", 25 + tableW/2 + wButton/1.5, height - hButton - 20, wButton, hButton, true);
   b2 = new Button("PREV", 25 + tableW/2 - wButton/1.5, height - hButton - 20, wButton, hButton, true);
 
@@ -22,8 +21,9 @@ void setup() {
 
   save           =  new Button("S", width - 45,  10 + hBanner, 40 ,40, true );
   newPlayer      =  new Button("NP", width - 45,  10 + hBanner, 40 ,40, true );
-  close          =  new Button("Cerrar", width/2, height - 200, wButton, hButton, true);
+  close          =  new Button("Cerrar", width/2, height - 200, 150, 50, true);
 
+  reset          =  new Button("Reset", 50, height - hButton - 20,wButton, hButton, true);
   entrenamiento  =  new Select("Modo entrenamiento",50, 70 ,  true,   20);
   competicion    =  new Select("Modo competición",  50, 100 , false,  20);
   mediaPista     =  new Select("Media pista",       50, 150 , false,  20);
@@ -42,7 +42,6 @@ void setup() {
   p2   = new Player("Pere Joan", "Gomila" , "home", "Central", "Punta", 10, 999999999, 2001, 16, 2, "perej@mail.com");
   p3   = new Player("Pere Joan", "Gomila" , "home", "Opuesto", "Central", 10, 999999999, 2001, 16, 2, "perej@mail.com");
 
-  guardar  = new PopUp("GUARDAR", "elige un título:", (width- popW)/2, (height-popH- hBanner)/2, popW, popH);
 
   cono = loadImage("cono.png");
 
@@ -54,6 +53,19 @@ void setup() {
   dSaved = new TextField(800, 450, 50, 35);
   mSaved = new TextField(870, 450, 50, 35);
   ySaved = new TextField(940, 450, 50, 35);
+
+  int h  = 314 - (int)hBanner;
+  int alturaCelda=20;
+
+  dayn      = new TextField(315, h, 3/2*alturaCelda, alturaCelda);
+  monthn    = new TextField(315+50, h, 3/2*alturaCelda, alturaCelda);
+  yearn     = new TextField(315+100, h, 3/2*alturaCelda, alturaCelda);
+  telefono  = new TextField(315, h+50, 200, alturaCelda);
+  correo    = new TextField(315, h+2*50, 200, alturaCelda);
+  dni       = new TextField(315, h+3*50, 200, alturaCelda);
+
+  ndorsal   = new TextField(946, 315 -(int)hBanner, alturaCelda, alturaCelda);
+
 
  // s1 = new TextField(x, y, 75, 25);
  // s2 = new TextField(x, y, 75, 25);
@@ -81,7 +93,6 @@ void setup() {
   //array de resultados para la posterior recorrimiento
   Resultado [] arrResultados = {r1, r2, r3, r4, r5, r6};
 
-  nuevoJugador1 = new Pop ( "New player",false);
   cono1 = new Cone (width-45, height - hBanner - 70);
 
   e = new ListaPaginada(arrResultados,10, 10, width*7/8, height*9/10);
@@ -122,39 +133,38 @@ void draw() {
     if(j<255){
       j+=25;
     }
-    
   }
-
 }
-
-
 
 void pantallas (int j){
   //println(pantalla);
-     if (pantalla==-1) { //entrada
-      paleta();
-    }
-    if (pantalla==0) { //entrada
-      p0(j);   
-    }
-    if (pantalla==1) { //mi equipo
-      p1();
-    }
-    if (pantalla==2) {
-      p2();
-    }
-    if (pantalla==3) {
-      resultados();
-    }
-    if (pantalla==4) {
-      guardados();
-    }
-    if (pantalla==5) {
-      sobreNosotros();
-    }
-    if (pantalla==6) {
-      p1.display();
-    }
+  if (pantalla==-1) { //entrada
+    paleta();
+  }
+  if (pantalla==0) { //entrada
+    p0(j);   
+  }
+  if (pantalla==1) { //mi equipo
+    p1();
+  }
+  if (pantalla==2) {
+    p2();
+  }
+  if (pantalla==3) {
+    resultados();
+  }
+  if (pantalla==4) {
+    guardados();
+  }
+  if (pantalla==5) {
+    sobreNosotros();
+  }
+  if (pantalla==6) {
+    p1.display();
+  }
+  if (pantalla==7) {
+    newPlayer();
+  }
 }
 
 void keyPressed() {
@@ -236,15 +246,7 @@ void mousePressed(){
   else if(b2.mouseOverButton() && b2.enabled){
     t.prevPage();
   }
-  if(guardar.bAceptar.mouseOverButton()){
-    guardar.setVisible(true);
-  }
-  else {
-    guardar.setVisible(false);
-  }
-  if(save.mouseOverButton()&&mousePressed){
-    guardar.setVisible(true);
-  }
+  
   if(false){
     mSaved.isPressed();
     nSaved.isPressed();
@@ -252,11 +254,12 @@ void mousePressed(){
     dSaved.isPressed();
   }
   if(newPlayer.mouseOverButton() && mousePressed){
-    nuevoJugador1.setDisp(true);
-    println("El pop up new player se encuentra en: "+ nuevoJugador1.getDisplay());
+    pantalla=7;
+    //nuevoJugador1.setDisp(true);
+    //println("El pop up new player se encuentra en: "+ nuevoJugador1.getDisplay());
   }
   if(close.mouseOverButton() && mousePressed){
-    nuevoJugador1.setDisp(false);
+    //nuevoJugador1.setDisp(false);
   }
 
   if(prev.mouseOverButton() && mousePressed && prev.enability()){
@@ -265,6 +268,29 @@ void mousePressed(){
   if(next.mouseOverButton() && mousePressed && next.enability()){
     println("mouse over next");
     e.next();
+  }
+  if(reset.mouseOverButton()&&mousePressed){
+    p.resetPinPositions();
+  }
+
+  if(entrenamiento.mouseOverSelected()&&mousePressed){
+    println("ENTRENAMIENTO PRESSED");
+    entrenamiento.setSelected(true);
+    competicion.setSelected(!true);
+  }
+  if(competicion.mouseOverSelected()&&mousePressed){
+    competicion.setSelected(true);
+    entrenamiento.setSelected(!true);
+  }
+
+  if(mediaPista.mouseOverSelected()&&mousePressed){
+    println("mediaPista PRESSED");
+    mediaPista.setSelected(true);
+    pistaEntera.setSelected(!true);
+  }
+  if(pistaEntera.mouseOverSelected()&&mousePressed){
+    pistaEntera.setSelected(true);
+    mediaPista.setSelected(!true);
   }
 }
 
