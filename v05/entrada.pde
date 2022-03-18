@@ -17,7 +17,7 @@ void p0(int j){
     
     fill(royalBlueDark, j);
     text("keep the ball", width/2, 250);
-    logoDrawing(width/2, height/2+50, 300, "FLYING", c3, c4); 
+    logoDrawing(width/2, height/2+50, 400, "FLYING", c3, c4); 
 
     popStyle();
 

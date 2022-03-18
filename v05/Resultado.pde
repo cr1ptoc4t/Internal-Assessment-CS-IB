@@ -68,7 +68,7 @@ class Resultado{
         pushStyle();
             rectMode(CENTER);
             fill(150);
-            rect(x, y, 400, 750, 5);
+            rect(x, y, 450, 800, 5);
                 pushStyle();
                     fill(255);
                     textFont(fuente1);

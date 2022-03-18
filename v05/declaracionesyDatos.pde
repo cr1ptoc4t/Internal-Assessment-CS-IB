@@ -17,7 +17,7 @@ Button reset;
 //Button mediaPista;
 //Button pistaEntera;
 
-Pissarra p;
+Pines p;
 Table t;
 Player p1;
 Player p2;
@@ -161,5 +161,8 @@ color currentCol;
 Button next, prev;
 
 ListaPaginada e;
+
+boolean menuDisplayed = false;
+PImage [] conos;
 
 //Resultado[] arrResultados;

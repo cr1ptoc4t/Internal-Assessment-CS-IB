@@ -1,6 +1,6 @@
 void setup() {
   // creació de pissarra i objectes: constuctors:
-  p = new Pissarra(50, 280, 700,700, 100, width-100);
+  p = new Pines((float)50, (float)280, (float)700,(float)700, (float)100, (float)width-100);
 
   img1 = loadImage("sobreNosotros1.jpg");
   img2 = loadImage("sobreNosotros2.jpg");
@@ -57,12 +57,12 @@ void setup() {
   int h  = 314 - (int)hBanner;
   int alturaCelda=20;
 
-  dayn      = new TextField(315, h, 3/2*alturaCelda, alturaCelda);
-  monthn    = new TextField(315+50, h, 3/2*alturaCelda, alturaCelda);
-  yearn     = new TextField(315+100, h, 3/2*alturaCelda, alturaCelda);
-  telefono  = new TextField(315, h+50, 200, alturaCelda);
-  correo    = new TextField(315, h+2*50, 200, alturaCelda);
-  dni       = new TextField(315, h+3*50, 200, alturaCelda);
+  dayn      = new TextField(400, h, 3/2*alturaCelda, alturaCelda);
+  monthn    = new TextField(400+50, h, 3/2*alturaCelda, alturaCelda);
+  yearn     = new TextField(400+100, h, 3/2*alturaCelda, alturaCelda);
+  telefono  = new TextField(400, h+50, 200, alturaCelda);
+  correo    = new TextField(400, h+2*50, 200, alturaCelda);
+  dni       = new TextField(400, h+3*50, 200, alturaCelda);
 
   ndorsal   = new TextField(946, 315 -(int)hBanner, alturaCelda, alturaCelda);
 
@@ -95,11 +95,12 @@ void setup() {
 
   cono1 = new Cone (width-45, height - hBanner - 70);
 
-  e = new ListaPaginada(arrResultados,10, 10, width*7/8, height*9/10);
+  e = new ListaPaginada(arrResultados,10, 10, width- 100, height*9/10);
   e.setButtons("bPrev.png", "bNext.png");
 
   //size(1200, 780);
   size(1300,900);
+  fullScreen();
   noStroke();
   textAlign(CENTER);
   textSize(18);

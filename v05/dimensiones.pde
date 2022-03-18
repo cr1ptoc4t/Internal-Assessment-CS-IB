@@ -16,8 +16,8 @@ float hT = 550;
 
 //pizarra
 
-float wBlackboard = 500;
-float hBlackboard = 500;
+float wBlackboard = 650;
+float hBlackboard = wBlackboard;
 
 //toolbar
 
@@ -26,7 +26,7 @@ float hTB = height - hBanner;
 
 
 //tabla 
-float tableW = 1000, tableH = 600;
+float tableW = 1400, tableH = 700;
 
 float wButtonTraining = 200;
 float hButtonTraining = 40;

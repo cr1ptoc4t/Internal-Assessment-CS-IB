@@ -105,10 +105,10 @@ class Player{
                 textFont(fuente1);
                 fill(blackCoral);
                 textSize(16);
-                text("Fecha de nacimiento:",150, 250);
-                text("Telefono personal:", 150, 300);
-                text("Correo electrónico: ",150, 350);
-                text("DNI: ",150, 400);
+                text("Fecha de nacimiento:",200, 250);
+                text("Telefono personal:", 200, 300);
+                text("Correo electrónico: ",200, 350);
+                text("DNI: ",200, 400);
             popStyle();
         popStyle();
 

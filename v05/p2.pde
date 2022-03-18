@@ -1,5 +1,4 @@
-boolean menuDisplayed = false;
-PImage [] conos;
+
 
 void p2(){
   

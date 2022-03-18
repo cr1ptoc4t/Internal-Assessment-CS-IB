@@ -1,4 +1,4 @@
-class Pissarra {
+class Pines {
  
   // Propietats de la Pissarra.
   float x, y, w, h, xPin1, xPin2;
@@ -8,7 +8,7 @@ class Pissarra {
  
   // Constructor
   /* float y1, */
-  Pissarra(float x, float y, float w, float h,  float xPin1, float  xPin2){
+  Pines(float x, float y, float w, float h,  float xPin1, float  xPin2){
     this.x = x;
     this.y = y;
     this.w = w;
@@ -57,23 +57,6 @@ class Pissarra {
       pins2[i].setPosition( width-100 , y+ 80*i);
     }
   }
- 
-  // Dibuixa la Pissarra
-  /*
-  void display(){
-    pushStyle();
-     
-      // Rectangle
-      stroke(0); strokeWeight(3); fill(0,200,200);
-      rect(x, y, w, h);
-     
-      // Texte
-      textSize(24); textAlign(LEFT); fill(0);
-      text("Press R to reset", x, y + w + 24);
-     
-    popStyle();
-  }
-  */
  
   // Dibuixa els Pins
   void displayPins1(){

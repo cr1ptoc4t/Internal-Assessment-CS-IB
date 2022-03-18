@@ -2,7 +2,7 @@ void p1(){
 
   pushStyle();
     //table();
-    t.display((width-tableW)/2, 50, tableW, tableH);
+    t.display((width-tableW)/2, 100, tableW, tableH);
     //t.display(50, 50, tableW, tableH);
     
     // Dibuixa els botons
@@ -72,9 +72,9 @@ void newPlayer(){
     fill(blackCoral);
     textSize(16);
     text("Fecha de nacimiento:           /          /        /",150, 250);
-    text("Telefono personal:", 150, 300);
-    text("Correo electrónico: ",150, 350);
-    text("DNI: ",150, 400);
+    text("Telefono personal:", 200, 300);
+    text("Correo electrónico: ",200, 350);
+    text("DNI: ",200, 400);
   popStyle();
   popStyle(); 
   pushStyle();
