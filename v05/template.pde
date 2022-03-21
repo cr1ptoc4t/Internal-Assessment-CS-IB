@@ -4,6 +4,8 @@ color c4;
 
 //creació de la plantilla: banner i espai buit
 void template(int j) {
+  pushStyle();
+  textAlign(LEFT);
   background(platinum);
 
   //banner
@@ -20,12 +22,13 @@ void template(int j) {
 
   fill(255,255,255, j);
   
-  text("Mi equipo", 250 +(width- 200)/6, hBanner/2);
-  text("Pizarra", 250 +2*(width- 200)/6, hBanner/2);
-  text("Resultados", 250 +3*(width- 200)/6, hBanner/2);
-  text("Guardados", 250 +4*(width- 200)/6, hBanner/2);
-  text("Sobre nosotros", 250 +5*(width- 200)/6, hBanner/2);
+  text("Mi equipo", 250 +(width- 200)/6, hBanner/2+10);
+  text("Pizarra", 250 +2*(width- 200)/6, hBanner/2+10);
+  text("Resultados", 250 +3*(width- 200)/6, hBanner/2+10);
+  text("Guardados", 250 +4*(width- 200)/6, hBanner/2+10);
+  text("Sobre nosotros", 250 +5*(width- 200)/6, hBanner/2+10);
 
+  popStyle();
   pushStyle();
   
   rectMode(CORNER);
@@ -36,8 +39,6 @@ void template(int j) {
   goToGuardados.display();
   goToSobreNosotros.display();
   popStyle();
- // no se ni que escric pero jajaj aixo es poer es video de instagram venga fe que escriuys a super rappicdad
-
 
   //zona libre
 

@@ -48,21 +48,17 @@ class Player{
             fill(royalBlueDark);
             text(this.surname+ ", "+ this.name, 200, 100);
         popStyle();
-
         textSize(15); fill(0);
-        //text(this.day +"/"+ this.month+ "/"+ this.year, 205, 120);
     }
 
 
     void datosPersonales(){
-        //titulo
-        //falta translate con push y pop matrix
-        
         pushStyle();
             fill(blackCoral);
             //rect (width/9, 220, 300, 400, 10);
             fill(0);
             textAlign(LEFT);
+            
             pushStyle();
                 textFont(fuente2);
                 textSize(25);
@@ -96,10 +92,13 @@ class Player{
                     vertex(width/2 +100 + 250, 190);
                 endShape();
             popStyle();
-
-            text(this.day + "/" + this.month + "/" +this.year,150+160, 250);
-            text(this.telefono, 150 + 140, 300);
-            text(this.email, 100 + 200, 350);
+            
+            pushStyle();
+                textAlign(LEFT);
+                text(this.day + "/" + this.month + "/" +this.year,150+250, 250);
+                text(this.telefono, 150 + 250, 300);
+                text(this.email, 150 + 250, 350);
+            popStyle();
 
             pushStyle();
                 textFont(fuente1);
@@ -125,9 +124,9 @@ class Player{
 
         textSize(18);
 
-        text(this.numb,width/2+120, 250);
-        text(this.firstPos, width/2+120, 300);
-        text(this.secPos, width/2+380, 300);
+        text(this.numb,width/2+300, 250);
+        text(this.firstPos, width/2+300, 300);
+        text(this.secPos, width/2+300, 350);
 
         pushStyle();
             textFont(fuente1);
@@ -135,7 +134,7 @@ class Player{
             textSize(16);
             text("Número dorsal: ", width/2+150, 250);
             text("Primera posición: ", width/2 +150, 300);
-            text("Segunda posición: ",  width/2+150, 300);
+            text("Segunda posición: ", width/2+150, 350);
         popStyle();
     }
 

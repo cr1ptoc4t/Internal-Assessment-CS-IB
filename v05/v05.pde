@@ -48,6 +48,7 @@ void setup() {
   fuente1 = createFont("HKGrotesk-Bold.otf", 40);
   fuente2 = createFont("Coco-Sharp-Extrabold-trial.ttf", 40);
   fuente3 = createFont("Coco-Sharp-Heavy-Italic-trial.ttf", 40);
+  fuente4= createFont("Keiner-SemiBold.ttf", 25);
 
   nSaved = new TextField(550, 400, 200, 35);
   dSaved = new TextField(800, 450, 50, 35);
@@ -104,24 +105,20 @@ void setup() {
   noStroke();
   textAlign(CENTER);
   textSize(18);
- 
+  textFont(fuente4);
 }
 
 
 void draw() {
 
   if(frameCount<75){
-  //if(true){
-  //if(false){
     inicio();
-  
   } else if(frameCount<125){
     fill(226,226, 240, i);
     rect(0,0,width, height);
     i++;
   } else{
     template(j);
-
     pushMatrix();
       translate(marginW, hBanner+marginH);
       pantallas(j);

@@ -19,59 +19,61 @@ void p1(){
 
 void newPlayer(){
   textAlign(LEFT);
-   pushStyle();
-     image(usuario, 130, 70, 50, 50);
-     textSize(100);
-     textFont(fuente2);
-     fill(255);
-     text("Nuevo jugador", 198, 98);
-     fill(royalBlueDark);
-     text("Nuevo jugador", 200, 100);
-   popStyle();
+  pushStyle();
+    image(usuario, 130, 70, 50, 50);
+    textSize(100);
+    textFont(fuente2);
+    fill(255);
+    text("Nuevo jugador", 198, 98);
+    fill(royalBlueDark);
+    text("Nuevo jugador", 200, 100);
+  popStyle();
 
   textSize(15); fill(0);
-   pushStyle();
-     fill(blackCoral);
-     //rect (width/9, 220, 300, 400, 10);
-     fill(0);
-     textAlign(LEFT);
-     pushStyle();
-     textFont(fuente2);
-     textSize(25);
-     fill(blackCoral);
-     text("Datos personales y de contacto: " , width/10, 200);
-   popStyle();
 
   pushStyle();
-     textSize(18);
-     fill(0,0,0,0);
-     stroke(0);
-     strokeWeight(1);
-     //caja 1
-     beginShape();
-       vertex(width/10 - 5, 190);
-       vertex(width/10 - 15, 190);
-       vertex(width/10 - 15, 500);
-       vertex(width/10 + 500, 500);
-       vertex(width/10 + 500, 190);
-       vertex(width/10 + 400, 190);
-     endShape();
-           //caja 2
-     beginShape();
-       vertex(width/2 +100 - 5, 190);
-       vertex(width/2 +100 - 15, 190);
-       vertex(width/2 +100 - 15, 500);
-       vertex(width/2 +100 + 500, 500);
-       vertex(width/2 +100 + 500, 190);
-       vertex(width/2 +100 + 250, 190);
-     endShape();
-   popStyle();
+    fill(blackCoral);
+    //rect (width/9, 220, 300, 400, 10);
+    fill(0);
+    textAlign(LEFT);
+    
+    pushStyle();
+      textFont(fuente2);
+      textSize(25);
+      fill(blackCoral);
+      text("Datos personales y de contacto: " , width/10, 200);
+    popStyle();
+
+    pushStyle();
+      textSize(18);
+      fill(0,0,0,0);
+      stroke(0);
+      strokeWeight(1);
+      //caja 1
+      beginShape();
+        vertex(width/10 - 5, 190);
+        vertex(width/10 - 15, 190);
+        vertex(width/10 - 15, 500);
+        vertex(width/10 + 500, 500);
+        vertex(width/10 + 500, 190);
+        vertex(width/10 + 400, 190);
+      endShape();
+      //caja 2
+      beginShape();
+        vertex(width/2 +100 - 5, 190);
+        vertex(width/2 +100 - 15, 190);
+        vertex(width/2 +100 - 15, 500);
+        vertex(width/2 +100 + 500, 500);
+        vertex(width/2 +100 + 500, 190);
+        vertex(width/2 +100 + 250, 190);
+      endShape();
+    popStyle();
 
   pushStyle();
     textFont(fuente1);
     fill(blackCoral);
     textSize(16);
-    text("Fecha de nacimiento:           /          /        /",150, 250);
+    text("Fecha de nacimiento:           /          /        /", 200, 250);
     text("Telefono personal:", 200, 300);
     text("Correo electrónico: ",200, 350);
     text("DNI: ",200, 400);
@@ -108,28 +110,3 @@ void newPlayer(){
   popStyle();
 
 }
-/*void table(){
-  Table t;
-
-// Dimensions de la taula
-float tableW = 800, tableH = 300;
-
-// Número de files (capçalera inclosa) i columnes de la taula
-int files = 6, columnes = 5;
-
-// Títols de les columnes 
-String[] headers = {"Id", "Nom", "Llinatges", "Edat", "Sexe"};
-
-// Amplades de les columnes
-float[] colWidths = {10, 20, 40, 10, 20};
-
-// Dades de la taula
-String[][] info = {
-                     {"1", "Pere", "Soler Miralles", "33", "Home"},
-                     {"2", "Maria", "Garcia Lopez", "25", "Dona"},
-                     {"3", "Joan", "Melis Cabrer", "47", "Home"},
-                     {"4", "Bel", "Riera Mates", "52", "Dona"},
-                     {"5", "Jose", "Perez Galdós", "37", "Home"},
-                  };
-}
-*/

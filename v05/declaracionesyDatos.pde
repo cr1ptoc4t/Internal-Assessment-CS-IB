@@ -1,6 +1,6 @@
 PImage img1, img2, img3, cono, usuario;
 
-PFont fuente1, fuente2, fuente3;
+PFont fuente1, fuente2, fuente3, fuente4;
 
 Button goToMiEquipo;
 Button goToPizarra;
