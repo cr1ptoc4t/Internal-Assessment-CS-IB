@@ -84,12 +84,12 @@ void setup() {
   s5_2 = new TextField(x, y, 75, 25);
 */
 
-  r1 = new Resultado(width/6, height/2 - 50, 0);
-  r2 = new Resultado(3*width/6,height/2 - 50 , 1);
-  r3 = new Resultado(5*width/6, height/2 - 50, 2);
-  r4 = new Resultado(width/6, height/2 - 50, 3);
-  r5 = new Resultado(3*width/6,height/2 - 50 , 4);
-  r6 = new Resultado(5*width/6, height/2 - 50, 5);
+  r1 = new Resultado((width+ 20)/6, height/2 - 50, 0);
+  r2 = new Resultado(3*(width+20)/6,height/2 - 50 , 1);
+  r3 = new Resultado(5*(width+20)/6, height/2 - 50, 2);
+  r4 = new Resultado((width+20)/6, height/2 - 50, 3);
+  r5 = new Resultado(3*(width+20)/6,height/2 - 50 , 4);
+  r6 = new Resultado(5*(width+20)/6, height/2 - 50, 5);
 
   //array de resultados para la posterior recorrimiento
   Resultado [] arrResultados = {r1, r2, r3, r4, r5, r6};

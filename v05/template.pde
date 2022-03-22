@@ -5,28 +5,29 @@ color c4;
 //creació de la plantilla: banner i espai buit
 void template(int j) {
   pushStyle();
-  textAlign(LEFT);
-  background(platinum);
+    textSize(25);
+    textAlign(LEFT);
+    background(platinum);
 
-  //banner
-  fill(blackCoral, j);
-  noStroke();
-  rect(marginW, marginH, width-2*marginW, hBanner);
+    //banner
+    fill(blackCoral, j);
+    noStroke();
+    rect(marginW, marginH, width-2*marginW, hBanner);
 
-  c3 = color(251, 54, 64, j);
-  c4 = color(10, 36, 99, j);
+    c3 = color(251, 54, 64, j);
+    c4 = color(10, 36, 99, j);
 
-  if(pantalla!=0){
-    logoDrawing(160, 44, 30, "keep the ball flying", c3, c4);
-  }
+    if(pantalla!=0){
+      logoDrawing(160, 44, 30, "keep the ball flying", c3, c4);
+    }
 
-  fill(255,255,255, j);
-  
-  text("Mi equipo", 250 +(width- 200)/6, hBanner/2+10);
-  text("Pizarra", 250 +2*(width- 200)/6, hBanner/2+10);
-  text("Resultados", 250 +3*(width- 200)/6, hBanner/2+10);
-  text("Guardados", 250 +4*(width- 200)/6, hBanner/2+10);
-  text("Sobre nosotros", 250 +5*(width- 200)/6, hBanner/2+10);
+    fill(255,255,255, j);
+    
+    text("Mi equipo", 250 +(width- 200)/6, hBanner/2+10);
+    text("Pizarra", 250 +2*(width- 200)/6, hBanner/2+10);
+    text("Resultados", 250 +3*(width- 200)/6, hBanner/2+10);
+    text("Guardados", 250 +4*(width- 200)/6, hBanner/2+10);
+    text("Sobre nosotros", 250 +5*(width- 200)/6, hBanner/2+10);
 
   popStyle();
   pushStyle();

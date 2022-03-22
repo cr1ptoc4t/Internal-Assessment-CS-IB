@@ -3,6 +3,3 @@ void resultados(){
     prev.display();
     next.display();
 }
-
-void nuevoResultado(){
-}

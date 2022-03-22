@@ -20,6 +20,8 @@ void p2(){
   p.checkPinsMotion();
   checkChanges();
   
+  textAlign(CENTER);
+
   if (entrenamiento.getSelected()){
     text("TRAINING", width/2, height/2);
     

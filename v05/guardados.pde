@@ -9,7 +9,7 @@ void guardados(){
 
 void fondo(){
     if(entrenamiento.getSelected()){
-        fill(150);
+        fill(120);
     } else{
         fill(100);
     }
@@ -17,7 +17,7 @@ void fondo(){
     stroke(0);
     for(int i=0; i<4; i+=1){
         for(int j=0; j<3; j+=1){
-            rect( 60 + i*(width/4), 100 + j*(20 + height/4), 300, 200, 5);
+            rect( 30 + i*(width/4), 75 + j*(20 + height/4), 350, 250, 5);
             //println(i+" "+j);
         }
     }
