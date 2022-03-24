@@ -48,7 +48,7 @@ void setup() {
   fuente1 = createFont("HKGrotesk-Bold.otf", 40);
   fuente2 = createFont("Coco-Sharp-Extrabold-trial.ttf", 40);
   fuente3 = createFont("Coco-Sharp-Heavy-Italic-trial.ttf", 40);
-  fuente4= createFont("Keiner-SemiBold.ttf", 25);
+  fuente4 = createFont("Keiner-SemiBold.ttf", 25);
 
   nSaved = new TextField(550, 400, 200, 35);
   dSaved = new TextField(800, 450, 50, 35);
