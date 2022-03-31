@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -31,13 +32,23 @@ public class Main extends PApplet {
 
         // Número de files d'una taula
         int n = getNumRowsTaula("equipo");
-        println("\nFiles equipo:"+n);
+        println("\nFiles equips:"+n);
+        /*
 
-        // Dades d'una taula (equipo)
-        String[][] dades1 = getInfoTaulaEquipo();
-        println("\nDades Taula Equipo:");
+        // Dades d'una taula (unitat)
+        String[][] dades1 = getInfoTaulaUnitat();
+        println("\nDades Taula Unitat:");
         printArray2D(dades1);
 
+        // Insereix la Unitat
+        //insertUnitat(4, "Programació Orientada");
+
+        // Update Unitat
+        updateUnitat(4, "POO");
+
+        // Delete Unitat
+        deleteUnitat("POO");
+*/
     }
 
     // Connexió a la BBDD
@@ -55,7 +66,7 @@ public class Main extends PApplet {
     // Retorna el número de files d'una taula
     public int getNumRowsTaula(String nomTaula){
         try {
-            ResultSet rs = query.executeQuery( "SELECT COUNT(*) AS n FROM "+ nomTaula );
+            ResultSet rs = query.executeQuery( "SELECT COUNT(*) AS n FROM "+ nomTaula);
             rs.next();
             int numRows = rs.getInt("n");
             return numRows;
@@ -67,16 +78,16 @@ public class Main extends PApplet {
     }
 
     // Retorna les dades d'una taula
-    public String[][] getInfoTaulaEquipo(){
-        int numFiles = getNumRowsTaula("equipo");
-        int numCols  = 3;
+    public String[][] getInfoTaulaUnitat(){
+        int numFiles = getNumRowsTaula("unitat");
+        int numCols  = 2;
         String[][] info = new String[numFiles][numCols];
         try {
-            ResultSet rs = query.executeQuery( "SELECT * FROM equipo");
+            ResultSet rs = query.executeQuery( "SELECT * FROM unitat");
             int nr = 0;
             while (rs.next()) {
-                info[nr][0] = String.valueOf(rs.getInt("id"));
-                info[nr][1] = rs.getString("nombre");
+                info[nr][0] = String.valueOf(rs.getInt("numero"));
+                info[nr][1] = rs.getString("nom");
                 nr++;
             }
             return info;
@@ -94,6 +105,47 @@ public class Main extends PApplet {
                 print(dades[f][c]+" \t ");
             }
             println();
+        }
+    }
+
+
+
+    // Inserta noves dades a una taula
+    public void insertUnitat(int i, String n){
+        try {
+            String q = "INSERT INTO unitat (numero, nom) VALUES ('"+i+"', '"+n+"')";
+            println("INSERT: "+q);
+            query.execute( q);
+            println("INSERT OK :)");
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    // Actualitza noves dades a una taula
+    public void updateUnitat(int id, String n){
+        try {
+            String q = "UPDATE unitat SET nom='"+n+"' WHERE numero='"+id+"'";
+            println("UPDATE: "+q);
+            query.execute( q);
+            println("UPDATE OK :)");
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    // Elimina dades de la taula
+    public void deleteUnitat(String n){
+        try {
+            String q = "DELETE FROM unitat WHERE nom='"+n+"'";
+            println("DELETE: "+q);
+            query.execute( q);
+            println("DELETE OK :)");
+        }
+        catch(Exception e) {
+            System.out.println(e);
         }
     }
 

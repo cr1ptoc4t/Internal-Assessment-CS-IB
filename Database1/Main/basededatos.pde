@@ -4,41 +4,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Main extends PApplet {
 
-    String user     = "admin";
-    String pass     = "12345";
-    String database = "voley";
+  String user     = "admin";
+  String pass     = "12345";
+  String database = "voley";
 
-    Connection con;
-    Statement query;
-
-    public static void main(String[] args) {
-        PApplet.main("Main", args);
-    }
-
-    public void settings(){
-        size(400, 400);
-        smooth(10);
-    }
-
-    public void setup(){
-
-        size(400, 400);
-
-        // Connecta amb BBDD
-        connectBBDD();
-
-        // Número de files d'una taula
-        int n = getNumRowsTaula("equipo");
-        println("\nFiles equipo:"+n);
-
-        // Dades d'una taula (equipo)
-        String[][] dades1 = getInfoTaulaEquipo();
-        println("\nDades Taula Equipo:");
-        printArray2D(dades1);
-
-    }
+  Connection con;
+  Statement query;
 
     // Connexió a la BBDD
     public void connectBBDD(){
@@ -67,16 +39,16 @@ public class Main extends PApplet {
     }
 
     // Retorna les dades d'una taula
-    public String[][] getInfoTaulaEquipo(){
-        int numFiles = getNumRowsTaula("equipo");
-        int numCols  = 3;
+    public String[][] getInfoTaulaUnitat(){
+        int numFiles = getNumRowsTaula("unitat");
+        int numCols  = 2;
         String[][] info = new String[numFiles][numCols];
         try {
-            ResultSet rs = query.executeQuery( "SELECT * FROM equipo");
+            ResultSet rs = query.executeQuery( "SELECT * FROM unitat");
             int nr = 0;
             while (rs.next()) {
-                info[nr][0] = String.valueOf(rs.getInt("id"));
-                info[nr][1] = rs.getString("nombre");
+                info[nr][0] = String.valueOf(rs.getInt("numero"));
+                info[nr][1] = rs.getString("nom");
                 nr++;
             }
             return info;
@@ -97,7 +69,43 @@ public class Main extends PApplet {
         }
     }
 
-    public void draw(){
+
+
+    // Inserta noves dades a una taula
+    public void insertPosicion( String n){
+        try {
+            String q = "INSERT INTO posicion (id,nombre) VALUES (NULL, '"+n+"')";
+            println("INSERT: "+q);
+            query.execute( q);
+            println("INSERT OK :)");
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
     }
 
-}
+    // Actualitza noves dades a una taula
+    public void updateUnitat(int id, String n){
+        try {
+            String q = "UPDATE unitat SET nom='"+n+"' WHERE numero='"+id+"'";
+            println("UPDATE: "+q);
+            query.execute( q);
+            println("UPDATE OK :)");
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    // Elimina dades de la taula
+    public void deleteUnitat(String n){
+        try {
+            String q = "DELETE FROM unitat WHERE nom='"+n+"'";
+            println("DELETE: "+q);
+            query.execute( q);
+            println("DELETE OK :)");
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
+    }
