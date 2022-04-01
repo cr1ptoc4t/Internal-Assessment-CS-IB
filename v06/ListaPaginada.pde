@@ -1,6 +1,5 @@
 class ListaPaginada{
     Resultado[] r;
-    RoundButton bPrev, bNext;
     int currentRes=0;
     int numRes =0;
     int numResVisibles = 3;
@@ -44,17 +43,6 @@ class ListaPaginada{
         } else{
             prev.setEnabled(true);
         }
-        //bPrev.display();
-        //bNext.display();
-    }
-
-
-    void setButtons(String img1, String img2) {
-        PImage imgPrev = loadImage(img1);
-        bPrev = new RoundButton(imgPrev, x, y + h/2, 30);
-
-        PImage imgNext = loadImage(img2);
-        bNext = new RoundButton(imgNext, x + w + 30, y + h/2, 30);
     }
 
     void next() { this.currentRes++;}

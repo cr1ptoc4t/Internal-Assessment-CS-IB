@@ -2,7 +2,8 @@
   void setup() {
 
     connectBBDD();
-    insertPosicion("P2");
+    getInfoTablaJugadores();
+
     // creacion de objetos
     p = new Pines((float)50, (float)280, (float)700,(float)700, (float)100, (float)width-100);
 
@@ -38,7 +39,7 @@
     // Creació de la taula
     t = new Table(files, columnes);
     t.setHeaders(headers);
-    t.setData(info);
+    t.setData(informacionJugadores);
     t.setColumnWidths(colWidths);
 
     //creació jugadors
@@ -71,23 +72,6 @@
 
     ndorsal   = new TextField(946, 315 -(int)hBanner, alturaCelda, alturaCelda);
 
-
-  // s1 = new TextField(x, y, 75, 25);
-  // s2 = new TextField(x, y, 75, 25);
-
-    /*
-    s1_1 = new TextField(x, y, 75, 25);
-    s1_2 = new TextField(x, y, 75, 25);
-    s2_1 = new TextField(x, y, 75, 25);
-    s2_2 = new TextField(x, y, 75, 25);
-    s3_1 = new TextField(x, y, 75, 25);
-    s3_2 = new TextField(x, y, 75, 25);
-    s4_1 = new TextField(x, y, 75, 25);
-    s4_2 = new TextField(x, y, 75, 25);
-    s5_1 = new TextField(x, y, 75, 25);
-    s5_2 = new TextField(x, y, 75, 25);
-  */
-
     r1 = new Resultado((width+ 20)/6, height/2 - 50, 0);
     r2 = new Resultado(3*(width+20)/6,height/2 - 50 , 1);
     r3 = new Resultado(5*(width+20)/6, height/2 - 50, 2);
@@ -101,7 +85,6 @@
     cono1 = new Cone (width-45, height - hBanner - 70);
 
     e = new ListaPaginada(arrResultados,10, 10, width- 100, height*9/10);
-    e.setButtons("bPrev.png", "bNext.png");
 
     //size(1200, 780);
     size(1300,900);

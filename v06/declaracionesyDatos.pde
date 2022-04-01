@@ -69,16 +69,16 @@ boolean halfB = false;
 boolean training = true;
 
 // Número de files (capçalera inclosa) i columnes de la taula
-int files = 18, columnes = 7;
+int files = 18, columnes = 4;
 
 // Títols de les columnes 
-String[] headers = {"Dorsal", "Nombre", "Apellidos", "Edad", "Sexo", "1ª p", "2ª p"};
+String[] headers = {"Dorsal", "Nombre", "Equipo", "posición"};
 String[] jugadores = {"", "J1", "J2", "J3", "J4", "J5", "J6", "J7", "J8"};
 int nPlayers =jugadores.length;
 
 // Amplades de les columnes
 //han de sumar 100
-float[] colWidths = {10, 20, 30, 10, 15, 7.5, 7.5};
+float[] colWidths = {20,40,20,20};
 float[] colWidthsPlayers = {40, 60/8, 60/8, 60/8, 60/8,60/8, 60/8, 60/8, 60/8};
 // Dades de la taula
 String[][] info = {
@@ -100,6 +100,8 @@ String[][] info = {
     {"16", "Bel", "Riera Mates",    "52", "D", "Lib", "Col"},
     {"17", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},            
 };
+
+String[][] informacionJugadores;
 
 String [] habilidades = {"colocación positiva", "colocación", "finta segundo toque",
                       "ace", "bloqueo", "finta", "remate", "Doble Positiva",
