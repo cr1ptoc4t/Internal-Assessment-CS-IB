@@ -17,15 +17,13 @@ class Table {
   }
   
   // Setters
-  
   void setHeaders(String[] h){
     this.tableHeaders = h;
   }
   
   void setData(String[][] d){
     this.tableData = d;
-    this.numTotalPages = d.length / (this.numRows-1);
-
+    this.numTotalPages = longInfo / (this.numRows-1);
   }
   
   void setValueAt(String value, int nr, int nc){

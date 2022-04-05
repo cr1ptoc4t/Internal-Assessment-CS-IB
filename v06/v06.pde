@@ -36,7 +36,7 @@
 
     guardado1      =  new Guardado(img1, "k1", 17, 04, 2021, 125, 100);
 
-    // Creació de la taula
+    // Creació de la taula -- no funciona
     t = new Table(files, columnes);
     t.setHeaders(headers);
     t.setData(informacionJugadores);

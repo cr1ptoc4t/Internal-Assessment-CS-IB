@@ -39,7 +39,7 @@ public int getNumRowsTaula(String nomTaula){
 // Retorna les dades d'una taula
 public String[][] getInfoTablaJugadores(){
     int numFilas = getNumRowsTaula("jugador");
-    int numCols  = 3;
+    int numCols  = 4;
     
     String[][] informacionJugadores = new String[numFilas][numCols];
     try {
@@ -48,7 +48,10 @@ public String[][] getInfoTablaJugadores(){
         while (rs.next()) {
             informacionJugadores[nr][0] = rs.getString("nombre");
             informacionJugadores[nr][1] = String.valueOf(rs.getInt("dorsal"));
-            //informacionJugadores[nr][2] = rs.getString("posicion");
+            informacionJugadores[nr][2] = String.valueOf(rs.getInt("equipo"));
+            informacionJugadores[nr][3] = String.valueOf(rs.getInt("posicion_id"));
+
+
             nr++;
             /*
             SELECT j.nombre AS nombre, j.dorsal AS dorsal, e.nombre AS equipo, p.nombre AS posicion 

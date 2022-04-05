@@ -60,6 +60,7 @@ TextField nSaved, dSaved, mSaved, ySaved;
 //TextField r1, r2, s1, s2;
 TextField s1_1, s1_2, s2_1, s2_2, s3_1, s3_2, s4_1, s4_2, s5_1, s5_2;
 
+int longInfo;
 
 String hability1, hability2, hability3, hability4, hability5;
 
@@ -79,7 +80,7 @@ int nPlayers =jugadores.length;
 // Amplades de les columnes
 //han de sumar 100
 float[] colWidths = {20,40,20,20};
-float[] colWidthsPlayers = {40, 60/8, 60/8, 60/8, 60/8,60/8, 60/8, 60/8, 60/8};
+float[] colWidthsPlayers = {20,40,20,20};
 // Dades de la taula
 String[][] info = {
     {"1", "Pere", "Soler Miralles", "33", "H","Lib", "Col"},                 
