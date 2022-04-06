@@ -5,6 +5,9 @@ void guardados(){
         logoDrawing(width/2, 60, 50,"últimas estrategias de partido guardadas", color(0,0,0,0), c4);
     }
     fondo();
+
+    guardado1.setXY(30,155- hBanner);
+    guardado1.display();
 }
 
 void fondo(){

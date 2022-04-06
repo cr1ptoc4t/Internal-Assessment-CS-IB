@@ -1,4 +1,4 @@
-PImage img1, img2, img3, cono, usuario;
+PImage img0, img1, img2, img3, cono, usuario;
 
 PFont fuente1, fuente2, fuente3, fuente4;
 
@@ -29,6 +29,7 @@ Select mediaPista, pistaEntera;
 Guardado guardado1;
 Guardado guardado2;
 
+
 //tipos enumerados
 enum pantallas {
   START, MIEQUIPO, PIZARRA, RESULTADOS, GUARDADOS, SOBRENOSOTROS
@@ -53,6 +54,10 @@ int j=0;
 int k=0;
 int nConos=0;
 
+float ancho= 500;
+float alto = ancho*0.62;
+float margenVertical = 110;
+
 boolean logged = false;
 TextField nombre,apellidos, telefono, dni, dayn, monthn, yearn,correo, ndorsal;
 TextField nSaved, dSaved, mSaved, ySaved;
@@ -70,17 +75,17 @@ boolean halfB = false;
 boolean training = true;
 
 // Número de files (capçalera inclosa) i columnes de la taula
-int files = 18, columnes = 4;
+int files = 20, columnes = 3;
 
 // Títols de les columnes 
-String[] headers = {"Dorsal", "Nombre", "Equipo", "posición"};
+String[] headers = {"Dorsal", "Nombre", "Posición"};
 String[] jugadores = {"", "J1", "J2", "J3", "J4", "J5", "J6", "J7", "J8"};
 int nPlayers =jugadores.length;
 
 // Amplades de les columnes
 //han de sumar 100
-float[] colWidths = {20,40,20,20};
-float[] colWidthsPlayers = {20,40,20,20};
+float[] colWidths = {10,70,20};
+float[] colWidthsPlayers = {20,40,40};
 // Dades de la taula
 String[][] info = {
     {"1", "Pere", "Soler Miralles", "33", "H","Lib", "Col"},                 

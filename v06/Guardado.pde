@@ -6,18 +6,22 @@ class Guardado{
     float x, y, w, h;
 
 
-    Guardado(PImage img,String titulo, int day, int month, int year,float x, float y){
+    Guardado(PImage img,String titulo, int day, int month, int year){
         
         this.day = day; 
         this.month = month;
         this.year = year;
         this.titulo = titulo;
-        this.x = x;
-        this.y = y;
+        this.x = 0;
+        this.y = 0;
         this.img = img;
-        w = 300;
-        h= 200;
+        w = 350;
+        h = 250;
 
+    }
+    void setXY(float a, float b){
+        x = a;
+        y = b;
     }
 
     void display(){

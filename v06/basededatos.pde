@@ -39,25 +39,18 @@ public int getNumRowsTaula(String nomTaula){
 // Retorna les dades d'una taula
 public String[][] getInfoTablaJugadores(){
     int numFilas = getNumRowsTaula("jugador");
-    int numCols  = 4;
+    int numCols  = 3;
     
     String[][] informacionJugadores = new String[numFilas][numCols];
     try {
-        ResultSet rs = query.executeQuery( "SELECT * FROM jugador");
+        ResultSet rs = query.executeQuery( "SELECT j.nombre AS nombre, j.dorsal AS dorsal, p.nombre AS posicion FROM jugador j, posicion p WHERE j.posicion_id=p.id");
         int nr = 0;
         while (rs.next()) {
-            informacionJugadores[nr][0] = rs.getString("nombre");
-            informacionJugadores[nr][1] = String.valueOf(rs.getInt("dorsal"));
-            informacionJugadores[nr][2] = String.valueOf(rs.getInt("equipo"));
-            informacionJugadores[nr][3] = String.valueOf(rs.getInt("posicion_id"));
-
+            informacionJugadores[nr][1] = rs.getString("nombre");
+            informacionJugadores[nr][0] = String.valueOf(rs.getInt("dorsal"));
+            informacionJugadores[nr][2] = rs.getString("posicion");
 
             nr++;
-            /*
-            SELECT j.nombre AS nombre, j.dorsal AS dorsal, e.nombre AS equipo, p.nombre AS posicion 
-            FROM jugador j, equipo e, posicion p 
-            WHERE j.equipo=e.id AND j.posicion_id=p.id
-            */
         }
         printArray2D(informacionJugadores);
         return informacionJugadores;

@@ -24,6 +24,7 @@ class Table {
   void setData(String[][] d){
     this.tableData = d;
     this.numTotalPages = longInfo / (this.numRows-1);
+    println("d");
   }
   
   void setValueAt(String value, int nr, int nc){
@@ -91,7 +92,11 @@ class Table {
             text(tableHeaders[c], xCol + 10, y + (r+1)*rowHeight - 10);
           }
           else{
-            text(tableData[r-1][c], xCol + 10, y + (r+1)*rowHeight - 10);
+            int k = (numRows-1)*numPage + (r-1);
+            //println(tableData.length);
+            if(k<this.tableData.length){
+              text(tableData[k][c], xCol + 10, y + (r+1)*rowHeight - 10);
+            }
           }
           xCol += w*columnWidths[c]/100.0;
         

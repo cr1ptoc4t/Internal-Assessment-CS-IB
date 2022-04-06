@@ -2,11 +2,12 @@
   void setup() {
 
     connectBBDD();
-    getInfoTablaJugadores();
+    String [][] infoJugadores = getInfoTablaJugadores();
 
     // creacion de objetos
     p = new Pines((float)50, (float)280, (float)700,(float)700, (float)100, (float)width-100);
 
+    img0 = loadImage("pizarra.jpg");
     img1 = loadImage("sobreNosotros1.jpg");
     img2 = loadImage("sobreNosotros2.jpg");
     img3 = loadImage("sobreNosotros3.jpg");
@@ -34,12 +35,12 @@
     mediaPista     =  new Select("Media pista",       50, 150 , false,  20);
     pistaEntera    =  new Select("Pista entera",      50, 180 , true,   20);
 
-    guardado1      =  new Guardado(img1, "k1", 17, 04, 2021, 125, 100);
+    guardado1      =  new Guardado(img0, "k1", 17, 04, 2021);
 
     // Creació de la taula -- no funciona
     t = new Table(files, columnes);
     t.setHeaders(headers);
-    t.setData(informacionJugadores);
+    t.setData(infoJugadores);
     t.setColumnWidths(colWidths);
 
     //creació jugadors
