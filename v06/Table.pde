@@ -1,10 +1,10 @@
 class Table {
 
-  String[] tableHeaders;   // Títols de les columnes
-  String[][] tableData;    // Dades de la taula
-  float[] columnWidths;    // Amplades de les columnes
+  String[] tableHeaders;   // Títulos de las columnas
+  String[][] tableData;    // Datos de la tabla
+  float[] columnWidths;    // Anchura de las columnas
   
-  int numCols, numRows;  // Número de files i columnes
+  int numCols, numRows;  // Número de filas y columnas
   
   int numPage;
   int numTotalPages;
@@ -24,7 +24,6 @@ class Table {
   void setData(String[][] d){
     this.tableData = d;
     this.numTotalPages = longInfo / (this.numRows-1);
-    println("d");
   }
   
   void setValueAt(String value, int nr, int nc){
@@ -35,6 +34,8 @@ class Table {
     this.columnWidths = w;
   }
   
+
+  //cambio de página
   void nextPage(){
     if(this.numPage<this.numTotalPages){
       this.numPage++;
@@ -47,7 +48,7 @@ class Table {
     }
   }
 
-  // Dibuixa taula
+  // Dibujar tabla
   void display(float x, float y, float w, float h){
 
     pushStyle();
@@ -59,7 +60,7 @@ class Table {
       fill(blackCoral); stroke(0);strokeWeight(1);
       rect(x, y, w, rowHeight);
       
-      // Dibuixa files
+      // Dibujar filas
       stroke(0);
       
       for(int r = 1; r <numRows; r++){
@@ -72,7 +73,7 @@ class Table {
         line(x, y + r*rowHeight, x + w, y + r*rowHeight);
       }
       
-      // Dibuixa Columnes
+      // Dibujar columnas
       float xCol = x;
       
       for(int c = 0; c<numCols; c++){
@@ -80,7 +81,7 @@ class Table {
         line(xCol, y, xCol, y + h);
       }
       
-      // Dibuixa textos
+      // Dibujar textos
       fill(0); textSize(24); textAlign(LEFT);
       
       for(int r = 0; r< numRows; r++){
@@ -93,7 +94,6 @@ class Table {
           }
           else{
             int k = (numRows-1)*numPage + (r-1);
-            //println(tableData.length);
             if(k<this.tableData.length){
               text(tableData[k][c], xCol + 10, y + (r+1)*rowHeight - 10);
             }

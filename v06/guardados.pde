@@ -1,5 +1,4 @@
 void guardados(){
-    logoDrawing(width/2, 60, 50,"guardados", color(0,0,0,0), c4);
     fondo();
 
     guardado1.setXY(30,155- hBanner);

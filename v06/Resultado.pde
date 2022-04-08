@@ -3,56 +3,56 @@ class Resultado{
     int nPartido;
 
     String contrario;
-    int day, month, year;
+    String fecha;
 
     // resultado del partido. equipos 1 y 2
-    int r1;
-    int r2;
+    String r1;
+    String r2;
 
     //set 1
-    int s1_1;
-    int s1_2;
+    String s1_1;
+    String s1_2;
 
     //set 2 
-    int s2_1;
-    int s2_2;
+    String s2_1;
+    String s2_2;
     
     //set 3
-    int s3_1;
-    int s3_2;
+    String s3_1;
+    String s3_2;
 
     //set 4
-    int s4_1;
-    int s4_2;
+    String s4_1;
+    String s4_2;
 
     //set 5
-    int s5_1;
-    int s5_2;
+    String s5_1;
+    String s5_2;
 
     Resultado(float x, float y, int nPartido){
         this.x = x;
         this.y = y;
 
         this.nPartido = nPartido;
-        this.contrario = equipos[nPartido];
+        this.contrario = infoPartido[nPartido][3];
         
-        this.day  = fecha[nPartido][0];
-        this.month= fecha[nPartido][1];
-        this.year = fecha[nPartido][2];
+        this.fecha  = formataFechaEsp(infoPartido[nPartido][1]);
         
-        this.r1 = resultados[nPartido][0];
-        this.r2 = resultados[nPartido][1];
-        this.s1_1 = resultados[nPartido][2];
-        this.s1_2 = resultados[nPartido][3];
-        this.s2_1 = resultados[nPartido][4];
-        this.s2_2 = resultados[nPartido][5];
-        this.s3_1 = resultados[nPartido][6];
-        this.s3_2 = resultados[nPartido][7];
-        this.s4_1 = resultados[nPartido][8];
-        this.s4_2 = resultados[nPartido][9];
-        this.s5_1 = resultados[nPartido][10];
-        this.s5_2 = resultados[nPartido][11];
+        this.r1 = infoPartido[nPartido][5];
+        this.r2 = infoPartido[nPartido][6];
+
+        this.s1_1 = infoPartido[nPartido][7];
+        this.s1_2 = infoPartido[nPartido][8];
+        this.s2_1 = infoPartido[nPartido][9];
+        this.s2_2 = infoPartido[nPartido][10];
+        this.s3_1 = infoPartido[nPartido][11];
+        this.s3_2 = infoPartido[nPartido][12];
+        this.s4_1 = infoPartido[nPartido][13];
+        this.s4_2 = infoPartido[nPartido][14];
+        this.s5_1 = infoPartido[nPartido][15];
+        this.s5_2 = infoPartido[nPartido][16];
     }
+	
 
 
     void setX (float x){
@@ -63,8 +63,17 @@ class Resultado{
         this.y = y;
     }
 
+    void checkContrario(){
+		println(infoPartido[1][5]);
+        if(infoPartido[nPartido][4]!=infoPartido[4][4] ){
+            this.contrario = infoPartido[nPartido][4];
+        } else{
+            this.contrario = infoPartido[nPartido][3];
+        }
+    }
 
     void display(){
+        checkContrario();
         pushStyle();
             rectMode(CENTER);
             fill(150);
@@ -86,33 +95,32 @@ class Resultado{
 
                     textSize(75);
                     fill(redSalsa);
-                    text(contrario, x-2, y-2, 380);
+                    
+                    text(contrario, x-2, y+ 40-2, 500, 300);
                     fill(255);
-                    text(contrario, x, y, 380);
+                    text(contrario, x, y+ 40, 500, 300);
                     fill(royalBlueDark);
-                    text(contrario, x+2, y+2, 380);
+                    text(contrario, x+2, y+ 40+2, 500, 300);
                     
                     textFont(fuente1);
                     textSize(15);
                     fill(255);
-                    text(fecha[nPartido][0] + "/"+fecha[nPartido][1]+"/"+ fecha[nPartido][2],  x, y- 350, 380);
+                    text(fecha,  x, y- 350, 380);
                     textSize(12);
                     textAlign(CENTER);
                     
-                    //encadenamiento de sets en funcion del numero de sets:
+                    // Encadenamiento de sets en funcion del numero de sets:
                     sets = s1_1+"-"+s1_2+"/"+s2_1+"-"+s2_2+"/"+s3_1+"-"+s3_2;
 
-                    if(r1+r2>=4){
+                    /*
+                    if(infoPartido[nPartido][5]+infoPartido[nPartido][6]>=4){
                         sets = sets + "/" + s4_1 + "-" + s4_2;
-                        
-                        if(r1+r2==5){
+                        if(infoPartido[nPartido][5]+infoPartido[nPartido][6]==5){
                             sets = sets + "/" + s5_1 + "-" + s5_2;
                         }
                     }
-                    
-                    
+                    */
                     text(sets , x, y + 130, 380);
-                    
                 popStyle();
         popStyle();
     }

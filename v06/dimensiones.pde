@@ -2,6 +2,11 @@ float logoW = 150 ;
 
 float hBanner = 80;
 
+
+String sets;
+int h  = 314 - (int)hBanner;
+int alturaCelda=20;
+
 float marginW = 0;
 float marginH = 0;
 

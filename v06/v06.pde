@@ -3,6 +3,8 @@
 
     connectBBDD();
     String [][] infoJugadores = getInfoTablaJugadores();
+    String [][] infoEquipo    = getInfoTablaEquipo();
+    infoPartido   = getInfoTablaPartido();
 
     // creacion de objetos
     p = new Pines((float)50, (float)280, (float)700,(float)700, (float)100, (float)width-100);
@@ -78,9 +80,10 @@
     r4 = new Resultado((width+20)/6, height/2 - 50, 3);
     r5 = new Resultado(3*(width+20)/6,height/2 - 50 , 4);
     r6 = new Resultado(5*(width+20)/6, height/2 - 50, 5);
+    r7 = new Resultado((width+20)/6, height/2 - 50, 6);
 
     //array de resultados para la posterior recorrimiento
-    Resultado [] arrResultados = {r1, r2, r3, r4, r5, r6};
+    Resultado [] arrResultados = {r1, r2, r3, r4, r5, r6,r7};
 
     cono1 = new Cone (width-45, height - hBanner - 70);
 

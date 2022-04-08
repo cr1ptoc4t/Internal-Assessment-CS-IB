@@ -2,6 +2,7 @@ PImage img0, img1, img2, img3, cono, usuario;
 
 PFont fuente1, fuente2, fuente3, fuente4;
 
+
 Button goToMiEquipo;
 Button goToPizarra;
 Button goToResultados;
@@ -63,13 +64,9 @@ float[] colWidths = {10,70,20};
 float[] colWidthsPlayers = {20,40,40};
 
 String[][] informacionJugadores;
+String [][] infoPartido;
 
-String [] habilidades = {"colocación positiva", "colocación", "finta segundo toque",
-                      "ace", "bloqueo", "finta", "remate", "Doble Positiva",
-                      "Positiva","Negativa","Doble negativa"};
-
-
-Resultado r1, r2, r3, r4, r5,r6;
+Resultado r1, r2, r3, r4, r5, r6, r7;
 
 // tu equipo - equipo contrario - set 1 equipo- set 1equipo contrario - set 2 equipo...
 int [][] resultados  = {
@@ -87,10 +84,6 @@ int [][] resultados  = {
     {1, 3, 25, 19, 22, 25, 24, 26, 22, 25, 0, 0},
 };
 String [] equipos = {"Equipo A", "Equipo B", "Equipo C","Equipo D", "Equipo E", "Equipo F","Equipo G", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo X", "Equipo Y", "Equipo Z"};
-
-String sets;
-int h  = 314 - (int)hBanner;
-int alturaCelda=20;
 
 //formato DD/MM/AAAA
 int[][] fecha={

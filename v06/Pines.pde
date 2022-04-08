@@ -14,6 +14,7 @@ class Pines {
     this.h = h;
     this.xPin1= xPin1;
     this.xPin2 = xPin2;
+    
     // Crea 5 pins (Equipo 1)
     pins1 = new Pin[6];
     String txt;

@@ -2,7 +2,7 @@ class ListaPaginada{
     //declaración de variables a usar
     Resultado[] r;
     int currentRes=0;
-    int numRes =0;
+    int numRes;
     int numResVisibles = 3;
     float x, y, w, h;
 
@@ -13,6 +13,7 @@ class ListaPaginada{
         this.y = y;
         this.w = w;
         this.h = h;
+        numRes = r.length;
     }
 
     // método para dibujar la lista
