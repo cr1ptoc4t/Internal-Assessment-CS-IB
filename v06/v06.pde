@@ -13,6 +13,8 @@
     img3 = loadImage("sobreNosotros3.jpg");
     usuario = loadImage("userIcon.png");
 
+
+    //botones
     goToMiEquipo      =  new Button("", 150 + 1*(width- 120)/6, hBanner/5, 150 + 2*(width- 120)/6, hButton, false);
     goToPizarra       =  new Button("", 150 + 2*(width- 120)/6, hBanner/5, 150 + 3*(width- 120)/6, hButton, false);
     goToResultados    =  new Button("", 150 + 3*(width- 120)/6, hBanner/5, 150 + 4*(width- 120)/6, hButton, false);
@@ -60,9 +62,6 @@
     dSaved = new TextField(800, 450, 50, 35);
     mSaved = new TextField(870, 450, 50, 35);
     ySaved = new TextField(940, 450, 50, 35);
-
-    int h  = 314 - (int)hBanner;
-    int alturaCelda=20;
 
     dayn      = new TextField(400, h, 3/2*alturaCelda, alturaCelda);
     monthn    = new TextField(400+50, h, 3/2*alturaCelda, alturaCelda);

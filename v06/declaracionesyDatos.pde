@@ -35,7 +35,7 @@ float alto = ancho*0.62;
 float margenVertical = 110;
 
 boolean logged = false;
-TextField nombre,apellidos, telefono, dni, dayn, monthn, yearn,correo, ndorsal;
+TextField nombre, apellidos, telefono, dni, dayn, monthn, yearn, correo, ndorsal;
 TextField nSaved, dSaved, mSaved, ySaved;
 
 TextField s1_1, s1_2, s2_1, s2_2, s3_1, s3_2, s4_1, s4_2, s5_1, s5_2;
@@ -89,6 +89,8 @@ int [][] resultados  = {
 String [] equipos = {"Equipo A", "Equipo B", "Equipo C","Equipo D", "Equipo E", "Equipo F","Equipo G", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo A", "Equipo B", "Equipo C","Equipo X", "Equipo Y", "Equipo Z"};
 
 String sets;
+int h  = 314 - (int)hBanner;
+int alturaCelda=20;
 
 //formato DD/MM/AAAA
 int[][] fecha={

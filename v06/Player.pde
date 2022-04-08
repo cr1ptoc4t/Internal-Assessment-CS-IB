@@ -56,7 +56,6 @@ class Player{
     void datosPersonales(){
         pushStyle();
             fill(blackCoral);
-            //rect (width/9, 220, 300, 400, 10);
             fill(0);
             textAlign(LEFT);
             

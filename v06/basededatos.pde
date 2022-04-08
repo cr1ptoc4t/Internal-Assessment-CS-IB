@@ -61,6 +61,31 @@ public String[][] getInfoTablaJugadores(){
     }
 }
 
+//arreglar no funciona
+public String[][] getInfoTablaEquipo(){
+    int numFilas = getNumRowsTaula("equipo");
+    int numCols  = 3;
+    
+    String[][] equipoInfo = new String[numFilas][numCols];
+    try {
+        ResultSet rs = query.executeQuery( "SELECT j.id AS id, j.nombre AS nombre, p.categoria AS posicion FROM jugador j, posicion p WHERE j.posicion_id=p.id");
+        int nr = 0;
+        while (rs.next()) {
+            informacionJugadores[nr][1] = rs.getString("nombre");
+            informacionJugadores[nr][0] = String.valueOf(rs.getInt("dorsal"));
+            informacionJugadores[nr][2] = rs.getString("posicion");
+
+            nr++;
+        }
+        printArray2D(informacionJugadores);
+        return informacionJugadores;
+    }
+    catch(Exception e) {
+        System.out.println(e);
+        return null;
+    }
+}
+
 //imprimir contenido array en dos dimensiones
 public void printArray2D(String[][] dades){
     for(int f=0; f<dades.length; f++){
