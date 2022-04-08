@@ -1,19 +1,19 @@
 
 class Button {
   
- // Propietats d'un botó:
- float x, y, w, h;  // Posició i dimensions
- // Colors de contorn, farciment, actiu i desactiu
+ // Propiedades
+ float x, y, w, h;  // Posición y dimensiones
+ // Colores de contorno, de relleno...
  color fillColor, strokeColor;
  color fillColorOver, fillColorDisabled;
- String textBoto;  // Text
- boolean enabled;  // Abilitat / desabilitat
- boolean opaco;
+ String textBoton;  // Texto del botón
+ boolean enabled;  // Habilitado o deshabilitado
+ boolean opaco;    // Opaco o transparente
  int a;
  
- // Mètode Constructor
+ // Método Constructor
   Button(String text, float x, float y, float w, float h, boolean opaco){
-   this.textBoto = text;
+   this.textBoton = text;
    this.x = x;
    this.y = y; 
    
@@ -28,8 +28,7 @@ class Button {
    strokeColor = color(0,0,0,0);
  }
  
- // Setters
- 
+ // Setters varios
  void setEnabled(boolean b){
    this.enabled = b;
  }
@@ -37,7 +36,7 @@ class Button {
    return enabled;
  }
  
- // Dibuixa el botó
+ // Dibuja el botón
  void display(){
    pushStyle();
 
@@ -48,41 +47,34 @@ class Button {
       }
       
       if(!enabled){
-        fill(fillColorDisabled,a);  // Color desabilitat
+        fill(fillColorDisabled,a);   // Color deshabilitado
       }
       else if(mouseOverButton()){
-        fill(fillColorOver, a);      // Color quan ratolí a sobre
+        fill(fillColorOver, a);      // Color cuando se ubica el ratón encima
       }
       else{
-        fill(fillColor, a);          // Color actiu però ratolí fora
+        fill(fillColor, a);          // Color botón activo pero sin el ratón encima
       }
-      stroke(strokeColor, a); strokeWeight(2);        //Color i gruixa del contorn
+      stroke(strokeColor, a); strokeWeight(2);        //Color y grosor del contorno
       float b=0;
       if(mouseX>hBanner){
         b=hBanner;
       }
-      rect(this.x, this.y- hBanner, this.w, this.h, 10);    // Rectangle del botó
+      rect(this.x, this.y- hBanner, this.w, this.h, 10);    // Rectangulo del botón
       
       
-      // Text (color, alineació i mida)
+      // Parámetros estéticos del texto
       fill(255); textAlign(CENTER); textSize(20);
-      text(textBoto, this.x + this.w/2, this.y + this.h/2 + 10- hBanner);
+      text(textBoton, this.x + this.w/2, this.y + this.h/2 + 10- hBanner);
     popStyle();
  }
 
  
- // Indica si el cursor està sobre el botó
+ // Indica si el cursor esta sobre el botón
  boolean mouseOverButton(){
    return (mouseX >= this.x) && 
           (mouseX<=this.x + this.w) && 
           (mouseY>= this.y) && 
           (mouseY<= this.y +this.h); 
  }
-/*
- void press(){
-   if(mouseOverButton()&& mousePressed){
-     p1();
-   }
- }
- */
 }

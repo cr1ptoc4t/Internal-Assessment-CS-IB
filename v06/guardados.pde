@@ -1,9 +1,5 @@
 void guardados(){
-    if(entrenamiento.getSelected()){
-        logoDrawing(width/2, 60, 50,"últimos entrenos guardados", color(0,0,0,0), c4);
-    } else{
-        logoDrawing(width/2, 60, 50,"últimas estrategias de partido guardadas", color(0,0,0,0), c4);
-    }
+    logoDrawing(width/2, 60, 50,"guardados", color(0,0,0,0), c4);
     fondo();
 
     guardado1.setXY(30,155- hBanner);

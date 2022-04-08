@@ -1,13 +1,12 @@
 class Pines {
  
-  // Propietats de la Pissarra.
+  // Propietades de la Pizarra
   float x, y, w, h, xPin1, xPin2;
  
-  // Col·leccions de Pins
+  // Arrays de Pins
   Pin[] pins1, pins2;
  
   // Constructor
-  /* float y1, */
   Pines(float x, float y, float w, float h,  float xPin1, float  xPin2){
     this.x = x;
     this.y = y;
@@ -15,8 +14,8 @@ class Pines {
     this.h = h;
     this.xPin1= xPin1;
     this.xPin2 = xPin2;
-    // Crea 5 pins (Equip 1)
-   pins1 = new Pin[6];
+    // Crea 5 pins (Equipo 1)
+    pins1 = new Pin[6];
     String txt;
     for(int i=0; i<pins1.length; i++){
       if(i<4){
@@ -33,7 +32,7 @@ class Pines {
  
  
    
-    // Crea 5 pins (Equip 2)
+    // Crea 5 pins (Equipo 2)
     pins2 = new Pin[6];
     for(int i=0; i<pins2.length; i++){
        if(i<4){
@@ -50,7 +49,7 @@ class Pines {
     }
   }
  
-  // Resetea la posició de tots els Pins
+  // Resetea la posición de todos los Pins
   void resetPinPositions(){
     for(int i=0; i<pins2.length; i++){
       pins1[i].setPosition( 100 , y + 80*i);
@@ -58,7 +57,7 @@ class Pines {
     }
   }
  
-  // Dibuixa els Pins
+  // Dibuja los Pins
   void displayPins1(){
     for(Pin p : pins1){
       p.display();
@@ -73,18 +72,18 @@ class Pines {
   }
    
  
-  // Comprova si el cursor està sobre la Pissarra
+  // Comprueba si el cursor está sobre la Pizarra
   boolean mouseOver(){
     return mouseX >= this.x && mouseX <= this.x + this.w &&
            mouseY >= this.y && mouseY <= this.y + this.h && 
            mousePressed ;
   }
  
-  // Comprova si cal moure algun Pin
+  // Comprueba si es necesario mover algún pin
   void checkPinsMotion(){
     if(mousePressed){
      
-      // Comprova els pins de l'Equip 1
+      // Comprueba los pins del equipo 1
       for(Pin p : pins1){
         if(p.mouseOver()){
           p.setPosition(mouseX, mouseY);
@@ -92,7 +91,7 @@ class Pines {
         }
       }
      
-      // Comprova els pins de l'Equip 2
+      // Comprueba los pins del equipo 2
       for(Pin p : pins2){
         if(p.mouseOver()){
           p.setPosition(mouseX, mouseY);
@@ -101,5 +100,4 @@ class Pines {
       } 
     }
   }
- 
 }

@@ -1,4 +1,5 @@
 class Player{
+    // Declaración de datos 
     String name;
     String surname;
     String gender;
@@ -6,7 +7,7 @@ class Player{
     String firstPos, secPos,email;
     int age, numb, telefono, year, day, month;
 
-
+    //Método constructor
     Player(String name, String surname , String gender, String firstPos, String secPos, int numb, int telefono, int year, int day, int month, String email){
         this.name = name;
         this.surname = surname;
@@ -114,7 +115,6 @@ class Player{
     }
 
     void datosDeportivos(){
-        //rect!!
         pushStyle();
             fill(blackCoral);
             textFont(fuente2);

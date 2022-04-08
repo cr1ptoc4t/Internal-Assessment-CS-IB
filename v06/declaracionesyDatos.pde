@@ -12,10 +12,6 @@ Button save, newPlayer;
 Button b1,b2;
 Button close;
 Button reset;
-//Button modoEntrenamiento;
-//Button modoCompeticion;
-//Button mediaPista;
-//Button pistaEntera;
 
 Pines p;
 Table t;
@@ -29,26 +25,6 @@ Select mediaPista, pistaEntera;
 Guardado guardado1;
 Guardado guardado2;
 
-
-//tipos enumerados
-enum pantallas {
-  START, MIEQUIPO, PIZARRA, RESULTADOS, GUARDADOS, SOBRENOSOTROS
-};
-
-enum posiciones{
-  LIB, COL, OP, PUN, CENT
-};
-
-enum genero{
-  HOMBRE, MUJER, OTRO
-};
-
-//datos video
-PImage[] img;
-int nFotogramas = 10;
-int f = 1;
-boolean vid = true;
-
 int i=0;
 int j=0;
 int k=0;
@@ -61,8 +37,7 @@ float margenVertical = 110;
 boolean logged = false;
 TextField nombre,apellidos, telefono, dni, dayn, monthn, yearn,correo, ndorsal;
 TextField nSaved, dSaved, mSaved, ySaved;
-//TextField 
-//TextField r1, r2, s1, s2;
+
 TextField s1_1, s1_2, s2_1, s2_2, s3_1, s3_2, s4_1, s4_2, s5_1, s5_2;
 
 int longInfo;
@@ -86,26 +61,6 @@ int nPlayers =jugadores.length;
 //han de sumar 100
 float[] colWidths = {10,70,20};
 float[] colWidthsPlayers = {20,40,40};
-// Dades de la taula
-String[][] info = {
-    {"1", "Pere", "Soler Miralles", "33", "H","Lib", "Col"},                 
-    {"2", "Maria", "Garcia Lopez", "25", "D","Lib", "Col"},
-    {"3", "Joan", "Melis Cabrer",  "47", "H","Lib", "Col"},
-    {"4", "Bel", "Riera Mates",    "52", "D", "Lib", "Col"},
-    {"5", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
-    {"6", "Joan", "Oliver Sureda",  "37", "H","Lib", "Col"},
-    {"7", "Pere Joan", "Fullana Mora",  "37", "H","Lib", "Col"},
-    {"8",  "Pedro", "Perez Galdós",  "37", "H","Lib", "Col"},
-    {"9",  "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
-    {"10", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
-    {"11", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
-    {"12", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
-    {"13", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},
-    {"14", "Maria", "Garcia Lopez", "25", "D","Lib", "Col"},
-    {"15", "Joan", "Melis Cabrer",  "47", "H","Lib", "Col"},
-    {"16", "Bel", "Riera Mates",    "52", "D", "Lib", "Col"},
-    {"17", "Jose", "Perez Galdós",  "37", "H","Lib", "Col"},            
-};
 
 String[][] informacionJugadores;
 
@@ -150,17 +105,6 @@ int[][] fecha={
     {10, 02, 2021},
     {13, 03, 2022},
 };
-/*
-int colocaciónPositiva;
-int colocación;
-int fintaSegundoToque;
-int ace;
-int bloqueo;
-int finta;
-int remate;
-int doblePositiva, positiva;
-int negativa, dobleNegativa;
-*/
 
 Cone cono1;
 
@@ -172,5 +116,3 @@ ListaPaginada e;
 
 boolean menuDisplayed = false;
 PImage [] conos;
-
-//Resultado[] arrResultados;

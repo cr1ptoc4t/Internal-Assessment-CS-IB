@@ -1,12 +1,11 @@
+//animación pantalla de carga
 void inicio(){
     background(blackCoral);
     pushMatrix();
         pushStyle();
         rotate(PI/5);
             textAlign(LEFT);
-            
             fill(royalBlueDark);
-            //text("keep the ball", width/2, height/2-150);
             for(int i=-1000; i< 2000; i+=100){
                 textFont(fuente3);
                 logoDrawing(width/2-420, i-500+k, 100, "KEEP THE BALL FLYING", redSalsa, royalBlueDark);

@@ -1,3 +1,4 @@
+//pantalla para introducir nuevos resultados
 void nuevosResultados(){
     pushStyle();
         textAlign(CENTER);

@@ -1,10 +1,12 @@
 class ListaPaginada{
+    //declaración de variables a usar
     Resultado[] r;
     int currentRes=0;
     int numRes =0;
     int numResVisibles = 3;
     float x, y, w, h;
 
+    //método constructor
     ListaPaginada(Resultado[] r, float x, float y, float w, float h){
         this.r = r;
         this.x = x;
@@ -13,6 +15,7 @@ class ListaPaginada{
         this.h = h;
     }
 
+    // método para dibujar la lista
     void display(){
         //set positions
         for(int i=0; i<numResVisibles; i++){
@@ -30,9 +33,8 @@ class ListaPaginada{
             }
         }
         
-
-        // enable & disenable buttons
-        // to avoid index out of bounds
+        // Activar y desactivar botones
+        // para evitar un error index out of bounds
         if(currentRes*numResVisibles>r.length){
             next.setEnabled(false);
         } else{
@@ -45,6 +47,7 @@ class ListaPaginada{
         }
     }
 
+    //métodos para pasar de página en la lista
     void next() { this.currentRes++;}
     void prev() { this.currentRes--;}
 }

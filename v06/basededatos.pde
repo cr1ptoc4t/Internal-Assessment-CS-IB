@@ -22,7 +22,7 @@ public void connectBBDD(){
     }
 }
 
-// Retorna el número de files d'una taula
+//getter para n filas de una tabla
 public int getNumRowsTaula(String nomTaula){
     try {
         ResultSet rs = query.executeQuery( "SELECT COUNT(*) AS n FROM "+ nomTaula );
@@ -36,7 +36,7 @@ public int getNumRowsTaula(String nomTaula){
     }
 }
 
-// Retorna les dades d'una taula
+// Getter datos tabla
 public String[][] getInfoTablaJugadores(){
     int numFilas = getNumRowsTaula("jugador");
     int numCols  = 3;
@@ -61,7 +61,7 @@ public String[][] getInfoTablaJugadores(){
     }
 }
 
-// Imprimeix contingut array 2D
+//imprimir contenido array en dos dimensiones
 public void printArray2D(String[][] dades){
     for(int f=0; f<dades.length; f++){
         for(int c=0; c<dades[f].length; c++){
@@ -71,7 +71,7 @@ public void printArray2D(String[][] dades){
     }
 }
 
-// Inserta noves dades a una taula
+// Insertar nuevos datos tabla posición
 public void insertPosicion( String n){
     try {
         String q = "INSERT INTO posicion (id,nombre) VALUES (NULL, '"+n+"')";
@@ -84,7 +84,7 @@ public void insertPosicion( String n){
     }
 }
 
-// Actualitza noves dades a una taula
+// Actualitzar datos tabla
 public void updateUnitat(int id, String n){
     try {
         String q = "UPDATE unitat SET nom='"+n+"' WHERE numero='"+id+"'";
@@ -97,7 +97,7 @@ public void updateUnitat(int id, String n){
     }
 }
 
-// Elimina dades de la taula
+// Eliminar dato tabla
 public void deleteUnitat(String n){
     try {
         String q = "DELETE FROM unitat WHERE nom='"+n+"'";

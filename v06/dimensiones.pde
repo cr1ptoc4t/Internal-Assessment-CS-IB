@@ -15,12 +15,10 @@ float wT = 950;
 float hT = 550;
 
 //pizarra
-
 float wBlackboard = 650;
 float hBlackboard = wBlackboard;
 
 //toolbar
-
 float wTB = 50;
 float hTB = height - hBanner;
 

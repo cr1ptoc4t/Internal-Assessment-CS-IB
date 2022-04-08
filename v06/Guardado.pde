@@ -1,11 +1,12 @@
 class Guardado{
 
+    //declaración de parámetros
     PImage img;
     String titulo;
     int day, month, year;
     float x, y, w, h;
 
-
+    //método constructor
     Guardado(PImage img,String titulo, int day, int month, int year){
         
         this.day = day; 
@@ -19,11 +20,13 @@ class Guardado{
         h = 250;
 
     }
+    //setter posición
     void setXY(float a, float b){
         x = a;
         y = b;
     }
 
+    //método dibujar
     void display(){
         pushStyle();
             fill(150);

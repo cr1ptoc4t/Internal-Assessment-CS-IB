@@ -1,22 +1,24 @@
+//pantalla tabla
 void p1(){
 
   pushStyle();
-    //table();
+    //dibujar el objeto tabla
     t.display((width-tableW)/2, 100, tableW, tableH);
-    //t.display(50, 50, tableW, tableH);
     
-    // Dibuixa els botons
+    //dibujar los botones correspondientes
     b1.display();
     b2.display();
     
-    // Actualitza forma del cursor
+    // Actualizar forma del cursor
     updateCursor();
     
+    //Dibujar el nuevo jugador como objeto
     newPlayer.display();
 
   popStyle();
 }
 
+//pantalla para introducir un nuevo jugador
 void newPlayer(){
   textAlign(LEFT);
   pushStyle();
@@ -33,7 +35,6 @@ void newPlayer(){
 
   pushStyle();
     fill(blackCoral);
-    //rect (width/9, 220, 300, 400, 10);
     fill(0);
     textAlign(LEFT);
     
@@ -49,6 +50,7 @@ void newPlayer(){
       fill(0,0,0,0);
       stroke(0);
       strokeWeight(1);
+
       //caja 1
       beginShape();
         vertex(width/10 - 5, 190);
@@ -58,6 +60,7 @@ void newPlayer(){
         vertex(width/10 + 500, 190);
         vertex(width/10 + 400, 190);
       endShape();
+
       //caja 2
       beginShape();
         vertex(width/2 +100 - 5, 190);
@@ -73,7 +76,7 @@ void newPlayer(){
     textFont(fuente1);
     fill(blackCoral);
     textSize(16);
-    text("Fecha de nacimiento:           /          /        /", 200, 250);
+    text("Fecha de nacimiento:                  /        /", 200, 250);
     text("Telefono personal:", 200, 300);
     text("Correo electrónico: ",200, 350);
     text("DNI: ",200, 400);
@@ -86,11 +89,6 @@ void newPlayer(){
     text("Datos deportivos: ", width/2 + 120, 200);
   popStyle(); 
 
-  textSize(18); 
-   //text(this.numb,width/2+120, 250);
-   //text(this.firstPos, width/2+120, 300);
-   //text(this.secPos, width/2+380, 300);  
-
   pushStyle();
      textFont(fuente1);
      fill(blackCoral);
@@ -98,8 +96,7 @@ void newPlayer(){
      text("Número dorsal: ", width/2+150, 250);
      text("Primera posición: ", width/2 +150, 300);
      text("Segunda posición: ",  width/2+150, 350);
-     //nombre.display();
-     //apellidos.display();
+     
      telefono.display();
      dni.display();
      dayn.display();
