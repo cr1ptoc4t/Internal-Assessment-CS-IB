@@ -38,6 +38,7 @@ public int getNumRowsTaula(String nomTaula){
 }
 
 // Getter datos tabla
+// CANVIAR DADES, AFEGIR QUADRANT QUE POSI PRIMERA I SEGONA POSICIÓ, FER QUERY.
 public String[][] getInfoTablaJugadores(){
     int numFilas = getNumRowsTaula("jugador");
     int numCols  = 3;
