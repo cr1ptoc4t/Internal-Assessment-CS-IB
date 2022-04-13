@@ -2,7 +2,6 @@ PImage img0, img1, img2, img3, cono, usuario;
 
 PFont fuente1, fuente2, fuente3, fuente4;
 
-
 Button goToMiEquipo;
 Button goToPizarra;
 Button goToResultados;
@@ -23,6 +22,7 @@ Player p3;
 Select entrenamiento,competicion;
 Select mediaPista, pistaEntera;
 
+
 Guardado guardado1;
 Guardado guardado2;
 
@@ -36,7 +36,7 @@ float alto = ancho*0.62;
 float margenVertical = 110;
 
 boolean logged = false;
-TextField nombre, apellidos, telefono, dni, dayn, monthn, yearn, correo, ndorsal;
+TextField nombre, posicion1, dayn, monthn, yearn, ndorsal;
 TextField nSaved, dSaved, mSaved, ySaved;
 
 TextField s1_1, s1_2, s2_1, s2_2, s3_1, s3_2, s4_1, s4_2, s5_1, s5_2;
@@ -65,6 +65,10 @@ float[] colWidthsPlayers = {20,40,40};
 
 String[][] informacionJugadores;
 String [][] infoPartido;
+String [] infoPosicion;
+
+int xPosicion = width/2;
+int yPosicion = 200;
 
 Resultado r1, r2, r3, r4, r5, r6, r7;
 

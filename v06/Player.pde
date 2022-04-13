@@ -2,30 +2,21 @@ class Player{
     // Declaración de datos 
     String name;
     String surname;
-    String gender;
 
-    String firstPos, secPos,email;
-    int age, numb, telefono, year, day, month;
+    String firstPos, secPos;
+    int age, numb, year, day, month;
 
     //Método constructor
-    Player(String name, String surname , String gender, String firstPos, String secPos, int numb, int telefono, int year, int day, int month, String email){
+    Player(String name, String firstPos, String secPos, int numb, int year, int day, int month){
         this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.gender = gender;
-        
         
         this.year = year;
         this.day = day;
         this.month = month;
 
-        this.telefono = telefono;
-        this.email = email;
-
         this.firstPos = firstPos;
         this.secPos = secPos;
         this.numb = numb;
-
     }
 
 
@@ -96,8 +87,8 @@ class Player{
             pushStyle();
                 textAlign(LEFT);
                 text(this.day + "/" + this.month + "/" +this.year,150+250, 250);
-                text(this.telefono, 150 + 250, 300);
-                text(this.email, 150 + 250, 350);
+                //text(this.posicion1, 150 + 250, 300);
+                //text(this.email, 150 + 250, 350);
             popStyle();
 
             pushStyle();
@@ -105,7 +96,7 @@ class Player{
                 fill(blackCoral);
                 textSize(16);
                 text("Fecha de nacimiento:",200, 250);
-                text("Telefono personal:", 200, 300);
+                text("posicion1 personal:", 200, 300);
                 text("Correo electrónico: ",200, 350);
                 text("DNI: ",200, 400);
             popStyle();

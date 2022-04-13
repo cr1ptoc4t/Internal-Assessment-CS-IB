@@ -143,6 +143,30 @@ public void printArray2D(String[][] dades){
         println();
     }
 }
+public String[] getInfoPosicion(){
+    int numFilas = getNumRowsTaula("posicion");
+    int numCols  = 2;
+    
+    String[] informacionPosicion = new String[numFilas];
+    try {
+        ResultSet rs = query.executeQuery( "SELECT * FROM `posicion`");
+        int nr = 0;
+        while (rs.next()) {
+            informacionPosicion[nr] = rs.getString("nombre");
+            //informacionPosicion[nr] = String.valueOf(rs.getInt("id"));
+
+            nr++;
+        }
+        println("Información POSICION \t-- COMPLETADO");
+        //printArray2D(informacionPosicion);
+        return informacionPosicion;
+    }
+    catch(Exception e) {
+        println("Información Posicion \t-- ERROR");
+        System.out.println(e);
+        return null;
+    }
+}
 
 // Insertar nuevos datos tabla posición
 public void insertPosicion( String n){

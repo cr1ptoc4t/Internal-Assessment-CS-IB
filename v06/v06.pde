@@ -5,7 +5,8 @@
     String [][] infoJugadores = getInfoTablaJugadores();
     String [][] infoEquipo    = getInfoTablaEquipo();
     infoPartido   = getInfoTablaPartido();
-
+    infoPosicion = getInfoPosicion();
+    
     // creacion de objetos
     p = new Pines((float)50, (float)280, (float)700,(float)700, (float)100, (float)width-100);
 
@@ -15,6 +16,8 @@
     img3 = loadImage("sobreNosotros3.jpg");
     usuario = loadImage("userIcon.png");
 
+    s1 = new Select2(infoPosicion, 550, 575, (float)selectW, (float)selectH);
+    s2 = new Select2(infoPosicion, 1200, 575, (float)selectW, (float)selectH);
 
     //botones
     goToMiEquipo      =  new Button("", 150 + 1*(width- 120)/6, hBanner/5, 150 + 2*(width- 120)/6, hButton, false);
@@ -48,9 +51,9 @@
     t.setColumnWidths(colWidths);
 
     //creació jugadors
-    p1   = new Player("Pere Joan", "Gomila" , "home", "Libero", "Col", 10, 999999999, 2001, 16, 2, "perej@mail.com");
-    p2   = new Player("Pere Joan", "Gomila" , "home", "Central", "Punta", 10, 999999999, 2001, 16, 2, "perej@mail.com");
-    p3   = new Player("Pere Joan", "Gomila" , "home", "Opuesto", "Central", 10, 999999999, 2001, 16, 2, "perej@mail.com");
+    p1   = new Player("Pere Joan", "Libero", "Col", 10, 2001, 16, 2);
+    p2   = new Player("Pere Joan", "Central", "Punta", 10, 2001, 16, 2);
+    p3   = new Player("Pere Joan", "Opuesto", "Central", 10, 2001, 16, 2);
 
 
     cono = loadImage("cono.png");
@@ -65,12 +68,12 @@
     mSaved = new TextField(870, 450, 50, 35);
     ySaved = new TextField(940, 450, 50, 35);
 
-    dayn      = new TextField(400, h, 3/2*alturaCelda, alturaCelda);
-    monthn    = new TextField(400+50, h, 3/2*alturaCelda, alturaCelda);
-    yearn     = new TextField(400+100, h, 3/2*alturaCelda, alturaCelda);
-    telefono  = new TextField(400, h+50, 200, alturaCelda);
-    correo    = new TextField(400, h+2*50, 200, alturaCelda);
-    dni       = new TextField(400, h+3*50, 200, alturaCelda);
+
+    nombre    = new TextField(width/2 -200, 100, 400, 2*alturaCelda);
+    dayn      = new TextField(width/2 + 120-50, 400, 3/2*alturaCelda, alturaCelda);
+    monthn    = new TextField(width/2 +120, 400, 3/2*alturaCelda, alturaCelda);
+    yearn     = new TextField(width/2 + 170, 400, 3/2*alturaCelda, alturaCelda);
+    posicion1 = new TextField(xPosicion, yPosicion, 200, alturaCelda);
 
     ndorsal   = new TextField(946, 315 -(int)hBanner, alturaCelda, alturaCelda);
 
@@ -183,6 +186,8 @@
     dSaved.keyPressed(key, (int)keyCode);
     mSaved.keyPressed(key, (int)keyCode);
     ySaved.keyPressed(key, (int)keyCode);
+     nombre.keyPressed(key, (int)keyCode);
+   posicion1.keyPressed(key, (int)keyCode);
   }
 
   void mousePointer(){
@@ -205,6 +210,13 @@
         cursor(HAND);
     } else {
       cursor(ARROW);
+    }
+
+    if(s1.mouseOverSelect2() && s1.enabled){
+      cursor(HAND);
+    }
+    else {
+     cursor(ARROW);
     }
   }
 
@@ -280,6 +292,16 @@
       pistaEntera.setSelected(true);
       mediaPista.setSelected(!true);
     }
+    nombre.isPressed();
+    posicion1.isPressed();
+
+    if(s1.mouseOverSelect2() && s1.enabled){
+    if(!s1.collapsed){
+      s1.update();      // Actualitzar valor
+      updateColor();    // Fer acció amb valor
+    }
+    s1.toggle();        // Plegar o desplegar
+    }
   }
 
   boolean mouseOverLogo(){
@@ -293,3 +315,19 @@
     return a ;
   }
 
+  void updateColor(){
+  if(s1.selectedValue=="RED"){
+    bgColor = color(255, 0, 0);
+  }
+  else if(s1.selectedValue=="GREEN"){
+    bgColor = color(0, 255, 0);
+  }
+  else if(s1.selectedValue=="BLUE"){
+    bgColor = color(0, 0, 255);
+  }
+}
+
+// Modificar el número segons Select 2
+void updateNumber(){
+  n = Integer.parseInt(s1.selectedValue);
+}

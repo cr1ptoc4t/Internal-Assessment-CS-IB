@@ -80,7 +80,7 @@ class TextField {
    // Indica si el ratolí està sobre el camp de text
    boolean mouseOverTextField() {
       if (mouseX >= this.x && mouseX <= this.x + this.w) {
-         if (mouseY >= this.y && mouseY <= this.y + this.h) {
+         if (mouseY >= this.y  && mouseY <= this.y + this.h) {
             return true;
          }
       }
