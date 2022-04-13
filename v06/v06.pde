@@ -16,8 +16,8 @@
     img3 = loadImage("sobreNosotros3.jpg");
     usuario = loadImage("userIcon.png");
 
-    s1 = new Select2(infoPosicion, 550, 575, (float)selectW, (float)selectH);
-    s2 = new Select2(infoPosicion, 1200, 575, (float)selectW, (float)selectH);
+    s1 = new Select2(infoPosicion, 550, 475, (float)selectW, (float)selectH);
+    s2 = new Select2(infoPosicion, 1200, 475, (float)selectW, (float)selectH);
 
     //botones
     goToMiEquipo      =  new Button("", 150 + 1*(width- 120)/6, hBanner/5, 150 + 2*(width- 120)/6, hButton, false);
@@ -36,6 +36,7 @@
     newPlayer      =  new Button("NP", width - 45,  10 + hBanner, 40 ,40, true );
     close          =  new Button("Cerrar", width/2, height - 200, 150, 50, true);
 
+    guardarJugador =  new Button("GUARDAR", width- 150 - 25, height - 55, 150, 50, true);
     reset          =  new Button("Reset", 50, height - hButton - 20,wButton, hButton, true);
     entrenamiento  =  new Select("Modo entrenamiento",50, 70 ,  true,   20);
     competicion    =  new Select("Modo competición",  50, 100 , false,  20);
@@ -55,7 +56,6 @@
     p2   = new Player("Pere Joan", "Central", "Punta", 10, 2001, 16, 2);
     p3   = new Player("Pere Joan", "Opuesto", "Central", 10, 2001, 16, 2);
 
-
     cono = loadImage("cono.png");
 
     fuente1 = createFont("HKGrotesk-Bold.otf", 40);
@@ -68,14 +68,11 @@
     mSaved = new TextField(870, 450, 50, 35);
     ySaved = new TextField(940, 450, 50, 35);
 
-
-    nombre    = new TextField(width/2 -200, 100, 400, 2*alturaCelda);
-    dayn      = new TextField(width/2 + 120-50, 400, 3/2*alturaCelda, alturaCelda);
-    monthn    = new TextField(width/2 +120, 400, 3/2*alturaCelda, alturaCelda);
-    yearn     = new TextField(width/2 + 170, 400, 3/2*alturaCelda, alturaCelda);
-    posicion1 = new TextField(xPosicion, yPosicion, 200, alturaCelda);
-
-    ndorsal   = new TextField(946, 315 -(int)hBanner, alturaCelda, alturaCelda);
+    nombre    = new TextField(450, 175, 700, alturaCelda-10);
+    dayn      = new TextField(520 + 120-50, 350 - (int)hBanner, 3/2*alturaCelda, alturaCelda);
+    monthn    = new TextField(520 + 120   , 350 - (int)hBanner, 3/2*alturaCelda, alturaCelda);
+    yearn     = new TextField(520 + 170   , 350 - (int)hBanner, 3/2*alturaCelda, alturaCelda);
+    ndorsal   = new TextField(520, 451 - (int)hBanner, alturaCelda, alturaCelda);
 
     r1 = new Resultado((width+ 20)/6, height/2 - 50, 0);
     r2 = new Resultado(3*(width+20)/6,height/2 - 50 , 1);
@@ -129,7 +126,7 @@
 
   void pantallas (int j){
     //println(pantalla);
-    if (pantalla==-1) { //entrada
+    if (pantalla==-1) { //paleta
       paleta();
     }
     if (pantalla==0) { //entrada
@@ -186,8 +183,12 @@
     dSaved.keyPressed(key, (int)keyCode);
     mSaved.keyPressed(key, (int)keyCode);
     ySaved.keyPressed(key, (int)keyCode);
-     nombre.keyPressed(key, (int)keyCode);
-   posicion1.keyPressed(key, (int)keyCode);
+    nombre.keyPressed(key, (int)keyCode);
+    dayn.keyPressed(key, (int)keyCode);
+    yearn.keyPressed(key, (int)keyCode);
+    monthn.keyPressed(key, (int)keyCode);
+    ndorsal.keyPressed(key, (int)keyCode);
+
   }
 
   void mousePointer(){
@@ -198,25 +199,29 @@
   }
 
   void updateCursor(){
-    
     if((goToMiEquipo.mouseOverButton() && goToMiEquipo.enabled)||
       (goToGuardados.mouseOverButton() && goToGuardados.enabled)||
       (goToPizarra.mouseOverButton() && goToPizarra.enabled) ||
       mouseOverObject(0,0,0,0) || save.mouseOverButton() || 
       (b1.mouseOverButton() && b1.enabled)||
       (b2.mouseOverButton() && b2.enabled)|| 
-      mouseOverObject(width-45, height - 70, 35, 45) //cono
+      mouseOverObject(width-45, height - 70, 35, 45) ||
+      (s1.mouseOverSelect2() && s1.enabled)||
+      (s2.mouseOverSelect2() && s2.enabled) ||
+      nombre.mouseOverTextField() ||
+      nSaved.mouseOverTextField() ||
+      dSaved.mouseOverTextField() ||
+      mSaved.mouseOverTextField() ||
+      ySaved.mouseOverTextField() ||
+      nombre.mouseOverTextField() ||
+      dayn.mouseOverTextField() ||
+      yearn.mouseOverTextField() ||
+      monthn.mouseOverTextField() ||
+      ndorsal.mouseOverTextField()
       ){
         cursor(HAND);
     } else {
       cursor(ARROW);
-    }
-
-    if(s1.mouseOverSelect2() && s1.enabled){
-      cursor(HAND);
-    }
-    else {
-     cursor(ARROW);
     }
   }
 
@@ -239,20 +244,21 @@
     if(mouseOverLogo()&& mousePressed){
       pantalla = 0;
     }
-    
     if(b1.mouseOverButton() && b1.enabled){
       t.nextPage();
     }
     else if(b2.mouseOverButton() && b2.enabled){
       t.prevPage();
     }
-    
-    if(false){
-      mSaved.isPressed();
-      nSaved.isPressed();
-      ySaved.isPressed();
-      dSaved.isPressed();
-    }
+    nombre.isPressed();
+    dayn.isPressed();
+    monthn.isPressed();
+    yearn.isPressed();
+    ndorsal.isPressed();
+    nSaved.isPressed();
+    ySaved.isPressed();
+    dSaved.isPressed();
+
     if(newPlayer.mouseOverButton() && mousePressed){
       pantalla=7;
       //nuevoJugador1.setDisp(true);
@@ -293,14 +299,19 @@
       mediaPista.setSelected(!true);
     }
     nombre.isPressed();
-    posicion1.isPressed();
 
     if(s1.mouseOverSelect2() && s1.enabled){
     if(!s1.collapsed){
       s1.update();      // Actualitzar valor
-      updateColor();    // Fer acció amb valor
     }
     s1.toggle();        // Plegar o desplegar
+    }
+
+    if(s2.mouseOverSelect2() && s2.enabled){
+    if(!s2.collapsed){
+      s2.update();      // Actualitzar valor
+    }
+    s2.toggle();        // Plegar o desplegar
     }
   }
 
@@ -314,18 +325,6 @@
     }else{cursor(ARROW);}
     return a ;
   }
-
-  void updateColor(){
-  if(s1.selectedValue=="RED"){
-    bgColor = color(255, 0, 0);
-  }
-  else if(s1.selectedValue=="GREEN"){
-    bgColor = color(0, 255, 0);
-  }
-  else if(s1.selectedValue=="BLUE"){
-    bgColor = color(0, 0, 255);
-  }
-}
 
 // Modificar el número segons Select 2
 void updateNumber(){

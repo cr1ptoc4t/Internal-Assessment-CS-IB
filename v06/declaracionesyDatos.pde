@@ -109,7 +109,7 @@ Cone cono1;
 
 color currentCol;
 
-Button next, prev;
+Button next, prev, guardarJugador;
 
 ListaPaginada e;
 

@@ -23,12 +23,7 @@ void newPlayer(){
   textAlign(LEFT);
   pushStyle();
     image(usuario, 130, 70, 50, 50);
-    textSize(100);
-    textFont(fuente2);
-    fill(255);
-    text("Nuevo jugador", 198, 98);
-    fill(royalBlueDark);
-    text("Nuevo jugador", 200, 100);
+    logoDrawing(450, 102.0, 70, "Nuevo jugador", redSalsa, royalBlueDark);
   popStyle();
 
   textSize(15); fill(0);
@@ -38,20 +33,22 @@ void newPlayer(){
     fill(blackCoral);
     textSize(30);
 
-    text("Nombre", 300, 200);
+    text("Nombre:", 300, 200);
     text("Fecha de nacimiento:", 300, 300);
-    text("Número dorsal: ", 300, 500);
-    text("Primera posición: ", 300, 600);
-    text("Segunda posición: ",  900, 600);
+    text("Número dorsal: ", 300, 400);
+    text("Primera posición: ", 300, 500);
+    text("Segunda posición: ",  900, 500);
     
 
     s1.display();
     s2.display();
-    posicion1.display();
+    nombre.display();
     dayn.display();
     monthn.display();
     yearn.display();
     ndorsal.display();
+    guardarJugador.display();
+
   popStyle();
 
 }
