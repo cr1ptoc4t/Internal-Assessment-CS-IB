@@ -71,7 +71,7 @@ public String[][] getInfoTablaEquipo(){
     
     String[][] equipoInfo = new String[numFilas][numCols];
     try {
-        ResultSet rs = query.executeQuery( "SELECT j.id AS id, j.nombre AS nombre, p.nombre AS categoria FROM equipo j, categoria p WHERE j.categoria_id=p.id ORDER BY `id` ASC");
+        ResultSet rs = query.executeQuery( "SELECT j.id AS id, j.nombre AS nombre, p.nombre AS categoria FROM equipo j, categoria p WHERE j.categoria_id=p.id ORDER BY `fecha` ASC");
         int nr = 0;
         while (rs.next()) {
             equipoInfo[nr][0] = String.valueOf(rs.getInt("id"));

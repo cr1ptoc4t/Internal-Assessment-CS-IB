@@ -44,6 +44,7 @@ TextField s1_1, s1_2, s2_1, s2_2, s3_1, s3_2, s4_1, s4_2, s5_1, s5_2;
 int longInfo;
 
 String hability1, hability2, hability3, hability4, hability5;
+String s;
 
 int pantalla = 0;
 
@@ -70,7 +71,7 @@ String [] infoPosicion;
 int xPosicion = width/2;
 int yPosicion = 200;
 
-Resultado r1, r2, r3, r4, r5, r6, r7;
+Resultado r1, r2, r3, r4, r5, r6, r7, r8, r9;
 
 // tu equipo - equipo contrario - set 1 equipo- set 1equipo contrario - set 2 equipo...
 int [][] resultados  = {

@@ -4,6 +4,7 @@ class Resultado{
 
     String contrario;
     String fecha;
+    String tipo;
 
     // resultado del partido. equipos 1 y 2
     String r1;
@@ -35,7 +36,7 @@ class Resultado{
 
         this.nPartido = nPartido;
         this.contrario = infoPartido[nPartido][3];
-        
+        this.tipo = infoPartido[nPartido][2];
         this.fecha  = formataFechaEsp(infoPartido[nPartido][1]);
         
         this.r1 = infoPartido[nPartido][5];
@@ -64,7 +65,6 @@ class Resultado{
     }
 
     void checkContrario(){
-		println(infoPartido[1][5]);
         if(infoPartido[nPartido][4]!=infoPartido[4][4] ){
             this.contrario = infoPartido[nPartido][4];
         } else{
@@ -101,6 +101,9 @@ class Resultado{
                     text(contrario, x, y+ 40, 500, 300);
                     fill(royalBlueDark);
                     text(contrario, x+2, y+ 40+2, 500, 300);
+                    textSize(15);
+                    fill(255);
+                    text(tipo, x,y+ 300, 500, 300);
                     
                     textFont(fuente1);
                     textSize(15);
@@ -110,16 +113,7 @@ class Resultado{
                     textAlign(CENTER);
                     
                     // Encadenamiento de sets en funcion del numero de sets:
-                    sets = s1_1+"-"+s1_2+"/"+s2_1+"-"+s2_2+"/"+s3_1+"-"+s3_2;
-
-                    /*
-                    if(infoPartido[nPartido][5]+infoPartido[nPartido][6]>=4){
-                        sets = sets + "/" + s4_1 + "-" + s4_2;
-                        if(infoPartido[nPartido][5]+infoPartido[nPartido][6]==5){
-                            sets = sets + "/" + s5_1 + "-" + s5_2;
-                        }
-                    }
-                    */
+                    sets = s1_1+"-"+s1_2+"/"+s2_1+"-"+s2_2+"/"+s3_1+"-"+s3_2+ "/" + s4_1 + "-" + s4_2+ "/" + s5_1 + "-" + s5_2;
                     text(sets , x, y + 130, 380);
                 popStyle();
         popStyle();

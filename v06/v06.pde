@@ -82,7 +82,7 @@
     r6 = new Resultado(5*(width+20)/6, height/2 - 50, 5);
     r7 = new Resultado((width+20)/6, height/2 - 50, 6);
 
-    //array de resultados para la posterior recorrimiento
+    //array de resultados para el posterior recorrimiento
     Resultado [] arrResultados = {r1, r2, r3, r4, r5, r6,r7};
 
     cono1 = new Cone (width-45, height - hBanner - 70);
@@ -313,6 +313,14 @@
     }
     s2.toggle();        // Plegar o desplegar
     }
+
+    if(mousePressed && guardarJugador.mouseOverButton()){
+
+    if(s1.selectedValue=="Colocador"){
+      s = "1";
+    }
+      insertaJugador(nombre.text, ndorsal.text, s);
+    }
   }
 
   boolean mouseOverLogo(){
@@ -329,4 +337,18 @@
 // Modificar el número segons Select 2
 void updateNumber(){
   n = Integer.parseInt(s1.selectedValue);
+}
+
+
+void insertaJugador(String n, String d, String s){
+  
+  try {
+        String q = " INSERT INTO `jugador` (`id`, `nombre`, `dorsal`, `equipo`, `posicion_id`) VALUES (NULL, '"+n+"', '"+d+"', 1, '"+s+"')";
+        println("INSERT: "+q);
+        query.execute(q);
+        println("INSERT OK :)");
+    }
+    catch(Exception e) {
+        System.out.println(e);
+    }
 }
