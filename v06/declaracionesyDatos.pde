@@ -71,7 +71,7 @@ String [] infoPosicion;
 int xPosicion = width/2;
 int yPosicion = 200;
 
-Resultado r1, r2, r3, r4, r5, r6, r7, r8, r9;
+Resultado r1, r2, r3, r4, r5, r6, r7;
 
 // tu equipo - equipo contrario - set 1 equipo- set 1equipo contrario - set 2 equipo...
 int [][] resultados  = {

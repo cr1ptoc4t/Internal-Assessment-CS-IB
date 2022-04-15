@@ -79,11 +79,10 @@
     r3 = new Resultado(5*(width+20)/6, height/2 - 50, 2);
     r4 = new Resultado((width+20)/6, height/2 - 50, 3);
     r5 = new Resultado(3*(width+20)/6,height/2 - 50 , 4);
-    r6 = new Resultado(5*(width+20)/6, height/2 - 50, 5);
-    r7 = new Resultado((width+20)/6, height/2 - 50, 6);
+    
 
     //array de resultados para el posterior recorrimiento
-    Resultado [] arrResultados = {r1, r2, r3, r4, r5, r6,r7};
+    Resultado [] arrResultados = {r1, r2, r3, r4, r5};
 
     cono1 = new Cone (width-45, height - hBanner - 70);
 
@@ -156,29 +155,6 @@
   }
 
   void keyPressed() {
-    if(key=='ñ'){
-      pantalla=6;
-    }
-    if(key=='p'){
-      pantalla= -1;
-    }
-    if ( key=='d' || key =='D') {
-      pantalla++;
-    }
-    if ( key=='a' || key =='A') {
-      pantalla--;
-    }
-    if (key=='t'){
-      mediaPista.setSelected(!mediaPista.getSelected());
-      pistaEntera.setSelected(!mediaPista.getSelected());
-    }
-    if (key=='c'){
-      competicion.setSelected(!competicion.getSelected());
-      entrenamiento.setSelected(!competicion.getSelected());
-    }
-    if(key =='R'|| key=='r'){
-      p.resetPinPositions();
-    }
     nSaved.keyPressed(key, (int)keyCode);
     dSaved.keyPressed(key, (int)keyCode);
     mSaved.keyPressed(key, (int)keyCode);
