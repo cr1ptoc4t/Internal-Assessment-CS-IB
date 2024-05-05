@@ -11,6 +11,7 @@ Keep The Ball Flying is a desktop application developed with Processing 4, desig
 - **Multiple Screens**: The application features several screens, including a virtual whiteboard for designing tactics, a table for viewing player information, and a log of saved plays for analysis and future reference.
 - **Database Connection**: The application is connected to a local database using MySQLWorkbench.
 - **Object-Oriented Programming**: The application utilizes all aspects of object-oriented programming, including encapsulation, inheritance, and polymorphism, to create modular, reusable, and maintainable code.
+- **Six-versioned**: You will see there are six versions of the application, use the most recent, the others are made just to see progress.
 
 ## Additional Information
 - **Development Time**: The development process of Keep The Ball Flying has taken almost a year, during which I worked on implementing features, designing the user interface, and solving technical issues.
