@@ -15,8 +15,8 @@ Keep The Ball Flying is a desktop application developed with Processing 4, desig
 
 ## Additional Information
 - **Development Time**: The development process of Keep The Ball Flying has taken almost a year, during which I worked on implementing features, designing the user interface, and solving technical issues.
-- **Language(s)**: You'll see there are many languages in this project, that's totally my fault (i've mixed spanish, catalan and english)
-- **Documentation**: Currently, documentation for the project is missing, but it will soon be completed and uploaded to facilitate its understanding and use by other users.
+- **Language(s)**: You'll see there are many natural languages in this project, that's totally my fault (i've mixed spanish, catalan and english)
+- **Documentation**:The documentation for the project consists of 12 PDF files that explain both the development process and the functioning of the application. These documents provide detailed insights into various aspects of the project, including design choices, implementation details, and usage instructions.
   
     > As one of my early projects developed as an unexperienced teenager, there might be some flaws or areas for improvement. Please keep this in mind while exploring the application.
 
